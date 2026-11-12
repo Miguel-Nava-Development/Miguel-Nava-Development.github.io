@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Miguel Nava</title>
+  <meta name="description" content="Get in touch with Miguel Nava about a role or a project.">
+  <meta name="theme-color" content="#d9dadd">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | Miguel Nava">
+  <meta property="og:description" content="Send Miguel Nava a message about a role or a project.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+</head>
+<body id="top" data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="favicon.svg" alt="" width="22" height="22">
+        <span>Miguel Nava</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Design</a></li>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="nav-cta" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page wrap">
+    <h1 class="hero-title">Contact</h1>
+
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <p class="lede">Hiring, or have a project in mind? Send me a message and I will reply by email.</p>
+      </div>
+
+      <!--
+        This form sends messages through Web3Forms, which forwards them to your inbox. Your own
+        email address is never written on this page. The access key below is public by design:
+        it only lets people send messages to you. To change where messages go, create a new
+        key at web3forms.com and replace the value in the hidden access_key field.
+      -->
+      <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="5b03a0e4-9a41-4543-9a18-ac6f2bf631ae">
+        <input type="hidden" name="subject" value="New message from your portfolio website">
+        <input type="hidden" name="from_name" value="Portfolio website">
+        <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-note">
+          <p class="field-note" id="email-note">Only used to reply to you.</p>
+        </div>
+
+        <div class="field">
+          <label for="reason">Reason for reaching out</label>
+          <textarea id="reason" name="message" rows="6" required></textarea>
+        </div>
+
+        <button class="btn" type="submit">Send message</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span data-year>2026</span> Miguel Nava</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Miguel-Nava-Development">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Behance</a></li>
+      </ul>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
