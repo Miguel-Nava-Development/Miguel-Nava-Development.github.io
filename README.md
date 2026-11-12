@@ -29,7 +29,7 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 | Find | Replace with |
 | --- | --- |
 | `Miguel Nava` | Your name, exactly as you want it shown (check this one is right) |
-| `Open to full-time roles` | Your availability, or delete the line |
+| `Open to full-time or project-based roles` | Your availability, or delete the line |
 | `href="#"` on GitHub, LinkedIn, Behance | Your profile links (in `index.html`, `software.html`, `about.html`) |
 
 ### 2. Add graphic design work
