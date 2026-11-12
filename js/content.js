@@ -20,7 +20,7 @@ window.PORTFOLIO = {
     {
       id: "brand-identity-system",          // unique, lowercase, no spaces: used in the share link
       title: "Brand identity system",
-      category: "Branding",                  // becomes a filter button automatically
+      category: "Branding",                  // becomes a filter button. Keep to 3 or 4 broad groups
       year: 2025,
       client: "Sample client",
       role: "Art direction and design",
@@ -36,7 +36,7 @@ window.PORTFOLIO = {
     {
       id: "poster-series",
       title: "Poster series",
-      category: "Posters",
+      category: "Print",
       year: 2025,
       client: "Sample client",
       role: "Design",
@@ -51,7 +51,7 @@ window.PORTFOLIO = {
     {
       id: "social-media-campaign",
       title: "Social media campaign",
-      category: "Social",
+      category: "Digital",
       year: 2024,
       client: "Sample client",
       role: "Design",
@@ -65,7 +65,7 @@ window.PORTFOLIO = {
     {
       id: "editorial-spread",
       title: "Editorial spread",
-      category: "Editorial",
+      category: "Print",
       year: 2024,
       client: "Sample client",
       role: "Layout and typography",
@@ -79,7 +79,7 @@ window.PORTFOLIO = {
     {
       id: "packaging-concept",
       title: "Packaging concept",
-      category: "Packaging",
+      category: "Print",
       year: 2024,
       client: "Personal project",
       role: "Design",
@@ -107,7 +107,7 @@ window.PORTFOLIO = {
     {
       id: "event-banner",
       title: "Event banner",
-      category: "Posters",
+      category: "Print",
       year: 2023,
       client: "Sample client",
       role: "Design",
@@ -121,7 +121,7 @@ window.PORTFOLIO = {
     {
       id: "landscape-illustration",
       title: "Landscape illustration",
-      category: "Illustration",
+      category: "Digital",
       year: 2023,
       client: "Personal project",
       role: "Illustration",
@@ -135,7 +135,7 @@ window.PORTFOLIO = {
     {
       id: "type-specimen",
       title: "Type specimen",
-      category: "Typography",
+      category: "Print",
       year: 2022,
       client: "Personal project",
       role: "Design",

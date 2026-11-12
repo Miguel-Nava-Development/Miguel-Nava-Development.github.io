@@ -472,7 +472,8 @@ button { font: inherit; color: inherit; }
 
 /* ---------- About ---------- */
 .page { padding-block: clamp(2rem, 6vw, 5rem) 0; }
-.about-grid {
+.about-grid,
+.contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
   gap: var(--gap) clamp(2rem, 6vw, 6rem);
@@ -519,12 +520,44 @@ button { font: inherit; color: inherit; }
 .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
 
 @media (max-width: 860px) {
-  .about-grid { grid-template-columns: 1fr; }
+  .about-grid,
+.contact-grid { grid-template-columns: 1fr; }
   .about-portrait { max-width: 22rem; }
 }
 @media (max-width: 560px) {
   .timeline li { grid-template-columns: 1fr; }
 }
+
+/* ---------- Contact form ---------- */
+.contact-intro { max-width: 36rem; }
+.form {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 40rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--artboard);
+}
+.field { display: grid; gap: 0.4rem; }
+.field label { font-weight: 600; }
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+.field textarea { min-height: 9rem; resize: vertical; }
+.field input:focus-visible,
+.field textarea:focus-visible { border-color: var(--select); outline-offset: 0; }
+.field-note { color: var(--ink-soft); font-size: 0.9375rem; }
+.form .btn { justify-self: start; }
+.form .btn:disabled { opacity: 0.6; cursor: wait; }
+.form-status { min-height: 1.5em; }
+.form-status[data-state="success"] { font-weight: 600; }
+.form-status[data-state="error"] { color: #b00020; font-weight: 600; }
 
 /* ---------- Closing band and footer ---------- */
 .closing { padding-block: clamp(4rem, 9vw, 8rem) 0; }
@@ -536,12 +569,7 @@ button { font: inherit; color: inherit; }
   line-height: 1;
   letter-spacing: -0.01em;
 }
-.closing-link {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: var(--step-1);
-  font-weight: 600;
-}
+.closing-action { margin-top: 1.5rem; }
 
 .site-footer { padding-block: clamp(3rem, 6vw, 5rem) 2.5rem; font-size: 0.9375rem; }
 .site-footer .wrap {

@@ -5,7 +5,8 @@ A hand-built site with no framework, no build step and no page builder. It is pl
 ```
 index.html        Graphic design (the home page)
 software.html     Software projects
-about.html        About, skills, experience, contact
+about.html        About, skills, experience
+contact.html      Contact form (your email address is never shown on the site)
 404.html          Shown when someone opens a link that does not exist
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
@@ -22,13 +23,12 @@ For a nicer workflow, open the folder in VS Code, install the **Live Server** ex
 
 ## Make it yours
 
-### 1. Replace the sample details
+### 1. Replace the sample details (and switch on the contact form, see below)
 Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 
 | Find | Replace with |
 | --- | --- |
 | `Miguel Nava` | Your name, exactly as you want it shown (check this one is right) |
-| `you@example.com` | Your real email |
 | `Open to full-time roles` | Your availability, or delete the line |
 | `href="#"` on GitHub, LinkedIn, Behance | Your profile links (in `index.html`, `software.html`, `about.html`) |
 
@@ -38,7 +38,7 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 3. Set `ratio` to match your cover image: `"4 / 5"` tall, `"1 / 1"` square, `"3 / 2"` wide, `"16 / 9"` banner.
 4. Save and refresh.
 
-Each `category` you use becomes a filter button automatically. Add more images to `images` to show a series. People can click any project to open it large, move between projects with the arrow keys, and you can send someone a direct link to one piece, for example `yoursite.com/#project=poster-series`.
+Each `category` you use becomes a filter button automatically, so keep it to three or four broad groups (for example Branding, Print, Digital). If every project uses the same category, or only one category is used, the filter row disappears. Add more images to `images` to show a series. People can click any project to open it large, move between projects with the arrow keys, and you can send someone a direct link to one piece, for example `yoursite.com/#project=poster-series`.
 
 Image tips: export JPG or WebP at about 1600 px on the long side, aim for under 400 KB each, and write a short `alt` that describes what is in the picture.
 
@@ -56,6 +56,15 @@ Every sample image says "Sample image" in its corner. Once your own work is in, 
 2. In the copy, change `data-collection="design"` to `data-collection="photography"`, update the `<title>`, and replace the headline with plain text.
 3. In `js/content.js`, add a `photography: [ ... ]` list that follows the same format as `design`.
 4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page.
+
+## Switch on the contact form
+The Contact page has a form (name, email, reason for reaching out). Visitors never see your email address: their message goes to a free form service called Web3Forms, which forwards it to your inbox.
+
+1. Go to web3forms.com and enter the email address that should receive messages. They email you an **access key**.
+2. Open `contact.html` and replace `YOUR_ACCESS_KEY_HERE` with that key. The key is safe to publish. It only lets people send messages to you, and it does not reveal your email.
+3. Upload the changed file to GitHub, wait a minute, open the Contact page and send yourself a test message.
+
+The free plan allows about 250 messages a month. If you ever get too many spam messages, Web3Forms has a free captcha you can turn on in their dashboard. Check their site for current limits.
 
 ## Fonts
 The site uses **Archivo** from Google Fonts. If someone is offline, their device falls back to a similar system font and everything still works. To host the font yourself instead, download it from fonts.google.com, put the files in a `fonts/` folder, and replace the Google Fonts `<link>` in each page with an `@font-face` rule.
@@ -91,9 +100,9 @@ A name like `miguelnava.com` looks more professional on a résumé than a `githu
 Note: `404.html` uses links that start with `/`, which works at the root of a domain (your own domain or `your-username.github.io`). If you host in a sub-folder, remove the leading `/` from its links.
 
 ## Before you share the link
-- [ ] Name, email, location and social links replaced
+- [ ] Name, location and social links replaced
 - [ ] Sample images and sample projects removed
 - [ ] Every image has a useful `alt`
 - [ ] About page filled in, and résumé link switched on if you have one
 - [ ] Opened on your phone and checked each tab
-- [ ] Tested the email link (it should open a new message to you)
+- [ ] Contact form switched on, and a test message sent to yourself arrived in your inbox

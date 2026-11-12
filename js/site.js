@@ -340,6 +340,54 @@
     });
   }
 
+  /* ---------- Contact page ---------- */
+
+  function initContact() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var status = document.getElementById('form-status');
+    var button = form.querySelector('button[type="submit"]');
+
+    function say(text, state) {
+      status.textContent = text;
+      status.setAttribute('data-state', state || '');
+    }
+
+    form.addEventListener('submit', function (event) {
+      var key = form.elements.access_key.value;
+      if (!key || key.indexOf('YOUR_ACCESS_KEY') === 0) {
+        event.preventDefault();
+        say('This form is not switched on yet. Add the Web3Forms access key in contact.html.', 'error');
+        return;
+      }
+      if (!window.fetch) return; /* old browser: let the form post normally */
+
+      event.preventDefault();
+      button.disabled = true;
+      say('Sending...', '');
+
+      var body = {};
+      new FormData(form).forEach(function (value, name) { body[name] = value; });
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body)
+      })
+        .then(function (response) { return response.json(); })
+        .then(function (result) {
+          if (!result || !result.success) throw new Error('rejected');
+          form.reset();
+          say('Thanks, your message was sent. I will reply by email.', 'success');
+        })
+        .catch(function () {
+          say('Your message was not sent. Check your connection and try again.', 'error');
+        })
+        .then(function () { button.disabled = false; });
+    });
+  }
+
   initDesign();
   initSoftware();
+  initContact();
 })();
