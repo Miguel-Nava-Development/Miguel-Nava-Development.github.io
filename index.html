@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Miguel Nava | Graphic design and software development</title>
-  <meta name="description" content="Portfolio of Miguel Nava: graphic design work including branding, posters and illustration, plus software development projects.">
+  <title>Miguel Nava | Marketing design and software development</title>
+  <meta name="description" content="Portfolio of Miguel Nava: marketing design work including social media posts, flyers, banners and ads, plus software development projects.">
   <meta name="theme-color" content="#d9dadd">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Miguel Nava | Graphic design and software development">
-  <meta property="og:description" content="Graphic design work and software projects by Miguel Nava.">
+  <meta property="og:title" content="Miguel Nava | Marketing design and software development">
+  <meta property="og:description" content="Marketing design and software projects by Miguel Nava.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.className += ' js';</script>
 </head>
-<body id="top" data-page="design">
+<body id="top" data-page="marketing">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -27,7 +27,7 @@
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul class="nav-list">
-          <li><a href="index.html" aria-current="page">Design</a></li>
+          <li><a href="index.html" aria-current="page">Marketing</a></li>
           <li><a href="software.html">Software</a></li>
           <li><a href="about.html">About</a></li>
           <li><a class="nav-cta" href="contact.html">Contact</a></li>
@@ -39,24 +39,34 @@
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
       <h1 class="hero-title" id="hero-title">
-        <a class="sel is-active" href="#work">Graphic design<span class="handles" aria-hidden="true"><i></i><i></i><i></i><i></i></span></a>
+        <a class="sel is-active" href="#companies">Marketing<span class="handles" aria-hidden="true"><i></i><i></i><i></i><i></i></span></a>
         and
         <a class="sel" href="software.html">software development<span class="handles" aria-hidden="true"><i></i><i></i><i></i><i></i></span></a>
       </h1>
       <div class="hero-meta">
-        <p class="lede">I make brand identities, posters and layouts, and I write the code behind websites and apps. The design work is below. The software is one tab over.</p>
+        <p class="lede">Social media posts, flyers, banners and ads I designed for the companies below. The software is one tab over.</p>
         <p class="status"><strong>Open to full-time or project-based roles</strong><br>Sudbury, Ontario, Canada</p>
       </div>
     </section>
 
-    <section class="work wrap" id="work" aria-labelledby="work-heading">
-      <h2 class="visually-hidden" id="work-heading">Graphic design work</h2>
-      <div class="toolbar">
-        <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
-        <p class="count" id="count" aria-live="polite"></p>
-      </div>
-      <noscript><p class="empty">The work on this page needs JavaScript. Turn it on in your browser settings, or email me and I will send a PDF.</p></noscript>
-      <div class="wall" id="wall" data-collection="design"></div>
+    <section class="work wrap" id="companies" aria-labelledby="companies-heading">
+      <h2 class="visually-hidden" id="companies-heading">Companies</h2>
+      <ul class="companies">
+        <li>
+          <a class="company" href="tim-mcdowell.html">
+            <div class="company-boards" aria-hidden="true">
+              <span class="board" style="--r: 800 / 418"><img src="assets/tme/social/2026-05-13-2025-cat-930-wheel-loader-rented.jpg" alt=""><span class="handles" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+              <span class="board" style="--r: 640 / 974"><img src="assets/tme/flyer-cim-2026/cover.jpg" alt=""><span class="handles" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+              <span class="board" style="--r: 2 / 3"><img src="assets/tme/banner-pdac-2026/cover.jpg" alt=""><span class="handles" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+            </div>
+            <div class="company-body">
+              <h2 class="company-name">Tim McDowell <span class="nb">Equipment Ltd.</span></h2>
+              <p class="company-text">Mining and construction equipment rentals and sales in Northern Ontario. <span data-count="tmeSocial">118</span> social media posts and videos, plus flyers, a pull-out banner and magazine ads.</p>
+              <span class="btn">View the work</span>
+            </div>
+          </a>
+        </li>
+      </ul>
     </section>
 
     <section class="closing wrap" aria-labelledby="closing-title">
@@ -76,26 +86,6 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
-
-  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
-    <div class="viewer-stage">
-      <div class="viewer-art" id="viewer-art"></div>
-      <ul class="viewer-thumbs" id="viewer-thumbs" aria-label="Images in this project"></ul>
-    </div>
-    <div class="viewer-info">
-      <button class="chip viewer-close" type="button" id="viewer-close">Close</button>
-      <div>
-        <p class="viewer-meta" id="viewer-meta"></p>
-        <h2 class="viewer-title" id="viewer-title"></h2>
-      </div>
-      <p id="viewer-summary"></p>
-      <dl class="specs" id="viewer-specs"></dl>
-      <div class="viewer-nav">
-        <button class="chip" type="button" id="viewer-prev">Previous</button>
-        <button class="chip" type="button" id="viewer-next">Next</button>
-      </div>
-    </div>
-  </dialog>
 
   <script src="js/content.js"></script>
   <script src="js/site.js"></script>

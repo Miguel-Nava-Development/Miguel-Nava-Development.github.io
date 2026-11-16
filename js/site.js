@@ -68,13 +68,48 @@
     list.appendChild(h('dd', { text: value }));
   }
 
-  /* ---------- Footer year ---------- */
+  /* ---------- Footer year and live counts ---------- */
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (node) {
     node.textContent = String(new Date().getFullYear());
   });
 
-  /* ---------- Graphic design page ---------- */
+  /* <span data-count="tmeSocial">43</span> shows how many items are in that list. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-count]'), function (node) {
+    var list = data[node.getAttribute('data-count')];
+    if (Array.isArray(list) && list.length) node.textContent = String(list.length);
+  });
+
+  /* ---------- Masonry helper (used by the flyers grid) ---------- */
+
+  function ratioOf(text) {
+    var m = /([\d.]+)\s*\/\s*([\d.]+)/.exec(text || '4 / 5');
+    return m ? parseFloat(m[1]) / parseFloat(m[2]) : 0.8;
+  }
+
+  /* Put each node in whichever column is currently shortest. entries: [{ node, ratio }] */
+  function balance(wall, entries) {
+    var gap = parseFloat(getComputedStyle(wall).columnGap) || 32;
+    var n = Math.max(1, Math.min(3, Math.floor((wall.clientWidth + gap) / (300 + gap))));
+    var cols = [];
+    var heights = [];
+    wall.style.setProperty('--cols', n);
+    wall.replaceChildren();
+    for (var i = 0; i < n; i++) {
+      var col = h('ul', { 'class': 'wall-col' });
+      cols.push(col);
+      heights.push(0);
+      wall.appendChild(col);
+    }
+    entries.forEach(function (entry) {
+      var k = heights.indexOf(Math.min.apply(null, heights));
+      cols[k].appendChild(entry.node);
+      heights[k] += 1 / entry.ratio + 0.2;
+    });
+    return n;
+  }
+
+  /* ---------- Gallery pages (graphic design samples and social posts) ---------- */
 
   function initDesign() {
     var wall = document.getElementById('wall');
@@ -83,23 +118,36 @@
     var filters = document.getElementById('filters');
     var count = document.getElementById('count');
     var viewer = document.getElementById('viewer');
+    var noun = wall.getAttribute('data-noun') || 'project';
+    var labelMode = wall.getAttribute('data-label');          /* "date": cards show the date, not the title */
+    var limit = parseInt(wall.getAttribute('data-initial'), 10) || Infinity;
+    var more = document.getElementById('more');
+    var section = wall.closest('section');
     var projects = collection(wall, 'design').filter(function (p) { return p && p.id && p.images && p.images.length; });
     var byId = {};
     var state = { category: 'All', projectId: null, imageIndex: 0 };
 
     if (!projects.length) {
       wall.parentNode.insertBefore(
-        emptyMessage('No work added yet. Add projects to the design list in js/content.js and they will show up here.'),
+        emptyMessage('No work added yet. Add items to js/content.js and they will show up here.'),
         wall
       );
       return;
     }
     projects.forEach(function (p) { byId[p.id] = p; });
 
-    /* Filter buttons, built from the categories you use */
+    /* Filter buttons, built from the categories you use. data-category-order="A|B|C" sets their order. */
     var categories = ['All'];
     projects.forEach(function (p) {
       if (p.category && categories.indexOf(p.category) === -1) categories.push(p.category);
+    });
+    var preferred = (wall.getAttribute('data-category-order') || '').split('|');
+    categories.sort(function (a, b) {
+      if (a === 'All') return -1;
+      if (b === 'All') return 1;
+      var ia = preferred.indexOf(a);
+      var ib = preferred.indexOf(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     });
 
     function matches(p) { return state.category === 'All' || p.category === state.category; }
@@ -133,7 +181,7 @@
         heights.push(0);
         wall.appendChild(col);
       }
-      visibleProjects().forEach(function (p) {
+      visibleProjects().slice(0, limit).forEach(function (p) {
         var k = heights.indexOf(Math.min.apply(null, heights));
         cols[k].appendChild(frames[p.id]);
         heights[k] += 1 / ratioValue(p.ratio) + 0.15;
@@ -147,7 +195,20 @@
       });
       layout();
       var n = visibleProjects().length;
-      count.textContent = n + (n === 1 ? ' project' : ' projects');
+      var shown = Math.min(n, limit);
+      var plural = n === 1 ? noun : noun + 's';
+      if (count) count.textContent = shown < n ? 'Showing ' + shown + ' of ' + n + ' ' + plural : n + ' ' + plural;
+      if (more) {
+        more.hidden = shown >= n;
+        more.textContent = 'Show all ' + n + ' ' + plural;
+      }
+    }
+
+    if (more) {
+      more.addEventListener('click', function () {
+        limit = Infinity;
+        applyFilter(state.category);
+      });
     }
 
     var resizeTimer;
@@ -170,12 +231,19 @@
 
     /* The wall of work */
     projects.forEach(function (p) {
-      var open = h('button', { type: 'button', 'class': 'frame-open' }, [
+      var stamp = p.year ? String(p.year) : '';
+      var cover = artwork(p.images[0], p.ratio, '', true);
+      if (p.video) cover.classList.add('has-video');
+      var open = h('button', {
+        type: 'button',
+        'class': 'frame-open',
+        'aria-label': p.title + (p.video ? ', video' : '') + (stamp ? ', ' + stamp : '')
+      }, [
         h('span', { 'class': 'frame-label' }, [
-          h('span', { 'class': 'frame-title', text: p.title }),
-          h('span', { 'class': 'frame-year', text: p.year ? String(p.year) : '' })
+          h('span', { 'class': 'frame-title', text: labelMode === 'date' ? stamp : p.title }),
+          h('span', { 'class': 'frame-year', text: labelMode === 'date' ? '' : stamp })
         ]),
-        artwork(p.images[0], p.ratio, '', true)
+        cover
       ]);
       open.addEventListener('click', function () { openProject(p.id); });
       frames[p.id] = h('li', { 'class': 'frame', 'data-id': p.id }, [open]);
@@ -189,11 +257,44 @@
     var title = document.getElementById('viewer-title');
     var summary = document.getElementById('viewer-summary');
     var specs = document.getElementById('viewer-specs');
+    var posted = document.getElementById('viewer-posted');
+    var link = document.getElementById('viewer-link');
+    var MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    /* "2026-04-15" becomes "April 15, 2026" */
+    function longDate(iso) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+      return m ? MONTH_NAMES[parseInt(m[2], 10) - 1] + ' ' + parseInt(m[3], 10) + ', ' + m[1] : '';
+    }
+
+    function stopVideo() {
+      var playing = art.querySelector('video');
+      if (playing) playing.pause();
+    }
 
     function showImage(index) {
       var p = byId[state.projectId];
       var image = p.images[index];
       state.imageIndex = index;
+      stopVideo();
+      if (p.video && index === 0) {
+        var clip = h('video', {
+          controls: true,
+          playsinline: true,
+          preload: 'metadata',
+          poster: image.src,
+          src: p.video,
+          'aria-label': image.alt || p.title
+        });
+        /* Landscape clips fill the width, tall ones fill the height */
+        clip.className = ratioOf(p.ratio) >= 1 ? 'is-landscape' : 'is-portrait';
+        clip.style.aspectRatio = p.ratio;
+        clip.addEventListener('error', function () {
+          art.replaceChildren(emptyMessage('Video not found: ' + p.video));
+        });
+        art.replaceChildren(clip);
+        return;
+      }
       var img = h('img', { src: image.src, alt: image.alt || p.title });
       img.addEventListener('error', function () {
         art.replaceChildren(emptyMessage('Image not found: ' + image.src));
@@ -205,8 +306,23 @@
     }
 
     function fillViewer(p) {
-      meta.textContent = [p.category, p.year].filter(Boolean).join(', ');
+      var when = longDate(p.date);
+      /* The sentence below repeats the date, so the small line above the title drops it. */
+      meta.textContent = [p.category, p.purpose && when ? '' : p.year].filter(Boolean).join(', ');
       title.textContent = p.title;
+      if (p.purpose && when) {
+        posted.textContent = 'I posted this ' + (p.approx ? 'around ' : 'on ') + when + ' with the purpose of ' + p.purpose + '.';
+        posted.hidden = false;
+      } else {
+        posted.hidden = true;
+      }
+      if (p.link) {
+        link.href = p.link;
+        link.textContent = 'See the original on ' + (p.linkLabel || 'the web');
+        link.hidden = false;
+      } else {
+        link.hidden = true;
+      }
       summary.textContent = p.summary || '';
       summary.hidden = !p.summary;
 
@@ -269,15 +385,347 @@
     });
 
     viewer.addEventListener('close', function () {
+      stopVideo();
       document.documentElement.classList.remove('modal-open');
-      if (location.hash.indexOf('#project=') === 0) setHash('#work');
+      if (location.hash.indexOf('#project=') === 0) setHash(section && section.id ? '#' + section.id : location.pathname.split('/').pop() || '');
     });
 
-    /* Share links: index.html#project=poster-series opens that project */
+    /* Share links: tim-mcdowell.html#project=social-20260730-1 opens that item */
     function openFromHash() {
       var match = /^#project=(.+)$/.exec(location.hash);
       if (match) openProject(decodeURIComponent(match[1]));
       else if (viewer.open) viewer.close();
+    }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+  }
+
+  /* ---------- Flyers, banners and ads: cards plus a flip-through reader ---------- */
+
+  function initBooklets() {
+    var wall = document.getElementById('booklets-wall');
+    var reader = document.getElementById('reader');
+    if (!wall || !reader) return;
+
+    var items = collection(wall, 'tmeBooklets').filter(function (b) { return b && b.id && b.pages && b.pages.length; });
+    var section = wall.closest('section');
+    if (!items.length) {
+      wall.parentNode.insertBefore(
+        emptyMessage('No flyers added yet. Add them to the tmeBooklets list in js/content.js and they will show up here.'),
+        wall
+      );
+      return;
+    }
+    var byId = {};
+    items.forEach(function (b) { byId[b.id] = b; });
+
+    /* Cards */
+    var entries = items.map(function (b) {
+      var pages = b.pages.length;
+      var cover = artwork(b.cover, b.ratio, '', true);
+      if (pages > 1) cover.appendChild(h('span', { 'class': 'page-badge', text: pages + ' pages' }));
+      var open = h('button', {
+        type: 'button',
+        'class': 'frame-open',
+        'aria-label': b.title + ', ' + b.event + ' ' + b.year + (pages > 1 ? ', ' + pages + ' pages. Open to flip through.' : '. Open to view.')
+      }, [
+        h('span', { 'class': 'frame-label' }, [
+          h('span', { 'class': 'frame-title', text: b.title }),
+          h('span', { 'class': 'frame-year', text: String(b.year) })
+        ]),
+        cover,
+        h('span', { 'class': 'frame-caption', text: b.event })
+      ]);
+      open.addEventListener('click', function () { openBooklet(b.id); });
+      return { node: h('li', { 'class': 'frame', 'data-id': b.id }, [open]), ratio: ratioOf(b.ratio) };
+    });
+
+    var lastColumns = 0;
+    function layout() { lastColumns = balance(wall, entries); }
+    layout();
+
+    var gridTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(gridTimer);
+      gridTimer = setTimeout(function () {
+        var gap = parseFloat(getComputedStyle(wall).columnGap) || 32;
+        var n = Math.max(1, Math.min(3, Math.floor((wall.clientWidth + gap) / (300 + gap))));
+        if (n !== lastColumns) layout();
+      }, 120);
+    });
+
+    /* Reader */
+    var area = document.getElementById('reader-area');
+    var title = document.getElementById('reader-title');
+    var meta = document.getElementById('reader-meta');
+    var summary = document.getElementById('reader-summary');
+    var status = document.getElementById('reader-status');
+    var range = document.getElementById('reader-range');
+    var rangeBox = document.getElementById('reader-range-box');
+    var prevBtn = document.getElementById('reader-prev');
+    var nextBtn = document.getElementById('reader-next');
+    var sidePrev = document.getElementById('reader-side-prev');
+    var sideNext = document.getElementById('reader-side-next');
+    var fullLink = document.getElementById('reader-full');
+
+    var cur = null;       /* booklet on show */
+    var mode = 'spread';  /* "spread" (flip book) or "single" (one page at a time) */
+    var pos = 0;          /* spread: leaves already turned. single: page index */
+    var book = null;
+    var parts = [];       /* spread: leaves. single: sheets */
+    var zTimer;
+    var swiped = false;
+
+    function pageCount() { return cur.pages.length; }
+    function leafCount() { return Math.ceil(pageCount() / 2); }
+
+    function pageRatio(p) { return p.w / p.h; }
+
+    /* Booklets whose pages are all the same shape, and large enough on screen, open as a book. */
+    function chooseMode(aw, ah) {
+      if (cur.mode === 'single' || pageCount() < 3) return 'single';
+      var r = pageRatio(cur.pages[0]);
+      for (var i = 1; i < cur.pages.length; i++) {
+        if (Math.abs(pageRatio(cur.pages[i]) / r - 1) > 0.03) return 'single';
+      }
+      var spreadH = Math.min(ah, aw / (2 * r));
+      var singleH = Math.min(ah, aw / r);
+      return spreadH >= 0.8 * singleH ? 'spread' : 'single';
+    }
+
+    function fit(ratio, boxW, boxH) {
+      var w = Math.min(boxW, boxH * ratio);
+      return { w: Math.floor(w), h: Math.floor(w / ratio) };
+    }
+
+    function pageImg(index) {
+      var page = cur.pages[index];
+      var img = h('img', { alt: cur.title + ', page ' + (index + 1) + ' of ' + pageCount(), decoding: 'async', draggable: 'false' });
+      img.setAttribute('data-src', page.src);
+      return img;
+    }
+
+    function load(img) {
+      if (img && !img.getAttribute('src')) img.src = img.getAttribute('data-src');
+    }
+
+    function pageIndexNow() {
+      if (mode === 'single') return pos;
+      if (pos === 0) return 0;
+      return 2 * pos < pageCount() ? 2 * pos : 2 * pos - 1;
+    }
+
+    /* ----- Flip book ----- */
+    function buildSpread(aw, ah) {
+      var r = pageRatio(cur.pages[0]);
+      var size = fit(r, aw / 2, ah);
+      book = h('div', { 'class': 'book book--spread' });
+      book.style.setProperty('--pw', size.w + 'px');
+      book.style.setProperty('--ph', size.h + 'px');
+      parts = [];
+      for (var i = 0; i < leafCount(); i++) {
+        var front = h('div', { 'class': 'face face--front' }, [pageImg(2 * i)]);
+        var back = h('div', { 'class': 'face face--back' }, 2 * i + 1 < pageCount() ? [pageImg(2 * i + 1)] : []);
+        var leaf = h('div', { 'class': 'leaf' }, [front, back]);
+        parts.push(leaf);
+        book.appendChild(leaf);
+      }
+      book.addEventListener('click', function (event) {
+        if (swiped) { swiped = false; return; }
+        var box = book.getBoundingClientRect();
+        step(event.clientX < box.left + box.width / 2 ? -1 : 1);
+      });
+    }
+
+    function setZ() {
+      var n = parts.length;
+      parts.forEach(function (leaf, i) { leaf.style.zIndex = String(i < pos ? i : n - i); });
+    }
+
+    function showSpread(next, animate) {
+      var n = parts.length;
+      var old = pos;
+      pos = Math.max(0, Math.min(n, next));
+      var state = pos === 0 ? 'start' : (pos === n ? 'end' : 'middle');
+      book.setAttribute('data-state', state);
+
+      var turning = animate && Math.abs(pos - old) === 1 ? parts[Math.min(pos, old)] : null;
+      if (!turning) book.classList.add('no-anim');
+      parts.forEach(function (leaf, i) { leaf.classList.toggle('is-flipped', i < pos); });
+      if (turning) {
+        turning.style.zIndex = String(n + 2);
+        clearTimeout(zTimer);
+        zTimer = setTimeout(setZ, 760);
+      } else {
+        setZ();
+        void book.offsetWidth;            /* apply without animating, then switch animation back on */
+        book.classList.remove('no-anim');
+      }
+
+      /* Load the pages nearby */
+      for (var i = Math.max(0, pos - 2); i < Math.min(n, pos + 3); i++) {
+        Array.prototype.forEach.call(parts[i].querySelectorAll('img'), load);
+      }
+    }
+
+    /* ----- One page at a time ----- */
+    function buildSingle(aw, ah) {
+      book = h('div', { 'class': 'book book--single' });
+      parts = cur.pages.map(function (page, i) {
+        var size = fit(pageRatio(page), aw, ah);
+        var sheet = h('div', { 'class': 'sheet' }, [pageImg(i)]);
+        sheet.style.width = size.w + 'px';
+        sheet.style.height = size.h + 'px';
+        book.appendChild(sheet);
+        return sheet;
+      });
+    }
+
+    function showSingle(next) {
+      pos = Math.max(0, Math.min(parts.length - 1, next));
+      parts.forEach(function (sheet, i) {
+        sheet.classList.toggle('is-current', i === pos);
+        sheet.classList.toggle('is-before', i < pos);
+        sheet.classList.toggle('is-after', i > pos);
+        sheet.setAttribute('aria-hidden', String(i !== pos));
+        if (Math.abs(i - pos) <= 2) load(sheet.querySelector('img'));
+      });
+    }
+
+    /* ----- Shared controls ----- */
+    function last() { return mode === 'spread' ? parts.length : parts.length - 1; }
+
+    function describe() {
+      var n = pageCount();
+      if (mode === 'single') return n === 1 ? '' : 'Page ' + (pos + 1) + ' of ' + n;
+      var left = pos > 0 && 2 * pos - 1 < n ? 2 * pos : 0;
+      var right = pos < parts.length && 2 * pos < n ? 2 * pos + 1 : 0;
+      if (left && right) return 'Pages ' + left + ' and ' + right + ' of ' + n;
+      return 'Page ' + (left || right) + ' of ' + n;
+    }
+
+    function refresh() {
+      var text = describe();
+      var multiple = last() > 0;
+      status.textContent = text;
+      range.max = String(last());
+      range.value = String(pos);
+      range.setAttribute('aria-valuetext', text);
+      rangeBox.hidden = !multiple;
+      [prevBtn, nextBtn, sidePrev, sideNext].forEach(function (b) { b.hidden = !multiple; });
+      prevBtn.disabled = sidePrev.disabled = pos <= 0;
+      nextBtn.disabled = sideNext.disabled = pos >= last();
+      /* A disabled button cannot keep focus, so hand it to something that still works */
+      var active = document.activeElement;
+      if (active && active.disabled && reader.contains(active)) {
+        var forward = active === nextBtn || active === sideNext;
+        var alt = forward ? (prevBtn.disabled ? null : prevBtn) : (nextBtn.disabled ? null : nextBtn);
+        (alt || document.getElementById('reader-close')).focus();
+      }
+      if (mode === 'single') {
+        fullLink.href = cur.pages[pos].src;
+        fullLink.hidden = false;
+      } else {
+        fullLink.hidden = true;
+      }
+    }
+
+    function go(next, animate) {
+      if (!cur) return;
+      if (mode === 'spread') showSpread(next, animate); else showSingle(next);
+      refresh();
+    }
+
+    function step(delta) { go(pos + delta, true); }
+
+    function build(startPage) {
+      var aw = Math.max(120, area.clientWidth - 16);
+      var ah = Math.max(120, area.clientHeight - 40);     /* room for the page shadow */
+      mode = chooseMode(aw, ah);
+      if (mode === 'spread') buildSpread(aw, ah); else buildSingle(aw, ah);
+      area.replaceChildren(book);
+      var p = startPage || 0;
+      go(mode === 'spread' ? Math.ceil(p / 2) : p, false);
+    }
+
+    function openBooklet(id) {
+      var b = byId[id];
+      if (!b) return;
+      cur = b;
+      title.textContent = b.title;
+      meta.textContent = [b.event, b.year, b.pages.length > 1 ? b.pages.length + ' pages' : ''].filter(Boolean).join(', ');
+      summary.textContent = b.summary || '';
+      summary.hidden = !b.summary;
+      if (!reader.open) {
+        reader.showModal();
+        document.documentElement.classList.add('modal-open');
+      }
+      build(0);
+      setHash('#booklet=' + encodeURIComponent(id));
+    }
+
+    prevBtn.addEventListener('click', function () { step(-1); });
+    nextBtn.addEventListener('click', function () { step(1); });
+    sidePrev.addEventListener('click', function () { step(-1); });
+    sideNext.addEventListener('click', function () { step(1); });
+    range.addEventListener('input', function () { go(parseInt(range.value, 10) || 0, false); });
+    document.getElementById('reader-close').addEventListener('click', function () { reader.close(); });
+
+    document.addEventListener('keydown', function (event) {
+      if (!reader.open || !cur) return;
+      if (event.target === range) return;                 /* let the slider use its own arrow keys */
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); step(-1); }
+      else if (event.key === 'ArrowRight' || event.key === 'PageDown') { event.preventDefault(); step(1); }
+      else if (event.key === 'Home') { event.preventDefault(); go(0, false); }
+      else if (event.key === 'End') { event.preventDefault(); go(last(), false); }
+    });
+
+    /* Swipe to turn */
+    var swipe = null;
+    area.addEventListener('pointerdown', function (event) {
+      swiped = false;
+      swipe = { x: event.clientX, y: event.clientY };
+    });
+    area.addEventListener('pointerup', function (event) {
+      if (!swipe) return;
+      var dx = event.clientX - swipe.x;
+      var dy = event.clientY - swipe.y;
+      swipe = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > 1.5 * Math.abs(dy)) {
+        swiped = true;                                    /* the click that follows should not turn a second page */
+        step(dx < 0 ? 1 : -1);
+      }
+    });
+    area.addEventListener('pointercancel', function () { swipe = null; });
+
+    /* Click on the dark backdrop closes the reader */
+    reader.addEventListener('click', function (event) {
+      var r = reader.getBoundingClientRect();
+      var outside = event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom;
+      if (outside) reader.close();
+    });
+
+    reader.addEventListener('close', function () {
+      document.documentElement.classList.remove('modal-open');
+      cur = null;
+      area.replaceChildren();
+      if (location.hash.indexOf('#booklet=') === 0) setHash(section && section.id ? '#' + section.id : location.pathname.split('/').pop() || '');
+    });
+
+    /* Rebuild when the window changes shape, keeping the same page on show */
+    var readerTimer;
+    window.addEventListener('resize', function () {
+      if (!cur || !reader.open) return;
+      clearTimeout(readerTimer);
+      /* Rebuild every time: page sizes depend on the space available */
+      readerTimer = setTimeout(function () { build(pageIndexNow()); }, 150);
+    });
+
+    /* Share links: tim-mcdowell.html#booklet=cim-flyer-2026 opens that flyer */
+    function openFromHash() {
+      var match = /^#booklet=(.+)$/.exec(location.hash);
+      if (match) openBooklet(decodeURIComponent(match[1]));
+      else if (reader.open) reader.close();
     }
     window.addEventListener('hashchange', openFromHash);
     openFromHash();
@@ -388,6 +836,7 @@
   }
 
   initDesign();
+  initBooklets();
   initSoftware();
   initContact();
 })();

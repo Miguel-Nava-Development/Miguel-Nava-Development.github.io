@@ -3,15 +3,16 @@
 A hand-built site with no framework, no build step and no page builder. It is plain HTML, CSS and JavaScript, so it runs anywhere and you can read every line.
 
 ```
-index.html        Graphic design (the home page)
+index.html        Marketing (the home page): lists the companies you have done work for
+tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
 software.html     Software projects
 about.html        About, skills, experience
 contact.html      Contact form (your email address is never shown on the site)
 404.html          Shown when someone opens a link that does not exist
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
-js/site.js        Behaviour (filters, viewer, layout). You should not need to touch it
-assets/           Your images, in design/, software/ and about/
+js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
+assets/           Your images: tme/ (Tim McDowell work), software/ and about/
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -32,15 +33,25 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 | `Open to full-time or project-based roles` | Your availability, or delete the line |
 | `href="#"` on GitHub, LinkedIn, Behance | Your profile links (in `index.html`, `software.html`, `about.html`) |
 
-### 2. Add graphic design work
-1. Put your images in `assets/design/`. Use short lowercase names with no spaces, such as `coffee-brand-1.jpg`.
-2. Open `js/content.js` and copy one block inside the `design` list. Change the details and image paths.
-3. Set `ratio` to match your cover image: `"4 / 5"` tall, `"1 / 1"` square, `"3 / 2"` wide, `"16 / 9"` banner.
-4. Save and refresh.
+### 2. Add marketing work (Tim McDowell Equipment Ltd.)
+The page `tim-mcdowell.html` has two sections, and both are filled from `js/content.js`.
 
-Each `category` you use becomes a filter button automatically, so keep it to three or four broad groups (for example Branding, Print, Digital). If every project uses the same category, or only one category is used, the filter row disappears. Add more images to `images` to show a series. People can click any project to open it large, move between projects with the arrow keys, and you can send someone a direct link to one piece, for example `yoursite.com/#project=poster-series`.
+**Social media posts and videos** (`tmeSocial`)
+1. Put the image in `assets/tme/social/`, named by date and title, for example `2026-08-14-cat-950-wheel-loader-rented.jpg`. Keep the original in your own folder named the same way, with the date first (`2026-08-14 CAT 950 Wheel Loader Rented.jpg`), so the files sort in the order they were posted.
+2. In `js/content.js`, copy one line inside `tmeSocial` and change: `id`, `title` (the main headline on the graphic), `year` (the short date on the card, such as `"Aug 14, 2026"`), `date` (`"2026-08-14"`), `ratio` (the image's width / height in pixels), `purpose`, `link` and the image path.
+3. `purpose` finishes the sentence the viewer shows: "I posted this on August 14, 2026 with the purpose of ..." so write it as, for example, `"announcing that a CAT 950 wheel loader had been rented"`.
+4. For a video, add `video: "assets/tme/social/2026-08-14-title.mp4"`. The first image is its poster. Compress videos to about 640 px wide first (a few MB each) so the page stays quick.
+5. Newest first. The page shows the first 18 and a "Show all" button reveals the rest, so a long list stays quick to load.
 
-Image tips: export JPG or WebP at about 1600 px on the long side, aim for under 400 KB each, and write a short `alt` that describes what is in the picture.
+**Flyers, banners and ads** (`tmeBooklets`)
+1. Export each page of the PDF as a JPG, about 1500 px tall (for example with `pdftoppm`, or "Export as JPG" in InDesign or Acrobat), and put them in a new folder such as `assets/tme/flyer-name/`, named `01.jpg`, `02.jpg` and so on. Also make a small cover image, `cover.jpg`, about 640 px wide.
+2. In `js/content.js`, copy one block inside `tmeBooklets`, then change the details and list every page under `pages` with its width and height in pixels.
+3. A flyer with three or more pages of the same shape opens as a flip book on a computer and one page at a time on a phone. Add `mode: "single"` to always show one page at a time (good for ads with different page shapes, or a tall banner).
+4. A direct link to one flyer looks like `tim-mcdowell.html#booklet=cim-flyer-2026`.
+
+Keep the large original files (`TME Work` and anything ending in `.pdf`, `.indd` or `.ai`) out of the website folder you upload. They are too big for the site and only the exported images are needed.
+
+To add another company, copy `tim-mcdowell.html` to a new name, add its own lists in `js/content.js`, and copy the company block in `index.html`.
 
 ### 3. Add software projects
 Same idea: copy a block inside the `software` list in `js/content.js`. Put a screenshot in `assets/software/`. Replace the `"#"` in `links` with the real address, or delete a link you do not have.
@@ -49,12 +60,12 @@ Same idea: copy a block inside the `software` list in `js/content.js`. Put a scr
 `about.html` is plain HTML. Replace the instruction text with your own. To add a résumé, put `resume.pdf` in `assets/`, then remove the comment markers around the "Download résumé" link near the bottom of the file.
 
 ### 5. Delete the samples
-Every sample image says "Sample image" in its corner. Once your own work is in, delete the `sample-*.svg` files and the sample entries in `js/content.js`.
+The software projects, the About page text and the About photo are still samples. Every sample image says "Sample image" in its corner. Once your own work is in, delete the `sample-*.svg` files and the sample entries in `js/content.js`. The old `assets/design/` samples are no longer used and can be deleted.
 
 ## Add another tab (photography, video, illustration...)
-1. Copy `index.html` to a new name, for example `photography.html`.
-2. In the copy, change `data-collection="design"` to `data-collection="photography"`, update the `<title>`, and replace the headline with plain text.
-3. In `js/content.js`, add a `photography: [ ... ]` list that follows the same format as `design`.
+1. Copy `tim-mcdowell.html` to a new name, for example `photography.html`.
+2. In the copy, change `data-collection="tmeSocial"` to `data-collection="photography"`, update the `<title>` and headline, and delete the section you do not need.
+3. In `js/content.js`, add a `photography: [ ... ]` list that follows the same format as `tmeSocial`.
 4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page.
 
 ## Switch on the contact form

@@ -1,0 +1,5 @@
+# Large original files kept next to the site on your computer. Do not publish these.
+TME Work/
+*.indd
+*.ai
+Thumbs.db

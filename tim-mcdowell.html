@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tim McDowell Equipment Ltd. | Marketing | Miguel Nava</title>
+  <meta name="description" content="Marketing design for Tim McDowell Equipment Ltd.: social media posts, flyers, a pull-out banner and magazine ads by Miguel Nava.">
+  <meta name="theme-color" content="#d9dadd">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tim McDowell Equipment Ltd. | Marketing | Miguel Nava">
+  <meta property="og:description" content="Social media posts, flyers, banners and ads designed for Tim McDowell Equipment Ltd.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+</head>
+<body id="top" data-page="marketing">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="favicon.svg" alt="" width="22" height="22">
+        <span>Miguel Nava</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Marketing</a></li>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="nav-cta" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="crumb"><a href="index.html">Back to Marketing</a></p>
+      <h1 class="hero-title hero-title--long" id="hero-title"><span class="nb">Tim McDowell</span> <span class="nb">Equipment Ltd.</span></h1>
+      <div class="hero-meta">
+        <p class="lede">Mining and construction equipment rentals and sales in Northern Ontario. I designed the social media posts, flyers, banner and magazine ads below.</p>
+        <nav class="jump" aria-label="On this page">
+          <a class="chip" href="#social">Social media posts</a>
+          <a class="chip" href="#graphic-design">Graphic design</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="work wrap" id="social" aria-labelledby="social-heading">
+      <div class="section-head">
+        <h2 class="section-title" id="social-heading">Social media posts</h2>
+        <p class="section-note">Rental and sale announcements, walkaround videos, trade show news and holiday greetings. Open a post to see when I posted it and what it was for.
+          <a href="https://www.instagram.com/timmcdowellequipment/" target="_blank" rel="noopener">See the company page on Instagram</a>.</p>
+      </div>
+      <div class="toolbar">
+        <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+        <p class="count" id="count" aria-live="polite"></p>
+      </div>
+      <noscript><p class="empty">The work on this page needs JavaScript. Turn it on in your browser settings.</p></noscript>
+      <div class="wall" id="wall" data-collection="tmeSocial" data-noun="post" data-label="date" data-initial="18" data-category-order="Rented and sold|Available and for sale|Videos|Team, events and holidays"></div>
+      <p class="more"><button class="btn btn--quiet" type="button" id="more" hidden>Show all posts</button></p>
+    </section>
+
+    <section class="work wrap" id="graphic-design" aria-labelledby="design-heading">
+      <div class="section-head">
+        <h2 class="section-title" id="design-heading">Graphic design</h2>
+        <p class="section-note">Flyers, a pull-out banner and magazine ads made for trade shows and print. Open a flyer to flip through its pages.</p>
+      </div>
+      <div class="wall" id="booklets-wall" data-collection="tmeBooklets"></div>
+    </section>
+
+    <section class="closing wrap" aria-labelledby="closing-title">
+      <h2 class="closing-title" id="closing-title">Hiring, or have a project in mind?</h2>
+      <a class="btn closing-action" href="contact.html">Send me a message</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span data-year>2026</span> Miguel Nava</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Miguel-Nava-Development">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Behance</a></li>
+      </ul>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-stage">
+      <div class="viewer-art" id="viewer-art"></div>
+      <ul class="viewer-thumbs" id="viewer-thumbs" aria-label="Images in this post"></ul>
+    </div>
+    <div class="viewer-info">
+      <button class="chip viewer-close" type="button" id="viewer-close">Close</button>
+      <div>
+        <p class="viewer-meta" id="viewer-meta"></p>
+        <h2 class="viewer-title" id="viewer-title"></h2>
+      </div>
+      <p class="viewer-posted" id="viewer-posted" hidden></p>
+      <p id="viewer-summary"></p>
+      <a class="viewer-link" id="viewer-link" href="#" target="_blank" rel="noopener" hidden></a>
+      <dl class="specs" id="viewer-specs"></dl>
+      <div class="viewer-nav">
+        <button class="chip" type="button" id="viewer-prev">Previous</button>
+        <button class="chip" type="button" id="viewer-next">Next</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="reader" id="reader" aria-labelledby="reader-title">
+    <div class="reader-bar">
+      <div class="reader-heading">
+        <p class="reader-meta" id="reader-meta"></p>
+        <h2 class="reader-title" id="reader-title"></h2>
+      </div>
+      <p class="reader-summary" id="reader-summary"></p>
+      <button class="chip reader-close" type="button" id="reader-close">Close</button>
+    </div>
+    <div class="reader-stage">
+      <button class="reader-turn" type="button" id="reader-side-prev" aria-label="Previous page"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg></button>
+      <div class="reader-area" id="reader-area"></div>
+      <button class="reader-turn" type="button" id="reader-side-next" aria-label="Next page"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg></button>
+    </div>
+    <div class="reader-foot">
+      <p class="reader-status" id="reader-status" aria-live="polite"></p>
+      <div class="reader-controls">
+        <button class="chip" type="button" id="reader-prev">Previous</button>
+        <label class="reader-range" id="reader-range-box"><span class="visually-hidden">Jump to a page</span><input type="range" id="reader-range" min="0" max="1" step="1" value="0"></label>
+        <button class="chip" type="button" id="reader-next">Next</button>
+      </div>
+      <a class="reader-full" id="reader-full" href="#" target="_blank" rel="noopener" hidden>Open this page full size</a>
+    </div>
+  </dialog>
+
+  <script src="js/content.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,149 +1,260 @@
 /*
   YOUR WORK LIVES HERE.
-  This is the only file you need to edit to add, remove or reorder projects.
-  Everything below is sample content: replace it with your own.
+  This is the only file you need to edit to add, remove or reorder work.
 
   Tips
-  - Keep each project inside { ... } and put a comma after it.
-  - Images go in the assets/ folder. Use short lowercase names with no spaces,
-    for example assets/design/coffee-brand-1.jpg
-  - "ratio" is the shape of the thumbnail in the grid: "4 / 5" (tall), "1 / 1" (square),
-    "3 / 2" (wide), "16 / 9" (banner). Match it to your image so nothing gets cropped.
-  - The first image of a design project is its cover. Add more images to show a series.
-  - Projects appear in the order you list them. Newest first works well.
+  - Keep each item inside { ... } and put a comma after it (not after the last one).
+  - Images go in the assets/ folder. Use short lowercase names with no spaces.
+  - "ratio" is the shape of the thumbnail in the grid, as width / height in pixels,
+    for example "800 / 418". Match it to your image so nothing gets cropped.
+  - Items appear in the order you list them. Newest first works well.
+  - Marketing work for Tim McDowell Equipment Ltd. is in tmeSocial and tmeBooklets.
+    The software projects further down are still sample content: replace them with your own.
 */
 
 window.PORTFOLIO = {
 
-  /* ---------- Graphic design (index.html) ---------- */
-  design: [
+  /* ---------- Tim McDowell Equipment Ltd.: social media posts (tim-mcdowell.html) ---------- */
+  /* Newest first. Every post comes from the company Instagram page, so the date is the day it went up.
+     To add a post, copy a line and change: id, title, year (short date on the card), date (YYYY-MM-DD),
+     ratio, purpose (finishes the sentence "I posted this on <date> with the purpose of ..."),
+     link (the original post) and images. Add  video: "assets/tme/social/name.mp4"  for a video; its first image is the poster.
+     "approx: true" says the date is only close, and the viewer then reads "around <date>". */
+  tmeSocial: [
+    { id: "social-20260812-1", title: "Reserve Yours Today", category: "Available and for sale", year: "Aug 12, 2026", date: "2026-08-12", ratio: "1080 / 566", purpose: "inviting customers to reserve a 2026 CAT 950-BR wheel loader for snow-removal work", link: "https://www.instagram.com/p/Db8fR9AIPgr/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-08-12-reserve-yours-today.jpg", alt: "Social media post: Reserve Yours Today" }] },
+    { id: "social-20260807-1", title: "Reserve Yours Today", category: "Available and for sale", year: "Aug 7, 2026", date: "2026-08-07", ratio: "1080 / 563", purpose: "inviting customers to reserve a 2026 CAT 980XE wheel loader before winter rentals fill up", link: "https://www.instagram.com/p/DbvnTiFDxle/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-08-07-reserve-yours-today.jpg", alt: "Social media post: Reserve Yours Today" }] },
+    { id: "social-20260803-1", title: "Reserve Yours Today", category: "Available and for sale", year: "Aug 3, 2026", date: "2026-08-03", ratio: "1080 / 565", purpose: "inviting customers to reserve a CAT 908 wheel loader for the coming snow-removal season", link: "https://www.instagram.com/p/DblUH_qj1EO/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-08-03-reserve-yours-today.jpg", alt: "Social media post: Reserve Yours Today" }] },
+    { id: "social-20260731-1", title: "Row of CAT Wheel Loaders", category: "Available and for sale", year: "Jul 31, 2026", date: "2026-07-31", ratio: "1080 / 565", purpose: "reminding customers to line up their fleet before the snow starts, with CAT wheel loaders ready for winter", link: "https://www.instagram.com/p/DbdlvsCic5_/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-07-31-row-of-cat-wheel-loaders.jpg", alt: "Social media post: Row of CAT Wheel Loaders" }] },
+    { id: "social-20260701-1", title: "Happy Canada Day", category: "Team, events and holidays", year: "Jul 1, 2026", date: "2026-07-01", ratio: "1047 / 1080", purpose: "wishing everyone a happy Canada Day", link: "https://www.instagram.com/p/DaQ3Cxpj6P4/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-07-01-happy-canada-day.jpg", alt: "Social media post: Happy Canada Day" }] },
+    { id: "social-20260623-1", title: "Winch and Ripper Attachments Available", category: "Available and for sale", year: "Jun 23, 2026", date: "2026-06-23", ratio: "727 / 726", purpose: "announcing a brand-new, zero-hour CAT D6 LGP dozer available to rent with winch and ripper attachments", link: "https://www.instagram.com/p/DZ7j8gcFaby/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-06-23-winch-and-ripper-attachments-available.jpg", alt: "Social media post: Winch and Ripper Attachments Available" }] },
+    { id: "social-20260619-1", title: "Full Walkaround: 2026 Toyota Land Cruiser Man Carrier", category: "Videos", year: "Jun 19, 2026", date: "2026-06-19", ratio: "640 / 360", purpose: "walking customers around a 2026 Toyota Land Cruiser underground man carrier", link: "https://www.instagram.com/p/DZx5cj1HQxG/", linkLabel: "Instagram", video: "assets/tme/social/2026-06-19-full-walkaround-2026-toyota-land-cruiser-man-carrier.mp4", images: [{ src: "assets/tme/social/2026-06-19-full-walkaround-2026-toyota-land-cruiser-man-carrier.jpg", alt: "Social media video: Full Walkaround: 2026 Toyota Land Cruiser Man Carrier" }] },
+    { id: "social-20260615-1", title: "CAT D4K Track-Type Tractor", category: "Available and for sale", year: "Jun 15, 2026", date: "2026-06-15", ratio: "728 / 729", purpose: "promoting the CAT D4K track-type tractor for finish grading and site work", link: "https://www.instagram.com/p/DZm7DYxkS0B/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-06-15-cat-d4k-track-type-tractor.jpg", alt: "Social media post: CAT D4K Track-Type Tractor" }] },
+    { id: "social-20260612-1", title: "2024 Faresin FR04 Telehandler", category: "Videos", year: "Jun 12, 2026", date: "2026-06-12", ratio: "640 / 360", purpose: "showing the 2024 Faresin FR04 telehandler at work", link: "https://www.instagram.com/p/DZf2TvilUVD/", linkLabel: "Instagram", video: "assets/tme/social/2026-06-12-2024-faresin-fr04-telehandler.mp4", images: [{ src: "assets/tme/social/2026-06-12-2024-faresin-fr04-telehandler.jpg", alt: "Social media video: 2024 Faresin FR04 Telehandler" }] },
+    { id: "social-20260605-2", title: "2025 CAT 966-BR Wheel Loader in Action", category: "Videos", year: "Jun 5, 2026", date: "2026-06-05", ratio: "640 / 360", purpose: "showing a brand-new CAT 966-BR wheel loader in action", link: "https://www.instagram.com/p/DZNy5sUiaTq/", linkLabel: "Instagram", video: "assets/tme/social/2026-06-05-2025-cat-966-br-wheel-loader-in-action.mp4", images: [{ src: "assets/tme/social/2026-06-05-2025-cat-966-br-wheel-loader-in-action.jpg", alt: "Social media video: 2025 CAT 966-BR Wheel Loader in Action" }] },
+    { id: "social-20260605-1", title: "2026 CAT R1700 Scooptram Rented", category: "Rented and sold", year: "Jun 5, 2026", date: "2026-06-05", ratio: "1080 / 565", purpose: "announcing that a 2026 CAT R1700 scooptram had gone out on rent", link: "https://www.instagram.com/p/DZNO_qiFYC8/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-06-05-2026-cat-r1700-scooptram-rented.jpg", alt: "Social media post: 2026 CAT R1700 Scooptram Rented" }] },
+    { id: "social-20260603-1", title: "Manitou MT 420 H Walkaround", category: "Videos", year: "Jun 3, 2026", date: "2026-06-03", ratio: "640 / 360", purpose: "walking customers around the Manitou MT 420 H telehandler", link: "https://www.instagram.com/p/DZIpMZXCscf/", linkLabel: "Instagram", video: "assets/tme/social/2026-06-03-manitou-mt-420-h-walkaround.mp4", images: [{ src: "assets/tme/social/2026-06-03-manitou-mt-420-h-walkaround.jpg", alt: "Social media video: Manitou MT 420 H Walkaround" }] },
+    { id: "social-20260529-1", title: "2026 CAT 980XE-BR Wheel Loader in Action", category: "Videos", year: "May 29, 2026", date: "2026-05-29", ratio: "640 / 360", purpose: "showing the 2026 CAT 980XE-BR wheel loader in action", link: "https://www.instagram.com/p/DY7v9wYDGo1/", linkLabel: "Instagram", video: "assets/tme/social/2026-05-29-2026-cat-980xe-br-wheel-loader-in-action.mp4", images: [{ src: "assets/tme/social/2026-05-29-2026-cat-980xe-br-wheel-loader-in-action.jpg", alt: "Social media video: 2026 CAT 980XE-BR Wheel Loader in Action" }] },
+    { id: "social-20260520-1", title: "2025 CAT D8 Dozer Rented", category: "Rented and sold", year: "May 20, 2026", date: "2026-05-20", ratio: "1080 / 565", purpose: "announcing that a 2025 CAT D8 dozer had been rented", link: "https://www.instagram.com/p/DYkRio9gMdi/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-05-20-2025-cat-d8-dozer-rented.jpg", alt: "Social media post: 2025 CAT D8 Dozer Rented" }] },
+    { id: "social-20260513-1", title: "2025 CAT 930 Wheel Loader Rented", category: "Rented and sold", year: "May 13, 2026", date: "2026-05-13", ratio: "1080 / 565", purpose: "announcing that a 2025 CAT 930 wheel loader had been rented", link: "https://www.instagram.com/p/DYSDKV2ACK0/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-05-13-2025-cat-930-wheel-loader-rented.jpg", alt: "Social media post: 2025 CAT 930 Wheel Loader Rented" }] },
+    { id: "social-20260508-2", title: "2026 CAT 330 Excavator", category: "Available and for sale", year: "May 8, 2026", date: "2026-05-08", ratio: "500 / 500", purpose: "promoting a 2026 CAT 330 excavator", link: "https://www.instagram.com/p/DYFxLgbjde1/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-05-08-2026-cat-330-excavator.jpg", alt: "Social media post: 2026 CAT 330 Excavator" }] },
+    { id: "social-20260508-1", title: "Refurbished 2009 CAT AD45B Underground Haul Truck", category: "Videos", year: "May 8, 2026", date: "2026-05-08", ratio: "640 / 360", purpose: "showing a fully refurbished 2009 CAT AD45B underground haul truck", link: "https://www.instagram.com/p/DYFXeUZDe9a/", linkLabel: "Instagram", video: "assets/tme/social/2026-05-08-refurbished-2009-cat-ad45b-underground-haul-truck.mp4", images: [{ src: "assets/tme/social/2026-05-08-refurbished-2009-cat-ad45b-underground-haul-truck.jpg", alt: "Social media video: Refurbished 2009 CAT AD45B Underground Haul Truck" }] },
+    { id: "social-20260506-1", title: "2024 CAT D6 LGP Crawler Tractor Rented", category: "Rented and sold", year: "May 6, 2026", date: "2026-05-06", ratio: "1080 / 565", purpose: "announcing that a 2024 CAT D6 LGP crawler tractor had been rented", link: "https://www.instagram.com/p/DYAG988ki9l/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-05-06-2024-cat-d6-lgp-crawler-tractor-rented.jpg", alt: "Social media post: 2024 CAT D6 LGP Crawler Tractor Rented" }] },
+    { id: "social-20260505-1", title: "Work Ready CAT R1700 Scoop Mine Ready Available", category: "Available and for sale", year: "May 5, 2026", date: "2026-05-05", ratio: "800 / 418", approx: true, purpose: "advertising a work-ready, mine-ready CAT R1700 scoop that was available", link: "https://www.linkedin.com/company/timmcdowellequipment/posts/", linkLabel: "LinkedIn", images: [{ src: "assets/tme/social/2026-05-05-work-ready-cat-r1700-scoop-mine-ready-available.jpg", alt: "Social media post: Work Ready CAT R1700 Scoop Mine Ready Available" }] },
+    { id: "social-20260501-1", title: "2026 CAT 265 Track Loader", category: "Available and for sale", year: "May 1, 2026", date: "2026-05-01", ratio: "500 / 500", purpose: "announcing the arrival of a 2026 CAT 265 compact track loader", link: "https://www.instagram.com/p/DXzs-n3DiJW/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-05-01-2026-cat-265-track-loader.jpg", alt: "Social media post: 2026 CAT 265 Track Loader" }] },
+    { id: "social-20260428-1", title: "CAT 730 Articulating Dump Truck", category: "Available and for sale", year: "Apr 28, 2026", date: "2026-04-28", ratio: "500 / 500", purpose: "promoting the CAT 730 articulated dump truck for heavy hauling jobs", link: "https://www.instagram.com/p/DXrV1v3DzlK/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-28-cat-730-articulating-dump-truck.jpg", alt: "Social media post: CAT 730 Articulating Dump Truck" }] },
+    { id: "social-20260427-1", title: "The Season Is Here! Get Your Broom Attachment", category: "Available and for sale", year: "Apr 27, 2026", date: "2026-04-27", ratio: "500 / 500", purpose: "promoting a broom attachment for rent to clear away leftover sand and dust in spring", link: "https://www.instagram.com/p/DXpT0bwj--E/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-27-the-season-is-here-get-your-broom-attachment.jpg", alt: "Social media post: The Season Is Here! Get Your Broom Attachment" }] },
+    { id: "social-20260410-1", title: "Epiroc 282 Boomer Rented", category: "Rented and sold", year: "Apr 10, 2026", date: "2026-04-10", ratio: "1080 / 565", purpose: "announcing that an Epiroc 282 Boomer drill rig had been rented and sent underground", link: "https://www.instagram.com/p/DW9lUKdEkvp/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-10-epiroc-282-boomer-rented.jpg", alt: "Social media post: Epiroc 282 Boomer Rented" }] },
+    { id: "social-20260408-1", title: "New CAT 950-BR Wheel Loader Rented", category: "Rented and sold", year: "Apr 8, 2026", date: "2026-04-08", ratio: "1080 / 565", purpose: "announcing that a brand-new CAT 950-BR wheel loader had been rented", link: "https://www.instagram.com/p/DW4XJoPk8eu/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-08-new-cat-950-br-wheel-loader-rented.jpg", alt: "Social media post: New CAT 950-BR Wheel Loader Rented" }] },
+    { id: "social-20260406-1", title: "CAT TH514D Telehandler Rented", category: "Rented and sold", year: "Apr 6, 2026", date: "2026-04-06", ratio: "1080 / 565", purpose: "announcing that a CAT TH514D telehandler had been rented", link: "https://www.instagram.com/p/DWzPnphCgt0/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-06-cat-th514d-telehandler-rented.jpg", alt: "Social media post: CAT TH514D Telehandler Rented" }] },
+    { id: "social-20260403-2", title: "CAT D6N LGP Dozer Rented", category: "Rented and sold", year: "Apr 3, 2026", date: "2026-04-03", ratio: "1080 / 565", purpose: "announcing that a CAT D6N LGP dozer had been rented for winter work", link: "https://www.instagram.com/p/DWrXnptEiJT/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-03-cat-d6n-lgp-dozer-rented.jpg", alt: "Social media post: CAT D6N LGP Dozer Rented" }] },
+    { id: "social-20260403-1", title: "Happy Easter", category: "Team, events and holidays", year: "Apr 3, 2026", date: "2026-04-03", ratio: "1080 / 1052", purpose: "wishing everyone a happy Easter", link: "https://www.instagram.com/p/DWrLKhllOaD/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-03-happy-easter.jpg", alt: "Social media post: Happy Easter" }] },
+    { id: "social-20260401-1", title: "CAT 420XE Backhoe Rented", category: "Rented and sold", year: "Apr 1, 2026", date: "2026-04-01", ratio: "1080 / 565", purpose: "announcing that a CAT 420XE backhoe had been rented for winter work", link: "https://www.instagram.com/p/DWmK02cCTio/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-04-01-cat-420xe-backhoe-rented.jpg", alt: "Social media post: CAT 420XE Backhoe Rented" }] },
+    { id: "social-20260330-1", title: "CAT D6 LGP Crawler Tractor Rented", category: "Rented and sold", year: "Mar 30, 2026", date: "2026-03-30", ratio: "1080 / 565", purpose: "announcing that a CAT D6 LGP crawler tractor had been rented", link: "https://www.instagram.com/p/DWg-1zwjpxU/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-30-cat-d6-lgp-crawler-tractor-rented.jpg", alt: "Social media post: CAT D6 LGP Crawler Tractor Rented" }] },
+    { id: "social-20260327-2", title: "New CAT 966 Wheel Loader Rented", category: "Rented and sold", year: "Mar 27, 2026", date: "2026-03-27", ratio: "1080 / 565", purpose: "announcing that a brand-new CAT 966 wheel loader had been rented", link: "https://www.instagram.com/p/DWZNepcEhON/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-27-new-cat-966-wheel-loader-rented.jpg", alt: "Social media post: New CAT 966 Wheel Loader Rented" }] },
+    { id: "social-20260327-1", title: "We Are Hiring! AZ Driver", category: "Team, events and holidays", year: "Mar 27, 2026", date: "2026-03-27", ratio: "500 / 500", purpose: "recruiting an AZ driver and yard person to join the Sudbury team", link: "https://www.instagram.com/p/DWY_mMuD1JV/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-27-we-are-hiring-az-driver.jpg", alt: "Social media post: We Are Hiring! AZ Driver" }] },
+    { id: "social-20260324-1", title: "H104 Boomer and Stopemate Rented", category: "Rented and sold", year: "Mar 24, 2026", date: "2026-03-24", ratio: "800 / 418", approx: true, purpose: "announcing that an H104 boomer drill rig and a Stopemate had been rented", link: "https://www.linkedin.com/company/timmcdowellequipment/posts/", linkLabel: "LinkedIn", images: [{ src: "assets/tme/social/2026-03-24-h104-boomer-and-stopemate-rented.jpg", alt: "Social media post: H104 Boomer and Stopemate Rented" }] },
+    { id: "social-20260317-3", title: "2024 Komatsu WA200-8 Wheel Loader Rented", category: "Rented and sold", year: "Mar 17, 2026", date: "2026-03-17", ratio: "1080 / 565", purpose: "showing a rented Komatsu WA200-8 wheel loader working through Sudbury's heavy snowfall", link: "https://www.instagram.com/p/DV_mlndD8n_/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-17-2024-komatsu-wa200-8-wheel-loader-rented.jpg", alt: "Social media post: 2024 Komatsu WA200-8 Wheel Loader Rented" }] },
+    { id: "social-20260317-2", title: "2022 CAT 420-07 Backhoe Rented", category: "Rented and sold", year: "Mar 17, 2026", date: "2026-03-17", ratio: "1080 / 563", purpose: "showing a rented 2022 CAT 420-07 backhoe working through Sudbury's heavy snowfall", link: "https://www.instagram.com/p/DV_kw8FlURf/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-17-2022-cat-420-07-backhoe-rented.jpg", alt: "Social media post: 2022 CAT 420-07 Backhoe Rented" }] },
+    { id: "social-20260317-1", title: "Our Loaders Are Hard at Work", category: "Rented and sold", year: "Mar 17, 2026", date: "2026-03-17", ratio: "1080 / 608", purpose: "thanking customers for keeping our loaders rented through the winter and reminding them we still have winter equipment", link: "https://www.instagram.com/p/DV_jiFilfxb/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-17-our-loaders-are-hard-at-work.jpg", alt: "Social media post: Our Loaders Are Hard at Work" }] },
+    { id: "social-20260313-2", title: "2019 CAT TH514D Telehandler Rented", category: "Rented and sold", year: "Mar 13, 2026", date: "2026-03-13", ratio: "800 / 418", approx: true, purpose: "announcing that a 2019 CAT TH514D telehandler had been rented", link: "https://www.linkedin.com/company/timmcdowellequipment/posts/", linkLabel: "LinkedIn", images: [{ src: "assets/tme/social/2026-03-13-2019-cat-th514d-telehandler-rented.jpg", alt: "Social media post: 2019 CAT TH514D Telehandler Rented" }] },
+    { id: "social-20260313-1", title: "2023 Broderson IC400-3B Crane Gone", category: "Rented and sold", year: "Mar 13, 2026", date: "2026-03-13", ratio: "1080 / 565", purpose: "announcing the sale of a 2023 Broderson IC400-3B carry deck crane", link: "https://www.instagram.com/p/DV1lYM-iWac/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-13-2023-broderson-ic400-3b-crane-gone.jpg", alt: "Social media post: 2023 Broderson IC400-3B Crane Gone" }] },
+    { id: "social-20260309-1", title: "CAT TH514D Telehandler Rented", category: "Rented and sold", year: "Mar 9, 2026", date: "2026-03-09", ratio: "1080 / 565", purpose: "announcing that a CAT TH514D telehandler was out on a jobsite", link: "https://www.instagram.com/p/DVqzRwsArK7/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-09-cat-th514d-telehandler-rented.jpg", alt: "Social media post: CAT TH514D Telehandler Rented" }] },
+    { id: "social-20260306-1", title: "CAT AD30 Underground Mining Truck Rented", category: "Rented and sold", year: "Mar 6, 2026", date: "2026-03-06", ratio: "1080 / 565", purpose: "announcing that another CAT AD30 underground mining truck had been rented", link: "https://www.instagram.com/p/DVjLwZVib3y/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-06-cat-ad30-underground-mining-truck-rented.jpg", alt: "Social media post: CAT AD30 Underground Mining Truck Rented" }] },
+    { id: "social-20260304-1", title: "MEC 3369RT Scissor Lift Rented", category: "Rented and sold", year: "Mar 4, 2026", date: "2026-03-04", ratio: "1080 / 565", purpose: "announcing that a MEC 3369RT rough-terrain scissor lift had been rented", link: "https://www.instagram.com/p/DVeCLAAghHm/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-04-mec-3369rt-scissor-lift-rented.jpg", alt: "Social media post: MEC 3369RT Scissor Lift Rented" }] },
+    { id: "social-20260302-1", title: "CAT D5 LGP Dozer Rented", category: "Rented and sold", year: "Mar 2, 2026", date: "2026-03-02", ratio: "1080 / 565", purpose: "announcing that a 2020 CAT D5 LGP dozer had been rented", link: "https://www.instagram.com/p/DVY4k6viXNq/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-03-02-cat-d5-lgp-dozer-rented.jpg", alt: "Social media post: CAT D5 LGP Dozer Rented" }] },
+    { id: "social-20260228-1", title: "PDAC Is Here, Come Say Hi at Booth #65", category: "Team, events and holidays", year: "Feb 28, 2026", date: "2026-02-28", ratio: "1080 / 565", purpose: "inviting the mining community to visit our booth at the PDAC convention, March 1 to 4", link: "https://www.instagram.com/p/DVUbomUjD2z/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-02-28-pdac-is-here-come-say-hi-booth-65.jpg", alt: "Social media post: PDAC Is Here, Come Say Hi at Booth #65" }] },
+    { id: "social-20260227-1", title: "CAT AD30 Underground Haul Truck Rented", category: "Rented and sold", year: "Feb 27, 2026", date: "2026-02-27", ratio: "1080 / 565", purpose: "announcing that a CAT AD30 underground haul truck had been rented", link: "https://www.instagram.com/p/DVRvYdqjKUt/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-02-27-cat-ad30-underground-haul-truck-rented.jpg", alt: "Social media post: CAT AD30 Underground Haul Truck Rented" }] },
+    { id: "social-20260226-1", title: "CAT D8 Dozer Rented", category: "Rented and sold", year: "Feb 26, 2026", date: "2026-02-26", ratio: "1080 / 565", purpose: "announcing that a CAT D8 dozer had been rented, with its key features", link: "https://www.instagram.com/p/DVPHuVSj-bN/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-02-26-cat-d8-dozer-rented.jpg", alt: "Social media post: CAT D8 Dozer Rented" }] },
+    { id: "social-20260130-1", title: "CAT TH514D Telehandler Sold", category: "Rented and sold", year: "Jan 30, 2026", date: "2026-01-30", ratio: "1080 / 565", purpose: "announcing the sale of a CAT TH514D telehandler", link: "https://www.instagram.com/p/DUJRF2YFBuj/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-01-30-cat-th514d-telehandler-sold.jpg", alt: "Social media post: CAT TH514D Telehandler Sold" }] },
+    { id: "social-20260127-1", title: "Toyota Land Cruisers Rented", category: "Rented and sold", year: "Jan 27, 2026", date: "2026-01-27", ratio: "1080 / 565", purpose: "announcing that two new 2025 Toyota Land Cruisers had been rented and delivered to a mine site", link: "https://www.instagram.com/p/DUBWepUDwfS/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2026-01-27-toyota-land-cruisers-rented.jpg", alt: "Social media post: Toyota Land Cruisers Rented" }] },
+    { id: "social-20251224-1", title: "Merry Christmas and Happy New Year", category: "Team, events and holidays", year: "Dec 24, 2025", date: "2025-12-24", ratio: "568 / 568", purpose: "thanking customers and partners and wishing them a merry Christmas and a happy new year", link: "https://www.instagram.com/p/DSqWrjBgHsG/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-12-24-merry-christmas-and-happy-new-year.jpg", alt: "Social media post: Merry Christmas and Happy New Year" }] },
+    { id: "social-20251217-1", title: "CAT R1600G Scooptram Rented", category: "Rented and sold", year: "Dec 17, 2025", date: "2025-12-17", ratio: "1080 / 565", purpose: "announcing that a CAT R1600G underground loader had been rented", link: "https://www.instagram.com/p/DSYLR9Vk4aX/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-12-17-cat-r1600g-scooptram-rented.jpg", alt: "Social media post: CAT R1600G Scooptram Rented" }] },
+    { id: "social-20251212-1", title: "CAT R1700G Scooptram Gone", category: "Rented and sold", year: "Dec 12, 2025", date: "2025-12-12", ratio: "1080 / 565", purpose: "announcing that another CAT R1700G underground loader had been sold", link: "https://www.instagram.com/p/DSK-eriiD7W/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-12-12-cat-r1700g-scooptram-gone.jpg", alt: "Social media post: CAT R1700G Scooptram Gone" }] },
+    { id: "social-20251210-1", title: "CAT 420F2 IT Backhoe Rented", category: "Rented and sold", year: "Dec 10, 2025", date: "2025-12-10", ratio: "1080 / 565", purpose: "showing a CAT 420F2 backhoe loader on the job clearing snow", link: "https://www.instagram.com/p/DSGBezvjCaK/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-12-10-cat-420f2-it-backhoe-rented.jpg", alt: "Social media post: CAT 420F2 IT Backhoe Rented" }] },
+    { id: "social-20251208-1", title: "2025 Toyota Land Cruiser Rented", category: "Rented and sold", year: "Dec 8, 2025", date: "2025-12-08", ratio: "1080 / 565", purpose: "announcing that a 2025 Toyota Land Cruiser dual-cab pickup had been rented", link: "https://www.instagram.com/p/DSApdssj0Ps/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-12-08-2025-toyota-land-cruiser-rented.jpg", alt: "Social media post: 2025 Toyota Land Cruiser Rented" }] },
+    { id: "social-20251205-1", title: "CAT R1300GII Rented", category: "Rented and sold", year: "Dec 5, 2025", date: "2025-12-05", ratio: "1080 / 565", purpose: "announcing that a CAT R1300G II underground mining loader had been rented", link: "https://www.instagram.com/p/DR4z3pgjjag/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-12-05-cat-r1300gii-rented.jpg", alt: "Social media post: CAT R1300GII Rented" }] },
+    { id: "social-20251203-1", title: "CAT R1700G Sold", category: "Rented and sold", year: "Dec 3, 2025", date: "2025-12-03", ratio: "1080 / 565", purpose: "announcing the sale of a CAT R1700G underground mining loader", link: "https://www.instagram.com/p/DRzkcEGkrhC/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-12-03-cat-r1700g-sold.jpg", alt: "Social media post: CAT R1700G Sold" }] },
+    { id: "social-20251126-1", title: "Broderson IC200-3J Crane Rented", category: "Rented and sold", year: "Nov 26, 2025", date: "2025-11-26", ratio: "1080 / 565", purpose: "announcing that a 2018 Broderson IC200-3J industrial crane had been rented", link: "https://www.instagram.com/p/DRiMavCl30K/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-26-broderson-ic200-3j-crane-rented.jpg", alt: "Social media post: Broderson IC200-3J Crane Rented" }] },
+    { id: "social-20251121-1", title: "Broderson IC80-3H Crane Gone", category: "Rented and sold", year: "Nov 21, 2025", date: "2025-11-21", ratio: "1080 / 565", purpose: "announcing the sale of a Broderson IC-80-3H carry deck crane", link: "https://www.instagram.com/p/DRVJAKhAAO_/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-21-broderson-ic80-3h-crane-gone.jpg", alt: "Social media post: Broderson IC80-3H Crane Gone" }] },
+    { id: "social-20251119-1", title: "CAT 930M Wheel Loader Rented", category: "Rented and sold", year: "Nov 19, 2025", date: "2025-11-19", ratio: "1080 / 565", purpose: "announcing that a CAT 930M wheel loader with bucket, blade and sander had been rented", link: "https://www.instagram.com/p/DRPuKZHAZ9q/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-19-cat-930m-wheel-loader-rented.jpg", alt: "Social media post: CAT 930M Wheel Loader Rented" }] },
+    { id: "social-20251117-1", title: "New Compressor and Telehandler Rented", category: "Rented and sold", year: "Nov 17, 2025", date: "2025-11-17", ratio: "1080 / 565", purpose: "announcing that a new compressor and a telehandler had gone out on rental", link: "https://www.instagram.com/p/DRK9YItAOV4/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-17-new-compressor-and-telehandler-rented.jpg", alt: "Social media post: New Compressor and Telehandler Rented" }] },
+    { id: "social-20251113-1", title: "Winter Ready John Deere 644-A Loader", category: "Available and for sale", year: "Nov 13, 2025", date: "2025-11-13", ratio: "1080 / 565", purpose: "advertising a John Deere 644-A loader for sale", link: "https://www.instagram.com/p/DRAGonliiJi/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-13-winter-ready-john-deere-644-a-loader.jpg", alt: "Social media post: Winter Ready John Deere 644-A Loader" }] },
+    { id: "social-20251112-1", title: "Winter Is Here! Get Your Winter Ready Loader", category: "Available and for sale", year: "Nov 12, 2025", date: "2025-11-12", ratio: "1080 / 565", purpose: "promoting our winter-ready loaders and their snow-clearing attachments", link: "https://www.instagram.com/p/DQ-B1tTDxKK/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-12-winter-is-here-get-your-winter-ready-loader.jpg", alt: "Social media post: Winter Is Here! Get Your Winter Ready Loader" }] },
+    { id: "social-20251111-1", title: "Remembrance Day", category: "Team, events and holidays", year: "Nov 11, 2025", date: "2025-11-11", ratio: "1080 / 720", purpose: "marking Remembrance Day", link: "https://www.instagram.com/p/DQ64mXUD7B3/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-11-remembrance-day.jpg", alt: "Social media post: Remembrance Day" }] },
+    { id: "social-20251110-1", title: "CAT Telehandler and Excavator Rented", category: "Rented and sold", year: "Nov 10, 2025", date: "2025-11-10", ratio: "1080 / 565", purpose: "announcing that a CAT telehandler and a CAT mini excavator had both gone out on the job", link: "https://www.instagram.com/p/DQ45hjQAgRO/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-10-cat-telehandler-and-excavator-rented.jpg", alt: "Social media post: CAT Telehandler and Excavator Rented" }] },
+    { id: "social-20251107-1", title: "John Deere 60D Excavator Rented", category: "Rented and sold", year: "Nov 7, 2025", date: "2025-11-07", ratio: "1080 / 565", purpose: "announcing that a John Deere 60D excavator with a drill attachment had been rented", link: "https://www.instagram.com/p/DQwVtgyE-1a/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-07-john-deere-60d-excavator-rented.jpg", alt: "Social media post: John Deere 60D Excavator Rented" }] },
+    { id: "social-20251105-1", title: "2025 CAT 980XE Available", category: "Available and for sale", year: "Nov 5, 2025", date: "2025-11-05", ratio: "500 / 500", purpose: "promoting the CAT 980XE, our largest wheel loader, for heavy snow removal", link: "https://www.instagram.com/p/DQrPkcIAVUj/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-05-2025-cat-980xe-available.jpg", alt: "Social media post: 2025 CAT 980XE Available" }] },
+    { id: "social-20251103-1", title: "CAT D6 LGP Dozer Rented", category: "Rented and sold", year: "Nov 3, 2025", date: "2025-11-03", ratio: "1080 / 565", purpose: "announcing that a CAT D6 LGP dozer had gone out on rent", link: "https://www.instagram.com/p/DQmChBqDg13/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-11-03-cat-d6-lgp-dozer-rented.jpg", alt: "Social media post: CAT D6 LGP Dozer Rented" }] },
+    { id: "social-20251031-1", title: "Happy Halloween", category: "Team, events and holidays", year: "Oct 31, 2025", date: "2025-10-31", ratio: "1080 / 1080", purpose: "wishing everyone a happy and safe Halloween", link: "https://www.instagram.com/p/DQfOf_PAZ1K/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-31-happy-halloween.jpg", alt: "Social media post: Happy Halloween" }] },
+    { id: "social-20251030-1", title: "CAT Backhoes Available Too", category: "Available and for sale", year: "Oct 30, 2025", date: "2025-10-30", ratio: "500 / 500", purpose: "promoting our CAT backhoes for winter excavation work", link: "https://www.instagram.com/p/DQbr9DQjclH/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-30-cat-backhoes-available-too.jpg", alt: "Social media post: CAT Backhoes Available Too" }] },
+    { id: "social-20251029-1", title: "2024 CAT AD45 Truck Sold", category: "Rented and sold", year: "Oct 29, 2025", date: "2025-10-29", ratio: "1080 / 565", purpose: "announcing the sale of a 2024 CAT AD45 underground truck", link: "https://www.instagram.com/p/DQZlUURABCi/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-29-2024-cat-ad45-truck-sold.jpg", alt: "Social media post: 2024 CAT AD45 Truck Sold" }] },
+    { id: "social-20251027-1", title: "2025 Atlas Copco XAS 850-175 PACE Compressor", category: "Available and for sale", year: "Oct 27, 2025", date: "2025-10-27", ratio: "1080 / 565", purpose: "introducing the Atlas Copco XAS 850-175 PACE towable air compressor", link: "https://www.instagram.com/p/DQUziH4FIFz/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-27-2025-atlas-copco-xas-850-175-pace-compressor.jpg", alt: "Social media post: 2025 Atlas Copco XAS 850-175 PACE Compressor" }] },
+    { id: "social-20251024-1", title: "New CAT 301.5 Excavator", category: "Available and for sale", year: "Oct 24, 2025", date: "2025-10-24", ratio: "1080 / 565", purpose: "announcing the arrival of a CAT 301.5 mini excavator", link: "https://www.instagram.com/p/DQMrKnsgO0j/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-24-new-cat-301-5-excavator.jpg", alt: "Social media post: New CAT 301.5 Excavator" }] },
+    { id: "social-20251022-2", title: "New Toyota Land Cruiser", category: "Available and for sale", year: "Oct 22, 2025", date: "2025-10-22", ratio: "1080 / 565", purpose: "announcing that a Toyota Land Cruiser had arrived for mining and off-road use", link: "https://www.instagram.com/p/DQH5nFVCCJR/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-22-new-toyota-land-cruiser.jpg", alt: "Social media post: New Toyota Land Cruiser" }] },
+    { id: "social-20251022-1", title: "Low-Hour CAT 930s Available", category: "Available and for sale", year: "Oct 22, 2025", date: "2025-10-22", ratio: "500 / 500", purpose: "promoting new and low-hour CAT 930 loaders ready for winter work", link: "https://www.instagram.com/p/DQHFoEqEQlm/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-22-low-hour-cat-930s-available.jpg", alt: "Social media post: Low-Hour CAT 930s Available" }] },
+    { id: "social-20251021-1", title: "Trackless MT5 For Sale", category: "Available and for sale", year: "Oct 21, 2025", date: "2025-10-21", ratio: "1080 / 565", purpose: "advertising a Trackless MT5 for sale", link: "https://www.instagram.com/p/DQE7vItDyq2/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-21-trackless-mt5-for-sale.jpg", alt: "Social media post: Trackless MT5 For Sale" }] },
+    { id: "social-20251017-1", title: "New Komatsu WA200-8 Wheel Loader", category: "Available and for sale", year: "Oct 17, 2025", date: "2025-10-17", ratio: "500 / 500", purpose: "promoting a new Komatsu WA200-8 wheel loader that is winter-ready and available with fork attachments", link: "https://www.instagram.com/p/DP6Ns08j9-n/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-17-new-komatsu-wa200-8-wheel-loader.jpg", alt: "Social media post: New Komatsu WA200-8 Wheel Loader" }] },
+    { id: "social-20251014-1", title: "New CAT 930 Wheel Loaders", category: "Available and for sale", year: "Oct 14, 2025", date: "2025-10-14", ratio: "500 / 500", purpose: "promoting new CAT 930 wheel loaders equipped for winter and available for rent", link: "https://www.instagram.com/p/DPyfQbZlb8o/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-14-new-cat-930-wheel-loaders.jpg", alt: "Social media post: New CAT 930 Wheel Loaders" }] },
+    { id: "social-20251010-1", title: "Happy Thanksgiving", category: "Team, events and holidays", year: "Oct 10, 2025", date: "2025-10-10", ratio: "864 / 1080", purpose: "wishing everyone a happy Thanksgiving", link: "https://www.instagram.com/p/DPolbPjjyT4/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-10-happy-thanksgiving.jpg", alt: "Social media post: Happy Thanksgiving" }] },
+    { id: "social-20251008-1", title: "Kovatera MC100G Rented", category: "Rented and sold", year: "Oct 8, 2025", date: "2025-10-08", ratio: "1080 / 565", purpose: "announcing that a 2017 Kovatera (Minecat) MC100G mining utility vehicle had been rented", link: "https://www.instagram.com/p/DPjd7RWiQvQ/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-08-kovatera-mc100g-rented.jpg", alt: "Social media post: Kovatera MC100G Rented" }] },
+    { id: "social-20251003-2", title: "TME Baseball Team End of Season Party", category: "Team, events and holidays", year: "Oct 3, 2025", date: "2025-10-03", ratio: "1080 / 608", purpose: "celebrating the TME baseball team's end-of-season party with families and friends", link: "https://www.instagram.com/p/DPWmpbBj_qA/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-03-tme-baseball-team-end-of-season-party.jpg", alt: "Social media post: TME Baseball Team End of Season Party" }, { src: "assets/tme/social/2025-10-03-tme-baseball-team-end-of-season-party-2.jpg", alt: "Social media post: TME Baseball Team End of Season Party" }] },
+    { id: "social-20251003-1", title: "New Toyota Land Cruiser", category: "Available and for sale", year: "Oct 3, 2025", date: "2025-10-03", ratio: "1080 / 565", purpose: "announcing the arrival of a new Toyota Land Cruiser built for mine-site duty", link: "https://www.instagram.com/p/DPWl7H-CTnH/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-03-new-toyota-land-cruiser.jpg", alt: "Social media post: New Toyota Land Cruiser" }] },
+    { id: "social-20251001-1", title: "3 Machines Rented", category: "Rented and sold", year: "Oct 1, 2025", date: "2025-10-01", ratio: "1080 / 565", purpose: "announcing that a CAT 336 excavator, a CAT 255 compact track loader and a CAT D6N LGP dozer had all gone out on rent", link: "https://www.instagram.com/p/DPRcWonk8mM/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-10-01-3-machines-rented.jpg", alt: "Social media post: 3 Machines Rented" }] },
+    { id: "social-20250926-1", title: "2025 Manitou MT625 Telehandler Walkaround", category: "Videos", year: "Sep 26, 2025", date: "2025-09-26", ratio: "360 / 640", purpose: "showing the Manitou MT625 H telehandler working on site in a 360-degree walkaround", link: "https://www.instagram.com/p/DPEkcsJk9Y3/", linkLabel: "Instagram", video: "assets/tme/social/2025-09-26-2025-manitou-mt625-telehandler-walkaround.mp4", images: [{ src: "assets/tme/social/2025-09-26-2025-manitou-mt625-telehandler-walkaround.jpg", alt: "Social media video: 2025 Manitou MT625 Telehandler Walkaround" }] },
+    { id: "social-20250925-1", title: "KES SL 4500 Scissor Lift Sold", category: "Rented and sold", year: "Sep 25, 2025", date: "2025-09-25", ratio: "1080 / 565", purpose: "announcing the sale of a KES SL 4500 scissor lift", link: "https://www.instagram.com/p/DPCQT-YDwoH/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-09-25-kes-sl-4500-scissor-lift-sold.jpg", alt: "Social media post: KES SL 4500 Scissor Lift Sold" }] },
+    { id: "social-20250924-1", title: "3 Machines Rented", category: "Rented and sold", year: "Sep 24, 2025", date: "2025-09-24", ratio: "1080 / 565", purpose: "announcing that two new Komatsu WX03 scoops and a Boart Longyear Stope Mate drill had left the yard", link: "https://www.instagram.com/p/DO_a0K2gfWc/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-09-24-3-machines-rented.jpg", alt: "Social media post: 3 Machines Rented" }] },
+    { id: "social-20250911-1", title: "CAT 336-06 NexGen Excavator Rented", category: "Rented and sold", year: "Sep 11, 2025", date: "2025-09-11", ratio: "1080 / 565", purpose: "announcing that a CAT 336 excavator had gone out on rental, with its key specs", link: "https://www.instagram.com/p/DOeIIiyjYv6/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-09-11-cat-336-06-nexgen-excavator-rented.jpg", alt: "Social media post: CAT 336-06 NexGen Excavator Rented" }] },
+    { id: "social-20250908-1", title: "Sandvik TH540 Underground Mining Truck", category: "Available and for sale", year: "Sep 8, 2025", date: "2025-09-08", ratio: "1080 / 565", purpose: "introducing the Sandvik TH540 underground mining truck and its payload specs", link: "https://www.instagram.com/p/DOWf7h2j4hS/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-09-08-sandvik-th540-underground-mining-truck.jpg", alt: "Social media post: Sandvik TH540 Underground Mining Truck" }] },
+    { id: "social-20250904-1", title: "KES MT173 Boom Truck Rented", category: "Rented and sold", year: "Sep 4, 2025", date: "2025-09-04", ratio: "1080 / 565", purpose: "announcing that a KES BT M173 mining boom truck had been rented, with its safety certifications and specs", link: "https://www.instagram.com/p/DOMWiqMjxPl/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-09-04-kes-mt173-boom-truck-rented.jpg", alt: "Social media post: KES MT173 Boom Truck Rented" }] },
+    { id: "social-20250903-1", title: "2025 MT625 Telehandler Rented", category: "Rented and sold", year: "Sep 3, 2025", date: "2025-09-03", ratio: "1080 / 565", purpose: "announcing that a Manitou MT 625 H telehandler had gone out on rent, with its main specs", link: "https://www.instagram.com/p/DOJrDCTD12c/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-09-03-2025-mt625-telehandler-rented.jpg", alt: "Social media post: 2025 MT625 Telehandler Rented" }] },
+    { id: "social-20250829-1", title: "Rented Sandvik LH203", category: "Rented and sold", year: "Aug 29, 2025", date: "2025-08-29", ratio: "1080 / 565", purpose: "announcing that a Sandvik LH203 scooptram was heading to a narrow-vein mining project, with its key specs", link: "https://www.instagram.com/p/DN8TAcYjjWx/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-08-29-rented-sandvik-lh203.jpg", alt: "Social media post: Rented Sandvik LH203" }] },
+    { id: "social-20250820-1", title: "Rented CAT 930M Wheel Loader", category: "Rented and sold", year: "Aug 20, 2025", date: "2025-08-20", ratio: "1080 / 565", purpose: "announcing that a CAT 930M wheel loader had been rented for a big project", link: "https://www.instagram.com/p/DNlg380PMsF/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-08-20-rented-cat-930m-wheel-loader.jpg", alt: "Social media post: Rented CAT 930M Wheel Loader" }] },
+    { id: "social-20250818-1", title: "Need a Telehandler?", category: "Available and for sale", year: "Aug 18, 2025", date: "2025-08-18", ratio: "1080 / 565", purpose: "promoting our telehandler fleet, from Caterpillar to Manitou, for rent or purchase", link: "https://www.instagram.com/p/DNgCYvBv0Xy/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-08-18-need-a-telehandler.jpg", alt: "Social media post: Need a Telehandler?" }] },
+    { id: "social-20250806-1", title: "CAT AD30 Underground Haul Truck Rented", category: "Rented and sold", year: "Aug 6, 2025", date: "2025-08-06", ratio: "1080 / 565", purpose: "announcing that a CAT AD30 underground haul truck had been rented and that we keep a solid fleet of them", link: "https://www.instagram.com/p/DNA4XRiuO4x/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-08-06-cat-ad30-underground-haul-truck-rented.jpg", alt: "Social media post: CAT AD30 Underground Haul Truck Rented" }] },
+    { id: "social-20250725-1", title: "Rented CAT TH514D Telehandler", category: "Rented and sold", year: "Jul 25, 2025", date: "2025-07-25", ratio: "1080 / 565", purpose: "announcing that a CAT TH514D telehandler had been rented", link: "https://www.instagram.com/p/DMhtE5ePM-g/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-25-rented-cat-th514d-telehandler.jpg", alt: "Social media post: Rented CAT TH514D Telehandler" }] },
+    { id: "social-20250721-1", title: "Rented CAT D5 LGP Dozer", category: "Rented and sold", year: "Jul 21, 2025", date: "2025-07-21", ratio: "1080 / 565", purpose: "announcing that another 2020 CAT D5 LGP dozer had been rented", link: "https://www.instagram.com/p/DMX242YRilK/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-21-rented-cat-d5-lgp-dozer.jpg", alt: "Social media post: Rented CAT D5 LGP Dozer" }] },
+    { id: "social-20250718-1", title: "Rented CAT D6N LGP Dozer", category: "Rented and sold", year: "Jul 18, 2025", date: "2025-07-18", ratio: "1080 / 565", purpose: "announcing that a CAT D6N LGP dozer had been rented for the summer", link: "https://www.instagram.com/p/DMPrk3EMfy5/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-18-rented-cat-d6n-lgp-dozer.jpg", alt: "Social media post: Rented CAT D6N LGP Dozer" }] },
+    { id: "social-20250716-1", title: "2025 CAT R1700 Scooptram Rented", category: "Rented and sold", year: "Jul 16, 2025", date: "2025-07-16", ratio: "1080 / 565", purpose: "announcing that a 2025 CAT R1700 scooptram had been rented", link: "https://www.instagram.com/p/DMKh6U9BdPt/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-16-2025-cat-r1700-scooptram-rented.jpg", alt: "Social media post: 2025 CAT R1700 Scooptram Rented" }] },
+    { id: "social-20250714-1", title: "3 Machines Rented", category: "Rented and sold", year: "Jul 14, 2025", date: "2025-07-14", ratio: "1080 / 565", purpose: "sharing that three machines had been rented to a film studio and shipped the same day", link: "https://www.instagram.com/p/DMGWaLPOz-L/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-14-3-machines-rented.jpg", alt: "Social media post: 3 Machines Rented" }] },
+    { id: "social-20250711-1", title: "Rented KES SL 4500 Scissor Lift", category: "Rented and sold", year: "Jul 11, 2025", date: "2025-07-11", ratio: "1080 / 565", purpose: "announcing that a 2023 KES SL 4500 scissor lift had been rented, and that we keep working through the summer heat", link: "https://www.instagram.com/p/DL9p-98Mebc/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-11-rented-kes-sl-4500-scissor-lift.jpg", alt: "Social media post: Rented KES SL 4500 Scissor Lift" }] },
+    { id: "social-20250709-1", title: "Rented IC200-3J Crane", category: "Rented and sold", year: "Jul 9, 2025", date: "2025-07-09", ratio: "1080 / 565", purpose: "announcing that a 2021 Broderson IC-200-3J crane was heading out to another job", link: "https://www.instagram.com/p/DL49C3-gTRV/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-09-rented-ic200-3j-crane.jpg", alt: "Social media post: Rented IC200-3J Crane" }] },
+    { id: "social-20250707-1", title: "Rented 2020 CAT D5 LGP Dozer", category: "Rented and sold", year: "Jul 7, 2025", date: "2025-07-07", ratio: "1080 / 565", purpose: "announcing that a 2020 CAT D5 LGP dozer had been rented", link: "https://www.instagram.com/p/DLz5HjcvRkF/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-07-07-rented-2020-cat-d5-lgp-dozer.jpg", alt: "Social media post: Rented 2020 CAT D5 LGP Dozer" }] },
+    { id: "social-20250702-1", title: "2025 CAT 930 Wheel Loader: Walkaround and Cabin Tour", category: "Videos", year: "Jul 2, 2025", date: "2025-07-02", ratio: "360 / 640", purpose: "giving a full walkaround and operator-cabin tour of the 2025 CAT 930 wheel loader", link: "https://www.instagram.com/p/DLnpSmuO-Lh/", linkLabel: "Instagram", video: "assets/tme/social/2025-07-02-2025-cat-930-wheel-loader-walkaround.mp4", images: [{ src: "assets/tme/social/2025-07-02-2025-cat-930-wheel-loader-walkaround.jpg", alt: "Social media video: 2025 CAT 930 Wheel Loader: Walkaround and Cabin Tour" }] },
+    { id: "social-20250627-1", title: "2025 CAT 930 Wheel Loader", category: "Available and for sale", year: "Jun 27, 2025", date: "2025-06-27", ratio: "1080 / 565", purpose: "announcing the arrival of a 2025 CAT 930 wheel loader in our yard", link: "https://www.instagram.com/p/DLavKWPMs8S/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-27-2025-cat-930-wheel-loader.jpg", alt: "Social media post: 2025 CAT 930 Wheel Loader" }] },
+    { id: "social-20250625-1", title: "Normet Minimec 2 Rented", category: "Rented and sold", year: "Jun 25, 2025", date: "2025-06-25", ratio: "1080 / 565", purpose: "announcing that a Normet Minimec 2 shotcrete spraying manipulator had been rented", link: "https://www.instagram.com/p/DLUdTYmO-pI/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-25-normet-minimec-2-rented.jpg", alt: "Social media post: Normet Minimec 2 Rented" }] },
+    { id: "social-20250623-1", title: "2025 CAT R1700 Underground Scoop: Walkaround and Cabin Tour", category: "Videos", year: "Jun 23, 2025", date: "2025-06-23", ratio: "360 / 640", purpose: "showing the 2025 CAT R1700 underground scoop from the outside and from inside the operator cabin", link: "https://www.instagram.com/p/DLQKpzCpLbE/", linkLabel: "Instagram", video: "assets/tme/social/2025-06-23-2025-cat-r1700-underground-scoop-walkaround.mp4", images: [{ src: "assets/tme/social/2025-06-23-2025-cat-r1700-underground-scoop-walkaround.jpg", alt: "Social media video: 2025 CAT R1700 Underground Scoop: Walkaround and Cabin Tour" }] },
+    { id: "social-20250620-1", title: "Rented CAT R1600G Scoop", category: "Rented and sold", year: "Jun 20, 2025", date: "2025-06-20", ratio: "1080 / 565", purpose: "announcing that a CAT R1600G scoop had been rented for underground mucking", link: "https://www.instagram.com/p/DLIeUJ1gmup/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-20-rented-cat-r1600g-scoop.jpg", alt: "Social media post: Rented CAT R1600G Scoop" }] },
+    { id: "social-20250618-1", title: "325 CAT Excavator Rented", category: "Rented and sold", year: "Jun 18, 2025", date: "2025-06-18", ratio: "1080 / 565", purpose: "announcing that a CAT 325 excavator had been rented and was on its way to a heavy-duty project", link: "https://www.instagram.com/p/DLCbrsyqug8/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-18-325-cat-excavator-rented.jpg", alt: "Social media post: 325 CAT Excavator Rented" }] },
+    { id: "social-20250617-1", title: "Rented CAT R1300G Scoop", category: "Rented and sold", year: "Jun 17, 2025", date: "2025-06-17", ratio: "1080 / 565", purpose: "announcing that a CAT R1300G scoop had been rented for underground work", link: "https://www.instagram.com/p/DK_22v7Nq_i/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-17-rented-cat-r1300g-scoop.jpg", alt: "Social media post: Rented CAT R1300G Scoop" }] },
+    { id: "social-20250616-1", title: "Walkaround: 2015 CAT R1600G Scoop", category: "Videos", year: "Jun 16, 2025", date: "2025-06-16", ratio: "360 / 640", purpose: "walking customers around a 2015 CAT R1600G underground scoop", link: "https://www.instagram.com/p/DK97aP4BsIJ/", linkLabel: "Instagram", video: "assets/tme/social/2025-06-16-walkaround-2015-cat-r1600g-scoop.mp4", images: [{ src: "assets/tme/social/2025-06-16-walkaround-2015-cat-r1600g-scoop.jpg", alt: "Social media video: Walkaround: 2015 CAT R1600G Scoop" }] },
+    { id: "social-20250613-1", title: "Walkaround: 2025 CAT 336 Excavator", category: "Videos", year: "Jun 13, 2025", date: "2025-06-13", ratio: "360 / 640", purpose: "walking customers around the 2025 CAT 336 excavator and its onboard technology", link: "https://www.instagram.com/p/DK2LTOUujMg/", linkLabel: "Instagram", video: "assets/tme/social/2025-06-13-walkaround-2025-cat-336-excavator.mp4", images: [{ src: "assets/tme/social/2025-06-13-walkaround-2025-cat-336-excavator.jpg", alt: "Social media video: Walkaround: 2025 CAT 336 Excavator" }] },
+    { id: "social-20250612-1", title: "2025 CAT 336 Excavator", category: "Available and for sale", year: "Jun 12, 2025", date: "2025-06-12", ratio: "1080 / 565", purpose: "announcing that the 2025 CAT 336 excavator had arrived and was available", link: "https://www.instagram.com/p/DKz6b87pvR2/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-12-2025-cat-336-excavator.jpg", alt: "Social media post: 2025 CAT 336 Excavator" }] },
+    { id: "social-20250610-1", title: "New & Rented!", category: "Rented and sold", year: "Jun 10, 2025", date: "2025-06-10", ratio: "864 / 1080", purpose: "announcing that a 2025 KES BT C-215 boom truck had been rented", link: "https://www.instagram.com/p/DKucGaAO2yE/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-10-new-and-rented.jpg", alt: "Social media post: New & Rented!" }] },
+    { id: "social-20250605-1", title: "Need Mining Equipment?", category: "Available and for sale", year: "Jun 5, 2025", date: "2025-06-05", ratio: "1080 / 565", purpose: "letting mining customers know we rent and sell scoops, jumbos, underground trucks and support gear", link: "https://www.instagram.com/p/DKhjZ7Dv4Op/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-05-need-mining-equipment.jpg", alt: "Social media post: Need Mining Equipment?" }] },
+    { id: "social-20250602-1", title: "255 Skidsteer Rented", category: "Rented and sold", year: "Jun 2, 2025", date: "2025-06-02", ratio: "1080 / 565", purpose: "announcing that a CAT 255 skid steer was on its jobsite and ready to work", link: "https://www.instagram.com/p/DKZkVhjOYO0/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-06-02-255-skidsteer-rented.jpg", alt: "Social media post: 255 Skidsteer Rented" }] },
+    { id: "social-20250529-1", title: "303 Excavator and Skyjack Rented", category: "Rented and sold", year: "May 29, 2025", date: "2025-05-29", ratio: "1080 / 565", purpose: "announcing that the new CAT 303 mini excavator and a Skyjack had been rented and were heading to their first job", link: "https://www.instagram.com/p/DKPcJb9t0fB/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-05-29-303-excavator-and-skyjack-rented.jpg", alt: "Social media post: 303 Excavator and Skyjack Rented" }] },
+    { id: "social-20250528-1", title: "2025 CAT 303 Mini Excavator Walkaround", category: "Videos", year: "May 28, 2025", date: "2025-05-28", ratio: "360 / 640", purpose: "giving a close look at the brand-new 2025 CAT 303 mini excavator, inside and out", link: "https://www.instagram.com/p/DKNREoRoP5R/", linkLabel: "Instagram", video: "assets/tme/social/2025-05-28-2025-cat-303-mini-excavator-walkaround.mp4", images: [{ src: "assets/tme/social/2025-05-28-2025-cat-303-mini-excavator-walkaround.jpg", alt: "Social media video: 2025 CAT 303 Mini Excavator Walkaround" }] },
+    { id: "social-20250526-1", title: "Rented R1300GII", category: "Rented and sold", year: "May 26, 2025", date: "2025-05-26", ratio: "1080 / 565", purpose: "announcing that a 2006 CAT R1300G II underground loader had been rented for mining work", link: "https://www.instagram.com/p/DKISFPcsSaH/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-05-26-rented-r1300gii.jpg", alt: "Social media post: Rented R1300GII" }] },
+    { id: "social-20250516-1", title: "Rented CAT 980XE Wheel Loader", category: "Rented and sold", year: "May 16, 2025", date: "2025-05-16", ratio: "1080 / 565", purpose: "showing the new CAT 980 XE wheel loader already out on a rental job", link: "https://www.instagram.com/p/DJuC8VHvEqC/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-05-16-rented-cat-980xe-wheel-loader.jpg", alt: "Social media post: Rented CAT 980XE Wheel Loader" }] },
+    { id: "social-20250515-1", title: "Rented CAT 908 Wheel Loader", category: "Rented and sold", year: "May 15, 2025", date: "2025-05-15", ratio: "1080 / 565", purpose: "announcing that a CAT 908 wheel loader had been rented out", link: "https://www.instagram.com/p/DJreQzUPzCo/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-05-15-rented-cat-908-wheel-loader.jpg", alt: "Social media post: Rented CAT 908 Wheel Loader" }] },
+    { id: "social-20250514-2", title: "Rented Broderson IC400", category: "Rented and sold", year: "May 14, 2025", date: "2025-05-14", ratio: "1080 / 565", purpose: "announcing that a Broderson IC400 crane had just gone out on rent", link: "https://www.instagram.com/p/DJo-FVaPsqu/", linkLabel: "Instagram", images: [{ src: "assets/tme/social/2025-05-14-rented-broderson-ic400.jpg", alt: "Social media post: Rented Broderson IC400" }] },
+    { id: "social-20250514-1", title: "CAT 980 XE Wheel Loader 360 Walkaround", category: "Videos", year: "May 14, 2025", date: "2025-05-14", ratio: "360 / 640", purpose: "introducing the brand-new CAT 980 XE wheel loader with a full 360-degree look inside and out", link: "https://www.instagram.com/p/DJo5reHOoPz/", linkLabel: "Instagram", video: "assets/tme/social/2025-05-14-cat-980-xe-wheel-loader-360-walkaround.mp4", images: [{ src: "assets/tme/social/2025-05-14-cat-980-xe-wheel-loader-360-walkaround.jpg", alt: "Social media video: CAT 980 XE Wheel Loader 360 Walkaround" }] },
+  ],
+
+  /* ---------- Tim McDowell Equipment Ltd.: flyers, banners and ads (tim-mcdowell.html) ---------- */
+  /* Each item is a booklet: "pages" lists page images in order (w and h are the image size in pixels).
+     Items with several pages of the same shape open as a flip-through book. mode: "single" shows one page at a time. */
+  tmeBooklets: [
     {
-      id: "brand-identity-system",          // unique, lowercase, no spaces: used in the share link
-      title: "Brand identity system",
-      category: "Branding",                  // becomes a filter button. Keep to 3 or 4 broad groups
-      year: 2025,
-      client: "Sample client",
-      role: "Art direction and design",
-      tools: ["Illustrator", "InDesign"],
-      summary: "Sample description. Say what the brief was, what you made, and what changed because of it. Two or three sentences is plenty.",
-      ratio: "4 / 5",
-      images: [
-        { src: "assets/design/sample-brand-identity.svg", alt: "Blue brand identity board with a yellow circular mark and colour swatches" },
-        { src: "assets/design/sample-logo-collection.svg", alt: "Grid of twelve simple logo marks in six colours" },
-        { src: "assets/design/sample-packaging.svg", alt: "Purple product box with a yellow circular label" }
+      id: "cim-flyer-2026",
+      title: "Mining and construction equipment flyer",
+      event: "CIM",
+      year: 2026,
+      summary: "A 20-page flyer for the CIM show: a mining section, a construction section and an attachments page, with a spec block for each machine.",
+      cover: { src: "assets/tme/flyer-cim-2026/cover.jpg", alt: "Cover of the mining and construction equipment flyer" },
+      ratio: "640 / 973",
+      pages: [
+        { src: "assets/tme/flyer-cim-2026/01.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/02.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/03.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/04.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/05.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/06.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/07.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/08.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/09.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/10.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/11.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/12.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/13.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/14.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/15.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/16.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/17.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/18.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/19.jpg", w: 986, h: 1500 },
+        { src: "assets/tme/flyer-cim-2026/20.jpg", w: 986, h: 1500 }
       ]
     },
     {
-      id: "poster-series",
-      title: "Poster series",
-      category: "Print",
-      year: 2025,
-      client: "Sample client",
-      role: "Design",
-      tools: ["Photoshop", "Illustrator"],
-      summary: "Sample description. A two-image project shows how a series looks in the viewer.",
-      ratio: "2 / 3",
-      images: [
-        { src: "assets/design/sample-poster-series.svg", alt: "Red poster with white bars and a large black circle" },
-        { src: "assets/design/sample-event-banner.svg", alt: "Black banner with orange stripes and a large orange circle" }
+      id: "prospector-ads-2026",
+      title: "Prospector magazine ads",
+      event: "April issue",
+      year: 2026,
+      summary: "Two full-page ads for the April issue: one landscape, one portrait.",
+      cover: { src: "assets/tme/prospector-ads-2026/cover.jpg", alt: "Cover of the prospector magazine ads" },
+      ratio: "900 / 695",
+      mode: "single",
+      pages: [
+        { src: "assets/tme/prospector-ads-2026/01.jpg", w: 1600, h: 1237 },
+        { src: "assets/tme/prospector-ads-2026/02.jpg", w: 1160, h: 1500 }
       ]
     },
     {
-      id: "social-media-campaign",
-      title: "Social media campaign",
-      category: "Digital",
-      year: 2024,
-      client: "Sample client",
-      role: "Design",
-      tools: ["Figma", "After Effects"],
-      summary: "Sample description. Four square tiles designed to work as a grid on a profile page.",
-      ratio: "1 / 1",
-      images: [
-        { src: "assets/design/sample-social-campaign.svg", alt: "Four square social tiles in green, black, white and yellow with simple shapes" }
+      id: "pdac-flyer-2026",
+      title: "Mining and construction equipment flyer",
+      event: "PDAC",
+      year: 2026,
+      summary: "The 20-page flyer made for the PDAC show in Toronto.",
+      cover: { src: "assets/tme/flyer-pdac-2026/cover.jpg", alt: "Cover of the mining and construction equipment flyer" },
+      ratio: "640 / 988",
+      pages: [
+        { src: "assets/tme/flyer-pdac-2026/01.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/02.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/03.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/04.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/05.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/06.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/07.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/08.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/09.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/10.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/11.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/12.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/13.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/14.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/15.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/16.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/17.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/18.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/19.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-2026/20.jpg", w: 971, h: 1500 }
       ]
     },
     {
-      id: "editorial-spread",
-      title: "Editorial spread",
-      category: "Print",
-      year: 2024,
-      client: "Sample client",
-      role: "Layout and typography",
-      tools: ["InDesign"],
-      summary: "Sample description. A magazine spread with a large image, a headline and two columns of text.",
-      ratio: "3 / 2",
-      images: [
-        { src: "assets/design/sample-editorial-layout.svg", alt: "Two-page magazine spread with a blue image block and text columns" }
+      id: "pdac-construction-flyer-2026",
+      title: "Construction equipment flyer",
+      event: "PDAC",
+      year: 2026,
+      summary: "A 12-page construction-only flyer: loaders, backhoes, excavators and dozers.",
+      cover: { src: "assets/tme/flyer-pdac-construction-2026/cover.jpg", alt: "Cover of the construction equipment flyer" },
+      ratio: "640 / 988",
+      pages: [
+        { src: "assets/tme/flyer-pdac-construction-2026/01.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/02.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/03.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/04.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/05.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/06.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/07.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/08.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/09.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/10.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/11.jpg", w: 971, h: 1500 },
+        { src: "assets/tme/flyer-pdac-construction-2026/12.jpg", w: 971, h: 1500 }
       ]
     },
     {
-      id: "packaging-concept",
-      title: "Packaging concept",
-      category: "Print",
-      year: 2024,
-      client: "Personal project",
-      role: "Design",
-      tools: ["Illustrator", "Blender"],
-      summary: "Sample description. A product box concept with a simple circular label.",
-      ratio: "1 / 1",
-      images: [
-        { src: "assets/design/sample-packaging.svg", alt: "Purple product box with a yellow circular label on a pink background" }
-      ]
-    },
-    {
-      id: "logo-collection",
-      title: "Logo collection",
-      category: "Branding",
-      year: 2023,
-      client: "Various",
-      role: "Design",
-      tools: ["Illustrator"],
-      summary: "Sample description. A selection of marks from different projects.",
-      ratio: "4 / 5",
-      images: [
-        { src: "assets/design/sample-logo-collection.svg", alt: "Grid of twelve simple logo marks in six colours" }
-      ]
-    },
-    {
-      id: "event-banner",
-      title: "Event banner",
-      category: "Print",
-      year: 2023,
-      client: "Sample client",
-      role: "Design",
-      tools: ["Photoshop"],
-      summary: "Sample description. A wide banner for a live event.",
-      ratio: "16 / 9",
-      images: [
-        { src: "assets/design/sample-event-banner.svg", alt: "Black banner with orange stripes and a large orange circle" }
-      ]
-    },
-    {
-      id: "landscape-illustration",
-      title: "Landscape illustration",
-      category: "Digital",
-      year: 2023,
-      client: "Personal project",
-      role: "Illustration",
-      tools: ["Procreate", "Illustrator"],
-      summary: "Sample description. Layered hills under a yellow sun.",
-      ratio: "3 / 2",
-      images: [
-        { src: "assets/design/sample-illustration.svg", alt: "Pink sky with a yellow sun above three layers of purple hills" }
-      ]
-    },
-    {
-      id: "type-specimen",
-      title: "Type specimen",
-      category: "Print",
-      year: 2022,
-      client: "Personal project",
-      role: "Design",
-      tools: ["Illustrator", "Glyphs"],
-      summary: "Sample description. A specimen sheet showing a typeface at large and small sizes.",
-      ratio: "2 / 3",
-      images: [
-        { src: "assets/design/sample-type-specimen.svg", alt: "Specimen sheet with a very large Aa and lines of small text" }
+      id: "pdac-pull-out-banner-2026",
+      title: "Pull-out banner",
+      event: "PDAC",
+      year: 2026,
+      summary: "A tall retractable banner for the PDAC booth.",
+      cover: { src: "assets/tme/banner-pdac-2026/cover.jpg", alt: "Cover of the pull-out banner" },
+      ratio: "640 / 959",
+      mode: "single",
+      pages: [
+        { src: "assets/tme/banner-pdac-2026/01.jpg", w: 1005, h: 2400 }
       ]
     }
   ],
