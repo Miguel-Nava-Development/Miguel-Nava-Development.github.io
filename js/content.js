@@ -9,6 +9,7 @@
     for example "800 / 418". Match it to your image so nothing gets cropped.
   - Items appear in the order you list them. Newest first works well.
   - Marketing work for Tim McDowell Equipment Ltd. is in tmeSocial and tmeBooklets.
+  - Marketing work for KES Equipment is in kesSocial.
     The software projects further down are still sample content: replace them with your own.
 */
 
@@ -257,6 +258,23 @@ window.PORTFOLIO = {
         { src: "assets/tme/banner-pdac-2026/01.jpg", w: 1005, h: 2400 }
       ]
     }
+  ],
+
+  /* ---------- KES Equipment: social media posts (kes.html) ---------- */
+  /* Same format as tmeSocial above. Every post comes from the KES Instagram page, newest first. */
+  kesSocial: [
+    { id: "kes-20260701-1", title: "Happy Canada Day", category: "Team, events and holidays", year: "Jul 1, 2026", date: "2026-07-01", ratio: "1200 / 1101", purpose: "wishing everyone a happy Canada Day", link: "https://www.instagram.com/p/DaQ4Wx9DwRx/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2026-07-01-happy-canada-day.jpg", alt: "Social media post: Happy Canada Day" }] },
+    { id: "kes-20260618-1", title: "We Are Hiring Mechanical Assembler", category: "Team, events and holidays", year: "Jun 18, 2026", date: "2026-06-18", ratio: "726 / 728", purpose: "advertising an opening for a mechanic assembler to build underground mining equipment and utility vehicles", link: "https://www.instagram.com/p/DZuuLhND-Vr/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2026-06-18-we-are-hiring-mechanical-assembler.jpg", alt: "Social media post: We Are Hiring Mechanical Assembler" }] },
+    { id: "kes-20260403-1", title: "Happy Easter", category: "Team, events and holidays", year: "Apr 3, 2026", date: "2026-04-03", ratio: "1200 / 1025", purpose: "wishing customers, partners and friends a happy Easter", link: "https://www.instagram.com/p/DWrLLiLDGh6/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2026-04-03-happy-easter.jpg", alt: "Social media post: Happy Easter" }] },
+    { id: "kes-20260228-1", title: "Join Us at PDAC!", category: "Team, events and holidays", year: "Feb 28, 2026", date: "2026-02-28", ratio: "1200 / 628", purpose: "announcing that KES Equipment would be at the PDAC convention from March 1 to 4, 2026", link: "https://www.instagram.com/p/DVUSHsXiWDj/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2026-02-28-join-us-at-pdac.jpg", alt: "Social media post: Join Us at PDAC!" }] },
+    { id: "kes-20260227-1", title: "KES C-215 Boom Truck Gone!", category: "Equipment", year: "Feb 27, 2026", date: "2026-02-27", ratio: "1200 / 628", purpose: "announcing that a KES BT C-215 boom truck had been sold", link: "https://www.instagram.com/p/DVRshiFjScP/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2026-02-27-kes-c-215-boom-truck-gone.jpg", alt: "Social media post: KES C-215 Boom Truck Gone!" }] },
+    { id: "kes-20251224-1", title: "Merry Christmas and Happy New Year", category: "Team, events and holidays", year: "Dec 24, 2025", date: "2025-12-24", ratio: "1200 / 1200", purpose: "wishing customers, partners and colleagues a merry Christmas and a happy new year, and thanking them for their support in 2025", link: "https://www.instagram.com/p/DSqHHoGlINj/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-12-24-merry-christmas-and-happy-new-year.jpg", alt: "Social media post: Merry Christmas and Happy New Year" }] },
+    { id: "kes-20251210-1", title: "KES 4500 Scissor Lift Gone!", category: "Equipment", year: "Dec 10, 2025", date: "2025-12-10", ratio: "1200 / 628", purpose: "announcing that another KES SL4500SS scissor lift had been sold and was on its way to Fiji", link: "https://www.instagram.com/p/DSFuaSEj3Gx/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-12-10-kes-4500-scissor-lift-gone.jpg", alt: "Social media post: KES 4500 Scissor Lift Gone!" }] },
+    { id: "kes-20251113-1", title: "Scissor Lift Out on Rental", category: "Equipment", year: "Nov 13, 2025", date: "2025-11-13", ratio: "1200 / 628", purpose: "announcing that a KES scissor lift was now out on rental", link: "https://www.instagram.com/p/DRAbt1hCoH_/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-11-13-scissor-lift-out-on-rental.jpg", alt: "Social media post: Scissor Lift Out on Rental" }] },
+    { id: "kes-20251111-1", title: "Lest We Forget", category: "Team, events and holidays", year: "Nov 11, 2025", date: "2025-11-11", ratio: "650 / 366", purpose: "honouring Remembrance Day", link: "https://www.instagram.com/p/DQ65iS9D1hR/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-11-11-lest-we-forget.jpg", alt: "Social media post: Lest We Forget" }] },
+    { id: "kes-20251031-1", title: "Happy Halloween", category: "Team, events and holidays", year: "Oct 31, 2025", date: "2025-10-31", ratio: "1200 / 1200", purpose: "wishing the community a happy Halloween", link: "https://www.instagram.com/p/DQfOgRujzW9/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-10-31-happy-halloween.jpg", alt: "Social media post: Happy Halloween" }] },
+    { id: "kes-20250930-1", title: "We Build Bridges Too!", category: "Equipment", year: "Sep 30, 2025", date: "2025-09-30", ratio: "1200 / 628", purpose: "promoting the KES portable logging bridges, built for low-volume crown land roads", link: "https://www.instagram.com/p/DPPF2__j2dB/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-09-30-we-build-bridges-too.jpg", alt: "Social media post: We Build Bridges Too!" }] },
+    { id: "kes-20250926-1", title: "KES SL 4500 Scissor Lift Sold", category: "Equipment", year: "Sep 26, 2025", date: "2025-09-26", ratio: "1200 / 628", purpose: "announcing that a KES SL 4500 scissor lift had been sold and was on its way to a customer", link: "https://www.instagram.com/p/DPEZJtLDymP/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-09-26-kes-sl-4500-scissor-lift-sold.jpg", alt: "Social media post: KES SL 4500 Scissor Lift Sold" }] },
   ],
 
   /* ---------- Software development (software.html) ---------- */

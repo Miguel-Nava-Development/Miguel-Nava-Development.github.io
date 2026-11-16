@@ -6,6 +6,7 @@ A hand-built site with no framework, no build step and no page builder. It is pl
 index.html        Home page: two big choices, Marketing and Software
 marketing.html    Marketing: what you do, the apps you use (with logos) and the jobs you did the work at
 tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
+kes.html          KES Equipment: social media posts
 software.html     Software projects
 about.html        About, skills, experience
 contact.html      Contact form (your email address is never shown on the site)
@@ -13,7 +14,7 @@ contact.html      Contact form (your email address is never shown on the site)
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), logos/ (app logos), software/ and about/
+assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), logos/ (app logos), software/ and about/
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -61,9 +62,11 @@ The page `tim-mcdowell.html` has two sections, and both are filled from `js/cont
 3. A flyer with three or more pages of the same shape opens as a flip book on a computer and one page at a time on a phone. Add `mode: "single"` to always show one page at a time (good for ads with different page shapes, or a tall banner).
 4. A direct link to one flyer looks like `tim-mcdowell.html#booklet=cim-flyer-2026`.
 
-Keep the large original files (`TME Work` and anything ending in `.pdf`, `.indd` or `.ai`) out of the website folder you upload. They are too big for the site and only the exported images are needed.
+Keep the large original files (the `Companies` folder, `TME Work`, and anything ending in `.pdf`, `.indd` or `.ai`) out of the website folder you upload. They are too big for the site and only the exported images are needed.
 
-To add another company, copy `tim-mcdowell.html` to a new name, add its own lists in `js/content.js`, and add its job block to the list in `marketing.html` (step 2 above). Inside the copy, change the "Back to Marketing" link only if you move the jobs list.
+**KES Equipment** (`kes.html`) works the same way as the social media posts above, with its own list, `kesSocial`, and images in `assets/kes/social/`. It has no flyers section.
+
+To add another company, copy `kes.html` (social posts only) or `tim-mcdowell.html` (posts plus flyers) to a new name, add its own lists in `js/content.js`, and add its block to the list in `marketing.html` (step 2 above). A block only needs role and dates if you want them shown. Inside the copy, change the "Back to Marketing" link only if you move the jobs list.
 
 ### 4. Add software projects
 Same idea: copy a block inside the `software` list in `js/content.js`. Put a screenshot in `assets/software/`. Replace the `"#"` in `links` with the real address, or delete a link you do not have.
