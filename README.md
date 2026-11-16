@@ -7,6 +7,7 @@ index.html        Home page: two big choices, Marketing and Software
 marketing.html    Marketing: what you do, the apps you use (with logos) and the jobs you did the work at
 tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
 kes.html          KES Equipment: social media posts
+gold-leaf.html    Gold Leaf Financial Group: photos and short clips of you at work
 software.html     Software projects
 about.html        About, skills, experience
 contact.html      Contact form (your email address is never shown on the site)
@@ -14,7 +15,7 @@ contact.html      Contact form (your email address is never shown on the site)
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), logos/ (app logos), software/ and about/
+assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos and clips), logos/ (app logos), software/ and about/
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -65,6 +66,8 @@ The page `tim-mcdowell.html` has two sections, and both are filled from `js/cont
 Keep the large original files (the `Companies` folder, `TME Work`, and anything ending in `.pdf`, `.indd` or `.ai`) out of the website folder you upload. They are too big for the site and only the exported images are needed.
 
 **KES Equipment** (`kes.html`) works the same way as the social media posts above, with its own list, `kesSocial`, and images in `assets/kes/social/`. It has no flyers section.
+
+**Gold Leaf Financial Group** (`gold-leaf.html`) shows photos and short clips of you at work, from the list `goldLeaf` in `js/content.js`, with files in `assets/gold-leaf/`. Each item needs an id, title, category ("Photos" or "Clips"), ratio, a one-sentence summary and its images; add `video: "assets/gold-leaf/name.mp4"` for a clip (its first image is the poster). There are no dates or links. Keep clips short and small, and check for background audio before you publish (the two clips here were saved without sound).
 
 To add another company, copy `kes.html` (social posts only) or `tim-mcdowell.html` (posts plus flyers) to a new name, add its own lists in `js/content.js`, and add its block to the list in `marketing.html` (step 2 above). A block only needs role and dates if you want them shown. Inside the copy, change the "Back to Marketing" link only if you move the jobs list.
 

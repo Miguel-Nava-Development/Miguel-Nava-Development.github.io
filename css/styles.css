@@ -735,6 +735,7 @@ button { font: inherit; color: inherit; }
 .company--text .company-body { margin-top: 0; }
 .company-boards--pair { grid-template-columns: 1fr 1fr; }
 .company-boards--kes { grid-template-columns: 1.911fr 1fr 1fr; }
+.company-boards--gold { grid-template-columns: 1.777fr 1.333fr 0.75fr; }
 .company-boards--pair .board { background: var(--artboard); }
 
 @media (max-width: 560px) {

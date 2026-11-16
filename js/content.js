@@ -10,6 +10,7 @@
   - Items appear in the order you list them. Newest first works well.
   - Marketing work for Tim McDowell Equipment Ltd. is in tmeSocial and tmeBooklets.
   - Marketing work for KES Equipment is in kesSocial.
+  - Photos and clips from Gold Leaf Financial Group are in goldLeaf.
     The software projects further down are still sample content: replace them with your own.
 */
 
@@ -275,6 +276,25 @@ window.PORTFOLIO = {
     { id: "kes-20251031-1", title: "Happy Halloween", category: "Team, events and holidays", year: "Oct 31, 2025", date: "2025-10-31", ratio: "1200 / 1200", purpose: "wishing the community a happy Halloween", link: "https://www.instagram.com/p/DQfOgRujzW9/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-10-31-happy-halloween.jpg", alt: "Social media post: Happy Halloween" }] },
     { id: "kes-20250930-1", title: "We Build Bridges Too!", category: "Equipment", year: "Sep 30, 2025", date: "2025-09-30", ratio: "1200 / 628", purpose: "promoting the KES portable logging bridges, built for low-volume crown land roads", link: "https://www.instagram.com/p/DPPF2__j2dB/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-09-30-we-build-bridges-too.jpg", alt: "Social media post: We Build Bridges Too!" }] },
     { id: "kes-20250926-1", title: "KES SL 4500 Scissor Lift Sold", category: "Equipment", year: "Sep 26, 2025", date: "2025-09-26", ratio: "1200 / 628", purpose: "announcing that a KES SL 4500 scissor lift had been sold and was on its way to a customer", link: "https://www.instagram.com/p/DPEZJtLDymP/", linkLabel: "Instagram", images: [{ src: "assets/kes/social/2025-09-26-kes-sl-4500-scissor-lift-sold.jpg", alt: "Social media post: KES SL 4500 Scissor Lift Sold" }] },
+  ],
+
+  /* ---------- Gold Leaf Financial Group: photos and clips (gold-leaf.html) ---------- */
+  /* Photos and short clips of me at work. There are no dates or links, so each item only needs:
+     id, title, category ("Photos" or "Clips"), ratio, summary (one sentence under the title) and images.
+     Add  video: "assets/gold-leaf/name.mp4"  for a clip; its first image is the poster. */
+  goldLeaf: [
+    { id: "gold-leaf-recording-desk", title: "Recording at my desk", category: "Photos", ratio: "1400 / 1050", summary: "Headphones on and a USB microphone in front of me, working at the laptop next to the green screen.", images: [
+      { src: "assets/gold-leaf/recording-desk-1.jpg", alt: "Miguel Nava in headphones at a laptop, with a USB microphone in front and a green screen behind" },
+      { src: "assets/gold-leaf/recording-desk-2.jpg", alt: "Miguel Nava in headphones at a laptop, with a USB microphone and a green screen behind" }
+    ] },
+    { id: "gold-leaf-studio-corner", title: "The studio corner", category: "Photos", ratio: "1050 / 1400", summary: "A corner of the office set up with a green screen, lights and a standing desk.", images: [
+      { src: "assets/gold-leaf/studio-corner-1.jpg", alt: "Miguel Nava standing at a laptop on a rolling stand beside a green screen and studio lights" },
+      { src: "assets/gold-leaf/studio-corner-2.jpg", alt: "Miguel Nava at the standing desk in the studio corner, holding up two fingers" }
+    ] },
+    { id: "gold-leaf-boardroom", title: "At the boardroom table", category: "Photos", ratio: "1400 / 1050", summary: "Working from the boardroom table with a microphone, keyboard and laptop.", images: [{ src: "assets/gold-leaf/boardroom-table.jpg", alt: "Miguel Nava seated at a boardroom table with a microphone, keyboard and laptop" }] },
+    { id: "gold-leaf-light-tent", title: "Inside the light tent", category: "Photos", ratio: "1400 / 788", summary: "Next to the green screen and lights, inside a light tent.", images: [{ src: "assets/gold-leaf/light-tent.jpg", alt: "Miguel Nava sitting inside a light tent next to a green screen and studio light" }] },
+    { id: "gold-leaf-clip-1", title: "Clip at the recording desk", category: "Clips", ratio: "480 / 848", summary: "A short clip at the recording desk with headphones on.", video: "assets/gold-leaf/clip-1.mp4", images: [{ src: "assets/gold-leaf/clip-1.jpg", alt: "Still from a short clip of Miguel Nava at the recording desk" }] },
+    { id: "gold-leaf-clip-2", title: "Another clip at the desk", category: "Clips", ratio: "480 / 848", summary: "A second short clip at the recording desk.", video: "assets/gold-leaf/clip-2.mp4", images: [{ src: "assets/gold-leaf/clip-2.jpg", alt: "Still from a second short clip of Miguel Nava at the recording desk" }] },
   ],
 
   /* ---------- Software development (software.html) ---------- */
