@@ -110,6 +110,9 @@ A name like `miguelnava.com` looks more professional on a résumé than a `githu
 
 Note: `404.html` uses links that start with `/`, which works at the root of a domain (your own domain or `your-username.github.io`). If you host in a sub-folder, remove the leading `/` from its links.
 
+## Keep the site link-only (hidden from search engines)
+Every page has `<meta name="robots" content="noindex, nofollow">` in its `<head>`. Google, Bing and other well-behaved search engines will not list the site, so people only find it if you give them the link. This is not a password: anyone who has or guesses the address can open it, and the repository on GitHub is public. To make the site searchable later, delete that one line from each `.html` file and push. Do not also add a `Disallow` rule in a `robots.txt`: search engines that cannot read the pages will not see the `noindex` instruction.
+
 ## Before you share the link
 - [ ] Name, location and social links replaced
 - [ ] Sample images and sample projects removed
