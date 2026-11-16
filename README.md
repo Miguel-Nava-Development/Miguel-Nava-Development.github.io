@@ -3,7 +3,8 @@
 A hand-built site with no framework, no build step and no page builder. It is plain HTML, CSS and JavaScript, so it runs anywhere and you can read every line.
 
 ```
-index.html        Marketing (the home page): lists the companies you have done work for
+index.html        Home page: two big choices, Marketing and Software
+marketing.html    Marketing: what you do, the apps you use (with logos) and the jobs you did the work at
 tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
 software.html     Software projects
 about.html        About, skills, experience
@@ -12,7 +13,7 @@ contact.html      Contact form (your email address is never shown on the site)
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), software/ and about/
+assets/           Your images: tme/ (Tim McDowell work), logos/ (app logos), software/ and about/
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -31,9 +32,20 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 | --- | --- |
 | `Miguel Nava` | Your name, exactly as you want it shown (check this one is right) |
 | `Open to full-time or project-based roles` | Your availability, or delete the line |
-| `href="#"` on GitHub, LinkedIn, Behance | Your profile links (in `index.html`, `software.html`, `about.html`) |
+| `href="#"` on GitHub, LinkedIn, Behance | Your profile links (in `index.html`, `marketing.html`, `software.html`, `about.html`) |
 
-### 2. Add marketing work (Tim McDowell Equipment Ltd.)
+### 2. The Marketing page and its jobs
+`marketing.html` has three parts, all plain HTML you can edit in any text editor:
+
+- **What I do**: six short highlights (`<li class="skill">`). Change the wording or add one by copying a block.
+- **The apps I work in**: a paragraph, then a tile for each app (`<li class="tool">`). The logos are in `assets/logos/`. To add an app, drop its logo in that folder (an SVG is best) and copy a tile. To remove one, delete its tile.
+- **Where I did this work**: one block per job. Jobs with work to show link to their own page (see below). A job without a page yet uses the plain block with the note "Photos from this job will be added here", which you can delete or reword.
+
+To add a job: copy one `<li>` inside `<ul class="companies">`, change the name, role, dates and text, and point the link at the new page. The comment above the list repeats these steps. The home page links to Marketing, not to individual jobs, so you do not need to change it.
+
+The app logos are the latest versions of each brand's icon, in the brand's colours. Brand logos belong to their owners and are used here only to show which apps you work in. The Final Cut Pro icon is a small 75 px image; if it looks soft on your screen, swap in a larger copy from Apple's own site, named `final-cut-pro.png`.
+
+### 3. Add marketing work (Tim McDowell Equipment Ltd.)
 The page `tim-mcdowell.html` has two sections, and both are filled from `js/content.js`.
 
 **Social media posts and videos** (`tmeSocial`)
@@ -51,22 +63,22 @@ The page `tim-mcdowell.html` has two sections, and both are filled from `js/cont
 
 Keep the large original files (`TME Work` and anything ending in `.pdf`, `.indd` or `.ai`) out of the website folder you upload. They are too big for the site and only the exported images are needed.
 
-To add another company, copy `tim-mcdowell.html` to a new name, add its own lists in `js/content.js`, and copy the company block in `index.html`.
+To add another company, copy `tim-mcdowell.html` to a new name, add its own lists in `js/content.js`, and add its job block to the list in `marketing.html` (step 2 above). Inside the copy, change the "Back to Marketing" link only if you move the jobs list.
 
-### 3. Add software projects
+### 4. Add software projects
 Same idea: copy a block inside the `software` list in `js/content.js`. Put a screenshot in `assets/software/`. Replace the `"#"` in `links` with the real address, or delete a link you do not have.
 
-### 4. Edit the About page
+### 5. Edit the About page
 `about.html` is plain HTML. Replace the instruction text with your own. To add a résumé, put `resume.pdf` in `assets/`, then remove the comment markers around the "Download résumé" link near the bottom of the file.
 
-### 5. Delete the samples
+### 6. Delete the samples
 The software projects, the About page text and the About photo are still samples. Every sample image says "Sample image" in its corner. Once your own work is in, delete the `sample-*.svg` files and the sample entries in `js/content.js`. The old `assets/design/` samples are no longer used and can be deleted.
 
 ## Add another tab (photography, video, illustration...)
 1. Copy `tim-mcdowell.html` to a new name, for example `photography.html`.
 2. In the copy, change `data-collection="tmeSocial"` to `data-collection="photography"`, update the `<title>` and headline, and delete the section you do not need.
 3. In `js/content.js`, add a `photography: [ ... ]` list that follows the same format as `tmeSocial`.
-4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page.
+4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page. The menu on every page also lists Marketing (`marketing.html`), Software, About and Contact.
 
 ## Switch on the contact form
 The Contact page has a form (name, email, reason for reaching out). Visitors never see your email address: their message goes to a free form service called Web3Forms, which forwards it to your inbox.

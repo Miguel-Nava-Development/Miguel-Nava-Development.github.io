@@ -680,6 +680,67 @@ button { font: inherit; color: inherit; }
   .company-boards { gap: 12px; }
 }
 
+/* ---------- Marketing page: skills, apps and jobs ---------- */
+.hero-jump { margin-top: clamp(1.25rem, 2.5vw, 2rem); }
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
+  gap: clamp(1.75rem, 3vw, 2.75rem) var(--gap);
+  list-style: none;
+  padding: 0;
+}
+.skill h3 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 1.05;
+}
+.skill p { max-width: 26rem; }
+
+.apps-text {
+  max-width: 48rem;
+  font-size: var(--step-1);
+  line-height: 1.5;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  padding: 0;
+  list-style: none;
+}
+.tool {
+  display: grid;
+  align-content: start;
+  gap: 0.15rem;
+  padding: 1.25rem;
+  background: var(--artboard);
+}
+.tool img { width: 64px; height: 64px; margin-bottom: 0.9rem; }
+.tool-name { font-weight: 700; }
+.tool-use { color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.35; }
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 1.5rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.job-note { color: var(--ink-soft); font-weight: 500; }
+.company--text .company-body { margin-top: 0; }
+.company-boards--pair { grid-template-columns: 1fr 1fr; }
+.company-boards--pair .board { background: var(--artboard); }
+
+@media (max-width: 560px) {
+  .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tool { padding: 1rem; }
+}
+
 /* ---------- Flyer reader (flip book) ---------- */
 .reader {
   width: 100vw;
