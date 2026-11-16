@@ -143,7 +143,7 @@ button { font: inherit; color: inherit; }
   text-decoration: none;
 }
 .site-nav a:hover { border-bottom-color: var(--ink); }
-.site-nav a[aria-current="page"] { border-bottom-color: var(--ink); font-weight: 700; }
+.site-nav a[aria-current] { border-bottom-color: var(--ink); font-weight: 700; }
 .site-nav a.nav-cta {
   padding: 0.4rem 0.95rem;
   border: 2px solid var(--select);
@@ -152,6 +152,53 @@ button { font: inherit; color: inherit; }
   font-weight: 600;
 }
 .site-nav a.nav-cta:hover { background: var(--select-deep); border-color: var(--select-deep); }
+
+/* Marketing sub tabs: a drop-down under "Marketing" where hovering works, and a tab strip on the Marketing pages */
+.has-sub { position: relative; }
+.site-nav .subnav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -0.9rem;
+  z-index: 30;
+  min-width: 11rem;
+  margin: 0;
+  padding: 0.6rem 0.9rem 0.7rem;
+  list-style: none;
+  background: var(--artboard);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+.subnav li + li { margin-top: 0.15rem; }
+@media (hover: hover) {
+  .has-sub > a::after {
+    content: "";
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    margin-left: 0.45em;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-0.2em) rotate(45deg);
+  }
+  .has-sub:hover > .subnav,
+  .has-sub:focus-within > .subnav { display: block; }
+}
+
+.subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  padding-block: 0 0.25rem;
+  font-size: 0.9375rem;
+}
+.subtabs a {
+  padding: 0.2rem 0;
+  border-bottom: 2px solid transparent;
+  font-weight: 500;
+  text-decoration: none;
+}
+.subtabs a:hover { border-bottom-color: var(--ink); }
+.subtabs a[aria-current] { border-bottom-color: var(--select); font-weight: 700; }
 
 @media (max-width: 560px) {
   .site-header { position: static; }
@@ -737,6 +784,9 @@ button { font: inherit; color: inherit; }
 .company-boards--kes { grid-template-columns: 1.911fr 1fr 1fr; }
 .company-boards--gold { grid-template-columns: 1.777fr 1.333fr 0.75fr; }
 .company-boards--pair .board { background: var(--artboard); }
+.company-boards--mix { grid-template-columns: 0.648fr 1.911fr 1.333fr; }
+.company-boards--logos { grid-template-columns: repeat(4, 1fr); }
+.board--logo > img { padding: 22%; object-fit: contain; }
 
 @media (max-width: 560px) {
   .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }

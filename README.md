@@ -4,7 +4,9 @@ A hand-built site with no framework, no build step and no page builder. It is pl
 
 ```
 index.html        Home page: two big choices, Marketing and Software
-marketing.html    Marketing: what you do, the apps you use (with logos) and the jobs you did the work at
+marketing.html    Marketing: a two-choice page that leads to Experience and Skills
+experience.html   Marketing > Experience: the companies you did the work at, each linking to its page
+skills.html       Marketing > Skills: what you do, plus the apps you use (with logos)
 tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
 kes.html          KES Equipment: social media posts
 gold-leaf.html    Gold Leaf Financial Group: photos of you at work
@@ -34,16 +36,18 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 | --- | --- |
 | `Miguel Nava` | Your name, exactly as you want it shown (check this one is right) |
 | `Open to full-time or project-based roles` | Your availability, or delete the line |
-| `href="#"` on GitHub, LinkedIn, Behance | Your profile links (in `index.html`, `marketing.html`, `software.html`, `about.html`) |
+| `href="#"` on GitHub, LinkedIn, Behance | Your profile links (in the footer of every page) |
 
-### 2. The Marketing page and its jobs
-`marketing.html` has three parts, all plain HTML you can edit in any text editor:
+### 2. The Marketing pages (Marketing, Experience, Skills)
+Marketing has two sub tabs. They show as a drop-down under "Marketing" in the menu (on computers) and as a small tab strip on the Marketing pages (everywhere, including phones).
 
-- **What I do**: six short highlights (`<li class="skill">`). Change the wording or add one by copying a block.
-- **The apps I work in**: a paragraph, then a tile for each app (`<li class="tool">`). The logos are in `assets/logos/`. To add an app, drop its logo in that folder (an SVG is best) and copy a tile. To remove one, delete its tile.
-- **Where I did this work**: one block per job. Jobs with work to show link to their own page (see below). A job without a page yet uses the plain block with the note "Photos from this job will be added here", which you can delete or reword.
+- `marketing.html` is a plain two-choice page: Experience and Skills.
+- `skills.html` has two parts you can edit in any text editor:
+  - **What I do**: six short highlights (`<li class="skill">`). Change the wording or add one by copying a block.
+  - **The apps I work in**: a paragraph, then a tile for each app (`<li class="tool">`). The logos are in `assets/logos/`. To add an app, drop its logo in that folder (an SVG is best) and copy a tile. To remove one, delete its tile.
+- `experience.html` has one block per company. Companies with work to show link to their own page (see below). A company without a page yet can use the plain block described in the comment above the list.
 
-To add a job: copy one `<li>` inside `<ul class="companies">`, change the name, role, dates and text, and point the link at the new page. The comment above the list repeats these steps. The home page links to Marketing, not to individual jobs, so you do not need to change it.
+To add a job, open `experience.html`: copy one `<li>` inside `<ul class="companies">`, change the name, role, dates and text, and point the link at the new page. The comment above the list repeats these steps. The home page and the Marketing page do not list individual jobs, so you do not need to change them.
 
 The app logos are the latest versions of each brand's icon, in the brand's colours. Brand logos belong to their owners and are used here only to show which apps you work in. The Final Cut Pro icon is a small 75 px image; if it looks soft on your screen, swap in a larger copy from Apple's own site, named `final-cut-pro.png`.
 
@@ -69,7 +73,7 @@ Keep the large original files (the `Companies` folder, `TME Work`, and anything 
 
 **Gold Leaf Financial Group** (`gold-leaf.html`) shows photos of you at work, from the list `goldLeaf` in `js/content.js`, with files in `assets/gold-leaf/`. Each item needs an id, title, category ("Photos"), ratio, a one-sentence summary and its images. There are no dates or links. Remove metadata from phone photos before you add them (the copies here were resized and saved without it).
 
-To add another company, copy `kes.html` (social posts only) or `tim-mcdowell.html` (posts plus flyers) to a new name, add its own lists in `js/content.js`, and add its block to the list in `marketing.html` (step 2 above). A block only needs role and dates if you want them shown. Inside the copy, change the "Back to Marketing" link only if you move the jobs list.
+To add another company, copy `kes.html` (social posts only) or `tim-mcdowell.html` (posts plus flyers) to a new name, add its own lists in `js/content.js`, and add its block to the list in `experience.html` (step 2 above). A block only needs role and dates if you want them shown. The copy keeps the "Back to Experience" link and the Experience / Skills tab strip under the menu.
 
 ### 4. Add software projects
 Same idea: copy a block inside the `software` list in `js/content.js`. Put a screenshot in `assets/software/`. Replace the `"#"` in `links` with the real address, or delete a link you do not have.
@@ -84,7 +88,7 @@ The software projects, the About page text and the About photo are still samples
 1. Copy `tim-mcdowell.html` to a new name, for example `photography.html`.
 2. In the copy, change `data-collection="tmeSocial"` to `data-collection="photography"`, update the `<title>` and headline, and delete the section you do not need.
 3. In `js/content.js`, add a `photography: [ ... ]` list that follows the same format as `tmeSocial`.
-4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page. The menu on every page also lists Marketing (`marketing.html`), Software, About and Contact.
+4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page. The menu on every page also lists Marketing (with its drop-down for Experience and Skills), Software, About and Contact; if you copy a page, copy the whole menu block.
 
 ## Switch on the contact form
 The Contact page has a form (name, email, reason for reaching out). Visitors never see your email address: their message goes to a free form service called Web3Forms, which forwards it to your inbox.
