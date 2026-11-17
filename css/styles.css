@@ -232,7 +232,7 @@ button { font: inherit; color: inherit; }
 .chip:hover,
 .chip[aria-pressed="true"] { background: var(--ink); color: #fff; }
 
-/* ---------- Selection handles (the one signature device) ---------- */
+/* ---------- Selection handles: shown on pictures when hovered or focused ---------- */
 .handles {
   position: absolute;
   inset: 0;
@@ -269,19 +269,11 @@ button { font: inherit; color: inherit; }
   letter-spacing: -0.01em;
 }
 
-.sel {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-  margin-inline: -0.08em;
-  padding: 0 0.08em 0.04em;
-  text-decoration: none;
-}
-.sel:hover { text-decoration: none; }
-.sel.is-active > .handles,
-.sel:hover > .handles,
-.sel:focus-visible > .handles { opacity: 1; }
-.sel:focus-visible { outline: none; }
+/* The two words on the home and Software headlines are links: they turn blue on hover and focus. */
+.hero-link { text-decoration: none; }
+.hero-link:hover,
+.hero-link:focus-visible { color: var(--select); }
+.hero-link:focus-visible { outline: 3px solid var(--select); outline-offset: 0.08em; }
 
 .hero-meta {
   display: grid;
@@ -296,26 +288,6 @@ button { font: inherit; color: inherit; }
 
 @media (max-width: 760px) {
   .hero-meta { grid-template-columns: 1fr; }
-}
-
-/* One orchestrated moment: the headline selects itself once on load. */
-@media (prefers-reduced-motion: no-preference) {
-  .sel.is-active > .handles { animation: handles-show 0.01s 0.3s both; }
-  .sel.is-active > .handles::before { animation: box-draw 0.45s 0.3s cubic-bezier(0.3, 0.7, 0.2, 1) both; }
-  .sel.is-active > .handles i { animation: handle-pop 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.5) both; }
-  .sel.is-active > .handles i:nth-child(1) { animation-delay: 0.3s; }
-  .sel.is-active > .handles i:nth-child(2) { animation-delay: 0.5s; }
-  .sel.is-active > .handles i:nth-child(4) { animation-delay: 0.7s; }
-  .sel.is-active > .handles i:nth-child(3) { animation-delay: 0.62s; }
-}
-@keyframes handles-show { from { opacity: 0; } to { opacity: 1; } }
-@keyframes box-draw {
-  from { clip-path: inset(0 100% 100% 0); }
-  to { clip-path: inset(-8px -8px -8px -8px); }
-}
-@keyframes handle-pop {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
 }
 
 /* ---------- Work: toolbar and wall ---------- */
@@ -686,7 +658,7 @@ button { font: inherit; color: inherit; }
   line-height: 1;
   letter-spacing: -0.01em;
 }
-.company--titled .company-name { margin-bottom: 1.5rem; }
+.company--titled .company-name { margin-bottom: clamp(1.75rem, 3.2vw, 2.75rem); }
 .company--titled .company-body { margin-top: 1.5rem; }
 .company-text { max-width: 38rem; font-size: var(--step-1); line-height: 1.45; }
 .company:hover .btn { background: var(--select-deep); border-color: var(--select-deep); }
