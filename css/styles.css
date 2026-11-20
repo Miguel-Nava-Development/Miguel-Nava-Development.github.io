@@ -674,6 +674,9 @@ button { font: inherit; color: inherit; }
 }
 .company--titled .company-name { margin-bottom: clamp(1.75rem, 3.2vw, 2.75rem); }
 .company--titled .company-body { margin-top: 1.5rem; }
+/* Home cards: title and text first, then the pictures, then the button. */
+.company--described .company-body { margin-top: 0; margin-bottom: clamp(1.75rem, 3.2vw, 2.75rem); }
+.company-foot { margin-top: 1.75rem; }
 .company-text { max-width: 38rem; font-size: var(--step-1); line-height: 1.45; }
 .company:hover .btn { background: var(--select-deep); border-color: var(--select-deep); }
 
