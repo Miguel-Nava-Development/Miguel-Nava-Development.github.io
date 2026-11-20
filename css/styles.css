@@ -513,8 +513,8 @@ button { font: inherit; color: inherit; }
 .project-summary { max-width: 36rem; }
 .stack {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(4.9rem, 1fr));
-  gap: clamp(8px, 1.1vw, 12px);
+  grid-template-columns: repeat(auto-fill, 4.5rem);
+  gap: 8px;
   padding: 0;
   list-style: none;
 }
@@ -522,12 +522,12 @@ button { font: inherit; color: inherit; }
   display: grid;
   justify-items: center;
   align-content: start;
-  gap: 0.5rem;
-  padding: 0.85rem 0.35rem 0.7rem;
+  gap: 0.35rem;
+  padding: 0.6rem 0.2rem 0.5rem;
   background: var(--artboard);
 }
-.stack-item img { width: 44px; height: 44px; }
-.stack-item span { font-size: 0.8125rem; font-weight: 700; line-height: 1.1; }
+.stack-item img { width: 32px; height: 32px; }
+.stack-item span { font-size: 0.6875rem; font-weight: 700; line-height: 1.1; }
 .stack-item--text { align-content: center; }
 .project-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
 
@@ -676,13 +676,14 @@ button { font: inherit; color: inherit; }
 .company--titled .company-body { margin-top: 1.5rem; }
 /* Home cards: title and text first, then the pictures, then the button. */
 .company--described .company-body { margin-top: 0; margin-bottom: clamp(1.75rem, 3.2vw, 2.75rem); }
-.company--described .company-boards {
-  --tile: clamp(4rem, 6.9vw, 5.75rem);
+.company--described .company-boards,
+.company-boards--logos {
+  --tile: clamp(4rem, 5.2vw, 4.5rem);
   grid-template-columns: repeat(auto-fill, var(--tile));
   justify-content: start;
   gap: 12px;
 }
-.company--described .board--label { padding: 6%; font-size: clamp(0.66rem, 1.05vw, 0.9rem); line-height: 1.05; }
+.company--described .board--label { padding: 4%; font-size: 0.66rem; line-height: 1.05; }
 .company-foot { margin-top: clamp(1.75rem, 3.2vw, 2.75rem); }
 .company-text { max-width: 38rem; font-size: var(--step-1); line-height: 1.45; }
 .company:hover .btn { background: var(--select-deep); border-color: var(--select-deep); }
@@ -752,8 +753,8 @@ button { font: inherit; color: inherit; }
 
 .tools {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: clamp(12px, 1.6vw, 20px);
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 12px;
   margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
   padding: 0;
   list-style: none;
@@ -762,12 +763,12 @@ button { font: inherit; color: inherit; }
   display: grid;
   align-content: start;
   gap: 0.15rem;
-  padding: 1.25rem;
+  padding: 1rem;
   background: var(--artboard);
 }
-.tool img { width: 64px; height: 64px; margin-bottom: 0.9rem; }
+.tool img { width: 40px; height: 40px; margin-bottom: 0.6rem; }
 .tool-name { font-weight: 700; }
-.tool-use { color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.35; }
+.tool-use { color: var(--ink-soft); font-size: 0.875rem; line-height: 1.35; }
 
 .job-meta {
   display: flex;
@@ -783,7 +784,6 @@ button { font: inherit; color: inherit; }
 .company-boards--gold { grid-template-columns: 1.777fr 1.333fr 0.75fr; }
 .company-boards--pair .board { background: var(--artboard); }
 .company-boards--mix { grid-template-columns: 0.648fr 1.911fr 1.333fr; }
-.company-boards--logos { grid-template-columns: repeat(4, 1fr); }
 .board--logo > img { padding: 22%; object-fit: contain; }
 .board--label {
   display: grid;
@@ -828,7 +828,7 @@ button { font: inherit; color: inherit; }
 
 @media (max-width: 560px) {
   .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tool { padding: 1rem; }
+  .tool { padding: 0.85rem; }
 }
 
 /* ---------- Flyer reader (flip book) ---------- */
