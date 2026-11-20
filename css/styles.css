@@ -776,6 +776,36 @@ button { font: inherit; color: inherit; }
 .company-boards--logos { grid-template-columns: repeat(4, 1fr); }
 .board--logo > img { padding: 22%; object-fit: contain; }
 
+/* ---------- Mining page ---------- */
+.company-boards--mining { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.companies--ruled > li { padding-top: 1.5rem; border-top: 2px solid var(--ink); }
+.companies--ruled .company-body { margin-top: 1.75rem; }
+.companies--ruled .company--text .company-body { margin-top: 0; }
+.company-sub {
+  margin-top: 0.75rem;
+  font-size: var(--step-1);
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 1.1;
+}
+.certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  gap: clamp(8px, 1.1vw, 12px);
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+.certs li {
+  display: flex;
+  align-items: center;
+  min-height: 4.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--artboard);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 @media (max-width: 560px) {
   .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tool { padding: 1rem; }

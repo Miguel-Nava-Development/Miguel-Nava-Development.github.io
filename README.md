@@ -3,7 +3,7 @@
 A hand-built site with no framework, no build step and no page builder. It is plain HTML, CSS and JavaScript, so it runs anywhere and you can read every line.
 
 ```
-index.html        Home page: two big choices, Marketing and Software
+index.html        Home page: three big choices, Marketing, Software and Mining
 marketing.html    Marketing: a two-choice page that leads to Experience and Skills
 experience.html   Marketing > Experience: the companies you did the work at, each linking to its page
 skills.html       Marketing > Skills: what you do, plus the apps you use (with logos)
@@ -11,6 +11,7 @@ tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers a
 kes.html          KES Equipment: social media posts
 gold-leaf.html    Gold Leaf Financial Group: photos of you at work
 software.html     Software projects
+mining.html       Mining: confined space rescue at NATT Safety (Vale shutdown) and heavy equipment work at Tim McDowell
 about.html        About, skills, experience
 contact.html      Contact form (your email address is never shown on the site)
 404.html          Shown when someone opens a link that does not exist
@@ -80,17 +81,20 @@ Each project is one block in the `software` list in `js/content.js`: a title, a 
 Each tool name is matched to its logo in the `logos` list just above `software`. To use a tool that is not there yet, put its logo in `assets/logos/` and add one line to `logos`. A name with no logo still shows, as a plain tile.
 The logos come from Simple Icons (CC0) and the Material Design Icons set (PowerShell), recoloured to each brand.
 
-### 5. Edit the About page
+### 5. The Mining page
+`mining.html` is plain HTML, like `experience.html`. It has two blocks: NATT Safety (confined space rescuer, with the certificates as white tiles) and Tim McDowell Equipment (three equipment photos, text, and a button to `tim-mcdowell.html`). To change the wording or add a certificate, edit the text or copy a `<li>` in the `certs` list. To add a video or photos of the shutdown, put them in `assets/` (short lowercase names) and ask for them to be added under the NATT Safety text. Remove metadata from phone photos first. The text comes from the résumé: NATT Safety, April 2024 to February 2025.
+
+### 6. Edit the About page
 `about.html` is plain HTML. Replace the instruction text with your own. To add a résumé, put `resume.pdf` in `assets/`, then remove the comment markers around the "Download résumé" link near the bottom of the file.
 
-### 6. Delete the samples
+### 7. Delete the samples
 The About page text and the About photo are still samples. The sample image says "Sample image" in its corner; once your own photo is in, delete `assets/about/sample-portrait.svg`. The old `assets/design/` samples are no longer used and can be deleted.
 
 ## Add another tab (photography, video, illustration...)
 1. Copy `tim-mcdowell.html` to a new name, for example `photography.html`.
 2. In the copy, change `data-collection="tmeSocial"` to `data-collection="photography"`, update the `<title>` and headline, and delete the section you do not need.
 3. In `js/content.js`, add a `photography: [ ... ]` list that follows the same format as `tmeSocial`.
-4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page. The menu on every page also lists Marketing (with its drop-down for Experience and Skills), Software, About and Contact; if you copy a page, copy the whole menu block.
+4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page. The menu on every page also lists Marketing (with its drop-down for Experience and Skills), Software, Mining, About and Contact; if you copy a page, copy the whole menu block.
 
 ## Switch on the contact form
 The Contact page has a form (name, email, reason for reaching out). Visitors never see your email address: their message goes to a free form service called Web3Forms, which forwards it to your inbox.
