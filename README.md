@@ -17,7 +17,7 @@ contact.html      Contact form (your email address is never shown on the site)
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app logos), software/ and about/
+assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos) and about/
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -76,13 +76,15 @@ Keep the large original files (the `Companies` folder, `TME Work`, and anything 
 To add another company, copy `kes.html` (social posts only) or `tim-mcdowell.html` (posts plus flyers) to a new name, add its own lists in `js/content.js`, and add its block to the list in `experience.html` (step 2 above). A block only needs role and dates if you want them shown. The copy keeps the "Back to Experience" link and the Experience / Skills tab strip under the menu.
 
 ### 4. Add software projects
-Same idea: copy a block inside the `software` list in `js/content.js`. Put a screenshot in `assets/software/`. Replace the `"#"` in `links` with the real address, or delete a link you do not have.
+Each project is one block in the `software` list in `js/content.js`: a title, a short `summary` and a `stack` list of the tools used (for example `["Python", "Qt"]`). The page shows the title, then a logo tile for each tool in the stack, then the summary. To add a project, copy a block. `links` is optional (for example `{ label: "Source code", url: "https://..." }`).
+Each tool name is matched to its logo in the `logos` list just above `software`. To use a tool that is not there yet, put its logo in `assets/logos/` and add one line to `logos`. A name with no logo still shows, as a plain tile.
+The logos come from Simple Icons (CC0) and the Material Design Icons set (PowerShell), recoloured to each brand.
 
 ### 5. Edit the About page
 `about.html` is plain HTML. Replace the instruction text with your own. To add a résumé, put `resume.pdf` in `assets/`, then remove the comment markers around the "Download résumé" link near the bottom of the file.
 
 ### 6. Delete the samples
-The software projects, the About page text and the About photo are still samples. Every sample image says "Sample image" in its corner. Once your own work is in, delete the `sample-*.svg` files and the sample entries in `js/content.js`. The old `assets/design/` samples are no longer used and can be deleted.
+The About page text and the About photo are still samples. The sample image says "Sample image" in its corner; once your own photo is in, delete `assets/about/sample-portrait.svg`. The old `assets/design/` samples are no longer used and can be deleted.
 
 ## Add another tab (photography, video, illustration...)
 1. Copy `tim-mcdowell.html` to a new name, for example `photography.html`.

@@ -746,29 +746,24 @@
       return;
     }
 
+    var logos = (window.PORTFOLIO && window.PORTFOLIO.logos) || {};
+
     items.forEach(function (p) {
-      var figure = h('figure', { 'class': 'frame project-figure' }, [
-        h('div', { 'class': 'frame-label' }, [
-          h('span', { 'class': 'frame-title', text: p.kind || 'Project' }),
-          h('span', { 'class': 'frame-year', text: p.year ? String(p.year) : '' })
-        ])
-      ]);
-      if (p.image) figure.appendChild(artwork(p.image, p.ratio || '16 / 10', undefined, false, 'project-art'));
-
-      var specs = h('dl', { 'class': 'specs' });
-      specRow(specs, 'Role', p.role);
-
       var body = h('div', { 'class': 'project-body' }, [
-        h('h2', { 'class': 'project-title', text: p.title }),
-        p.summary ? h('p', { 'class': 'project-summary', text: p.summary }) : null,
-        specs.children.length ? specs : null
+        h('h2', { 'class': 'project-title', text: p.title })
       ]);
 
       if (p.stack && p.stack.length) {
         body.appendChild(h('ul', { 'class': 'stack', 'aria-label': 'Built with' }, p.stack.map(function (tech) {
-          return h('li', { text: tech });
+          var logo = logos[tech];
+          return h('li', { 'class': logo ? 'stack-item' : 'stack-item stack-item--text' }, [
+            logo ? h('img', { src: logo, alt: '', width: 44, height: 44 }) : null,
+            h('span', { text: tech })
+          ]);
         })));
       }
+
+      if (p.summary) body.appendChild(h('p', { 'class': 'project-summary', text: p.summary }));
 
       if (p.links && p.links.length) {
         body.appendChild(h('p', { 'class': 'project-links' }, p.links.map(function (link, i) {
@@ -784,7 +779,7 @@
         })));
       }
 
-      list.appendChild(h('li', { 'class': 'project' }, [figure, body]));
+      list.appendChild(h('li', { 'class': 'project' }, [body]));
     });
   }
 

@@ -11,7 +11,8 @@
   - Marketing work for Tim McDowell Equipment Ltd. is in tmeSocial and tmeBooklets.
   - Marketing work for KES Equipment is in kesSocial.
   - Photos from Gold Leaf Financial Group are in goldLeaf.
-    The software projects further down are still sample content: replace them with your own.
+  - Software projects are in software (one block each). "stack" lists the tools used; each name is
+    shown with its logo from the logos list just above it.
 */
 
 window.PORTFOLIO = {
@@ -295,64 +296,45 @@ window.PORTFOLIO = {
   ],
 
   /* ---------- Software development (software.html) ---------- */
+  /* Logo for each tool name used in a "stack" list. To show a new tool, drop its logo in assets/logos/
+     and add one line here. A name that is not listed here still shows, as plain text. */
+  logos: {
+    "Python": "assets/logos/python.svg",
+    "Qt": "assets/logos/qt.svg",
+    "OpenCV": "assets/logos/opencv.svg",
+    "NumPy": "assets/logos/numpy.svg",
+    "SQLite": "assets/logos/sqlite.svg",
+    "HTML": "assets/logos/html5.svg",
+    "CSS": "assets/logos/css.svg",
+    "JavaScript": "assets/logos/javascript.svg",
+    "PowerShell": "assets/logos/powershell.svg"
+  },
+
+  /* One block per project, in the order shown. "links" is optional: { label: "Source code", url: "https://..." }. */
   software: [
     {
-      id: "team-task-board",
-      title: "Team task board",
-      kind: "Web app",                       // small label above the screenshot
-      year: 2025,
-      role: "Full-stack developer",
-      summary: "Sample description. Say what the app does, who it is for, and the hardest problem you solved while building it.",
-      stack: ["JavaScript", "React", "Node.js", "PostgreSQL"],
-      ratio: "16 / 10",
-      image: { src: "assets/software/sample-task-board.svg", alt: "Task board with three columns of cards" },
-      links: [
-        { label: "Live site", url: "#" },    // replace "#" with the real address, or delete the line
-        { label: "Source code", url: "#" }
-      ]
+      id: "magnifying-match",
+      title: "Magnifying Match",
+      summary: "A Windows app that watches the screen and stops when a picture you gave it shows up. I built it for grinding a game for a rare drop: when the item appears it plays a sound, shows a desktop notification and jumps to the front with a screenshot of the match. It runs entirely on the computer.",
+      stack: ["Python", "Qt", "OpenCV", "NumPy"]
     },
     {
-      id: "analytics-dashboard",
-      title: "Analytics dashboard",
-      kind: "Web app",
-      year: 2025,
-      role: "Front-end developer",
-      summary: "Sample description. A dashboard with summary tiles and a bar chart built from a live data feed.",
-      stack: ["TypeScript", "D3", "Python", "FastAPI"],
-      ratio: "16 / 10",
-      image: { src: "assets/software/sample-dashboard.svg", alt: "Dashboard with three summary tiles and a bar chart" },
-      links: [
-        { label: "Live site", url: "#" },
-        { label: "Source code", url: "#" }
-      ]
+      id: "jobwatch",
+      title: "JobWatch",
+      summary: "A Windows app that looks for new jobs around Sudbury and shows them as cards that link to the postings. It also keeps a history of every application, with charts of what was sent, what got a reply and what led to an interview, and it can run each morning and send a notification. The history stays in a database on the computer.",
+      stack: ["Python", "SQLite", "HTML", "CSS", "JavaScript", "PowerShell"]
     },
     {
-      id: "rest-api-service",
-      title: "REST API service",
-      kind: "Back end",
-      year: 2024,
-      role: "Back-end developer",
-      summary: "Sample description. A documented API with authentication, tests and a Docker setup.",
-      stack: ["Node.js", "Express", "Docker"],
-      ratio: "16 / 10",
-      image: { src: "assets/software/sample-api-terminal.svg", alt: "Terminal window showing colourful code and an API request" },
-      links: [
-        { label: "Source code", url: "#" }
-      ]
+      id: "music-fixer",
+      title: "Music Fixer",
+      summary: "A tool that cleans up a music library. Drop in songs and it tidies the file names, fixes spelling and capitalisation, fills in artist, album, year and genre, adds cover art and sets duplicates aside. Your originals are never changed: fixed copies go to a new folder and each one is checked after it is saved. It grew out of the scripts I wrote to clean up my own library.",
+      stack: ["JavaScript", "HTML", "CSS", "PowerShell", "Python"]
     },
     {
-      id: "habit-tracker",
-      title: "Habit tracker",
-      kind: "Mobile app",
-      year: 2024,
-      role: "Design and development",
-      summary: "Sample description. A mobile app I designed and built end to end.",
-      stack: ["React Native", "Firebase"],
-      ratio: "16 / 10",
-      image: { src: "assets/software/sample-mobile-app.svg", alt: "Two phone screens showing lists of habits" },
-      links: [
-        { label: "Source code", url: "#" }
-      ]
+      id: "game-bot-hub",
+      title: "Game Bot Hub",
+      summary: "One app for several games: pick a game, see its helpers and press Run. The first set is for Pokémon X/Y running in an emulator. It plans which Pokémon to hunt and where, sorts the PC boxes, with a preview and a backup before anything is changed, and shows what is in the bag. It uses only what comes with Python, so there is nothing extra to install.",
+      stack: ["Python"]
     }
   ]
 };
