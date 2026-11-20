@@ -321,7 +321,7 @@ window.PORTFOLIO = {
     {
       id: "jobwatch",
       title: "JobWatch",
-      summary: "A Windows app that looks for new jobs around Sudbury and shows them as cards that link to the postings. It also keeps a history of every application, with charts of what was sent, what got a reply and what led to an interview, and it can run each morning and send a notification. The history stays in a database on the computer.",
+      summary: "A job search application.",
       stack: ["Python", "SQLite", "HTML", "CSS", "JavaScript", "PowerShell"]
     },
     {
