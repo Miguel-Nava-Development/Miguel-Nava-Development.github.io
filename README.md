@@ -82,7 +82,7 @@ Each tool name is matched to its logo in the `logos` list just above `software`.
 The logos come from Simple Icons (CC0) and the Material Design Icons set (PowerShell), recoloured to each brand.
 
 ### 5. The Mining page
-`mining.html` is plain HTML, like `experience.html`. It has two blocks: NATT Safety (confined space rescuer, with the certificates as white tiles) and Tim McDowell Equipment (three equipment photos, text, and a button to `tim-mcdowell.html`). To change the wording or add a certificate, edit the text or copy a `<li>` in the `certs` list. To add a video or photos of the shutdown, put them in `assets/` (short lowercase names) and ask for them to be added under the NATT Safety text. Remove metadata from phone photos first. The text comes from the résumé: NATT Safety, April 2024 to February 2025.
+`mining.html` is plain HTML, like `experience.html`. It has two blocks: NATT Safety (confined space rescuer, with the certificates as white tiles) and Tim McDowell Equipment (three equipment photos, text, and a button to `tim-mcdowell.html`). To change the wording or add a certificate, edit the text or copy a `<li>` in the `certs` list. To add a video or photos of the shutdown, put them in `assets/` (short lowercase names) and ask for them to be added under the NATT Safety text. Remove metadata from phone photos first. The text comes from the résumé; the NATT Safety date is shown as just 2024 at your request.
 
 ### 6. Edit the About page
 `about.html` is plain HTML. Replace the instruction text with your own. To add a résumé, put `resume.pdf` in `assets/`, then remove the comment markers around the "Download résumé" link near the bottom of the file.
