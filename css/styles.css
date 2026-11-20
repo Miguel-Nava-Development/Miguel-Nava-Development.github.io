@@ -775,6 +775,19 @@ button { font: inherit; color: inherit; }
 .company-boards--mix { grid-template-columns: 0.648fr 1.911fr 1.333fr; }
 .company-boards--logos { grid-template-columns: repeat(4, 1fr); }
 .board--logo > img { padding: 22%; object-fit: contain; }
+.board--label {
+  display: grid;
+  place-items: center;
+  padding: 8%;
+  font-size: clamp(1.05rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 1.02;
+  text-align: center;
+}
+@media (max-width: 560px) {
+  .company-boards--labels { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ---------- Mining page ---------- */
 .company-boards--mining { grid-template-columns: repeat(3, minmax(0, 1fr)); }
