@@ -676,7 +676,14 @@ button { font: inherit; color: inherit; }
 .company--titled .company-body { margin-top: 1.5rem; }
 /* Home cards: title and text first, then the pictures, then the button. */
 .company--described .company-body { margin-top: 0; margin-bottom: clamp(1.75rem, 3.2vw, 2.75rem); }
-.company-foot { margin-top: 1.75rem; }
+.company--described .company-boards {
+  --tile: clamp(4rem, 6.9vw, 5.75rem);
+  grid-template-columns: repeat(auto-fill, var(--tile));
+  justify-content: start;
+  gap: 12px;
+}
+.company--described .board--label { padding: 6%; font-size: clamp(0.66rem, 1.05vw, 0.9rem); line-height: 1.05; }
+.company-foot { margin-top: clamp(1.75rem, 3.2vw, 2.75rem); }
 .company-text { max-width: 38rem; font-size: var(--step-1); line-height: 1.45; }
 .company:hover .btn { background: var(--select-deep); border-color: var(--select-deep); }
 
@@ -787,9 +794,6 @@ button { font: inherit; color: inherit; }
   font-stretch: 75%;
   line-height: 1.02;
   text-align: center;
-}
-@media (max-width: 560px) {
-  .company-boards--labels { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ---------- Mining page ---------- */
