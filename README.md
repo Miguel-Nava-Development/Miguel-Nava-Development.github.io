@@ -36,7 +36,7 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 | --- | --- |
 | `Miguel Nava` | Your name, exactly as you want it shown (check this one is right) |
 | `Open to full-time or project-based roles` | Your availability, or delete the line |
-| `href="#"` on Behance | Your Behance link (in the footer of every page, plus the Contact list on the About page). GitHub and LinkedIn are already set. |
+| (optional) another profile link, for example Behance | Add `<li><a href="https://...">Behance</a></li>` to the footer list on every page and to the Contact list in `about.html`. GitHub and LinkedIn are already set, and there is no Behance link for now. |
 
 ### 2. The Marketing pages (Marketing, Experience, Skills)
 Marketing has two sub tabs. They show as a drop-down under "Marketing" in the menu (on computers) and as a small tab strip on the Marketing pages (everywhere, including phones).
