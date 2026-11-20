@@ -333,7 +333,7 @@ window.PORTFOLIO = {
     {
       id: "game-bot-hub",
       title: "Game Bot Hub",
-      summary: "One app for several games: pick a game, see its helpers and press Run. The first set is for Pokémon X/Y running in an emulator. It plans which Pokémon to hunt and where, sorts the PC boxes, with a preview and a backup before anything is changed, and shows what is in the bag. It uses only what comes with Python, so there is nothing extra to install.",
+      summary: "One app for several games: pick a game, see its helpers and press Run. The first set is for Pokémon X/Y running in an emulator. Much of the work was digging through the emulator's memory to find where the game keeps things like the current battle and the character's position, and testing each helper. It also plans which Pokémon to hunt and where, sorts the PC boxes with a preview and a backup before anything is changed, and shows what is in the bag. It uses only what comes with Python, so there is nothing extra to install.",
       stack: ["Python"]
     }
   ]
