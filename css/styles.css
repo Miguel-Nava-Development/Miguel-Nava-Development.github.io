@@ -855,9 +855,19 @@ button { font: inherit; color: inherit; }
 
 /* ---------- Diplomas and certificates page ---------- */
 .cert-action { margin-top: 0.25rem; }
-.diploma { width: 100%; max-width: 56rem; margin-top: 0.5rem; }
+.diploma-row {
+  display: grid;
+  grid-template-columns: minmax(16rem, 26rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+  width: 100%;
+}
+.diploma { width: 100%; max-width: 60rem; }
 .diploma img { display: block; width: 100%; height: auto; background: var(--artboard); }
 .diploma figcaption { margin-top: 0.6rem; color: var(--ink-soft); font-size: 0.9375rem; }
+@media (max-width: 860px) {
+  .diploma-row { grid-template-columns: minmax(0, 1fr); }
+}
 .cert-group + .cert-group { margin-top: clamp(2rem, 4vw, 3rem); }
 .cert-group .company-sub { margin-top: 0; margin-bottom: 0.9rem; }
 .cert-list {
