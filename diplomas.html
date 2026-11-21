@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=20261120n">
+  <link rel="stylesheet" href="css/styles.css?v=20261120r">
   <script>document.documentElement.className += ' js';</script>
 </head>
-<body id="top" data-page="marketing">
+<body id="top" data-page="about">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -29,25 +29,28 @@
       <nav class="site-nav" aria-label="Main">
         <ul class="nav-list">
           <li class="has-sub">
-            <a href="marketing.html" aria-current="true">Marketing</a>
+            <a href="marketing.html">Marketing</a>
             <ul class="subnav" aria-label="Marketing">
               <li><a href="experience.html">Experience</a></li>
               <li><a href="skills.html">Skills</a></li>
-              <li><a href="diplomas.html">Diplomas &amp; Certificates</a></li>
             </ul>
           </li>
           <li><a href="software.html">Software</a></li>
           <li><a href="mining.html">Mining</a></li>
-          <li><a href="about.html">About</a></li>
+          <li class="has-sub">
+            <a href="about.html" aria-current="true">About</a>
+            <ul class="subnav" aria-label="About">
+              <li><a href="diplomas.html">Diplomas &amp; Certificates</a></li>
+            </ul>
+          </li>
           <li><a class="nav-cta" href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <nav class="subtabs wrap" aria-label="Marketing sections">
-    <a href="experience.html">Experience</a>
-    <a href="skills.html">Skills</a>
+  <nav class="subtabs wrap" aria-label="About sections">
+    <a href="about.html">About</a>
     <a href="diplomas.html" aria-current="page">Diplomas &amp; Certificates</a>
   </nav>
 
@@ -67,18 +70,21 @@
       <h2 class="visually-hidden" id="diplomas-title">Diplomas</h2>
       <!--
         To add a diploma: copy one <li> below and change the name, school, dates and text.
-        To show the diploma itself, copy the <div class="diploma-row"> from the university block: the text sits on
-        the left and the <figure class="diploma"> on the right (the picture goes in assets/diplomas/, about 1600 px wide). The high school block shows its transcripts as a button instead,
-        until the diploma itself is added.
+        Each block is a row (<div class="diploma-row">): the school's logo, the text and any buttons on the left,
+        and the diploma itself, as a <figure class="diploma"> about 1600 px wide, on the right.
+        Pictures and PDFs go in assets/diplomas/, logos in assets/logos/.
       -->
       <ul class="companies companies--ruled">
         <li>
           <div class="company company--text">
             <div class="company-body">
-              <h3 class="company-name">University degree</h3>
-              <p class="job-meta"><span>Laurentian University</span><span>January 2020 to October 2023</span></p>
               <div class="diploma-row">
-                <p class="company-text">I studied in the Computer Science program at Laurentian University in Sudbury, Ontario. I graduated with a Bachelor of Computer Science, Specialization Game Design, with Honours, cum laude. I program in Java, C#, C++, Assembly x86, SQL and Python. For the web, I work with HTML, CSS, PHP and WordPress. In 2023 I also completed a Unity course for 2D video games, which is listed under Certificates below. The software projects I built in my free time are on my <a href="software.html">Software page</a>.</p>
+                <div class="diploma-text">
+                  <h3 class="company-name">University degree</h3>
+                  <p class="job-meta"><span>Laurentian University</span><span>January 2020 to October 2023</span></p>
+                  <p class="inst-logos"><img class="inst-logo inst-logo--lg" src="assets/logos/laurentian.png" width="900" height="215" alt="Laurentian University"></p>
+                  <p class="company-text">I studied in the Computer Science program at Laurentian University in Sudbury, Ontario. I graduated with a Bachelor of Computer Science, Specialization Game Design, with Honours, cum laude. I program in Java, C#, C++, Assembly x86, SQL and Python. For the web, I work with HTML, CSS, PHP and WordPress. In 2023 I also completed a Unity course for 2D video games, which is listed under Certificates below. The software projects I built in my free time are on my <a href="software.html">Software page</a>.</p>
+                </div>
                 <figure class="diploma">
                   <img src="assets/diplomas/university-degree.jpg" width="1600" height="1267" alt="Laurentian University degree certificate awarded to Miguel Enrique Lopez Nava: Bachelor of Computer Science, Specialization Game Design, with Honours, cum laude, granted October 17, 2023.">
                   <figcaption><a href="assets/diplomas/university-degree.pdf" target="_blank" rel="noopener">Open the degree as a PDF<span class="visually-hidden"> (opens in a new tab)</span></a></figcaption>
@@ -90,11 +96,26 @@
         <li>
           <div class="company company--text">
             <div class="company-body">
-              <h3 class="company-name">High school diploma with <span class="nb">IB Diploma</span></h3>
-              <p class="job-meta"><span>Escola Americana do Rio de Janeiro (EARJ)</span><span>2014 to 2018</span></p>
-              <p class="company-text">I went to high school at EARJ in Rio de Janeiro, Brazil. I passed 12th grade with an IB Diploma, the International Baccalaureate's bilingual diploma.</p>
-              <p class="cert-action"><a class="btn" href="assets/diplomas/high-school-transcripts.pdf" target="_blank" rel="noopener">View my transcripts<span class="visually-hidden"> (PDF, opens in a new tab)</span></a></p>
-              <p class="job-note">Three pages: the EARJ transcript, then the IB diploma and its results. My home address and student number are covered.</p>
+              <div class="diploma-row">
+                <div class="diploma-text">
+                  <h3 class="company-name">High school diploma with <span class="nb">IB Diploma</span></h3>
+                  <p class="job-meta"><span>Escola Americana do Rio de Janeiro (EARJ)</span><span>2014 to 2018</span></p>
+                  <p class="inst-logos">
+                    <img class="inst-logo" src="assets/logos/earj.png" width="900" height="189" alt="Escola Americana do Rio de Janeiro">
+                    <img class="inst-logo" src="assets/logos/ib.png" width="761" height="212" alt="International Baccalaureate">
+                  </p>
+                  <p class="company-text">I went to high school at EARJ in Rio de Janeiro, Brazil. I passed 12th grade in 2018 with an IB Diploma, the International Baccalaureate's bilingual diploma. My transcripts and the IB Diploma are in the buttons below.</p>
+                  <p class="cert-actions">
+                    <a class="btn" href="assets/diplomas/high-school-transcripts.pdf" target="_blank" rel="noopener">View my transcripts<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>
+                    <a class="btn" href="assets/diplomas/ib-diploma.pdf" target="_blank" rel="noopener">IB Diploma<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>
+                  </p>
+                  <p class="job-note">On the transcript, my home address and student number are covered.</p>
+                </div>
+                <figure class="diploma">
+                  <img src="assets/diplomas/high-school-diploma.jpg" width="1600" height="1188" alt="High school diploma from Escola Americana do Rio de Janeiro awarded to Miguel Enrique Lopez Nava, dated May 30, 2018.">
+                  <figcaption><a href="assets/diplomas/high-school-diploma.pdf" target="_blank" rel="noopener">Open the diploma as a PDF<span class="visually-hidden"> (opens in a new tab)</span></a></figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </li>
@@ -107,7 +128,8 @@
         <p class="section-note">Courses and training I completed. Where the issuer has a public page for a certificate, the Click to verify button opens it.</p>
       </div>
       <!--
-        To add a certificate: copy one <li class="cert"> into the group it belongs to.
+        To add a certificate: copy one <li class="cert"> into the group it belongs to. The issuer's logo goes first
+        (a picture in assets/logos/, with alt="" because the issuer's name is written under the title).
         With a verification link, add the <p class="cert-action"> button line from the Coursera tiles
         under the issuer line (it says "Click to verify"). Without a link, leave it out.
       -->
@@ -116,11 +138,13 @@
         <h3 class="company-sub">Technology</h3>
         <ul class="cert-list" aria-label="Technology certificates">
           <li class="cert">
+            <img class="cert-logo" src="assets/logos/microsoft.png" width="700" height="160" alt="">
             <h4 class="cert-title">Foundations of Coding Full-Stack</h4>
             <p class="cert-issuer">Microsoft, through Coursera, 2026</p>
             <p class="cert-action"><a class="btn" href="https://coursera.org/verify/RIKIX54GMEWJ" target="_blank" rel="noopener">Click to verify<span class="visually-hidden"> Foundations of Coding Full-Stack on Coursera (opens in a new tab)</span></a></p>
           </li>
           <li class="cert">
+            <img class="cert-logo" src="assets/logos/domestika.png" width="397" height="88" alt="">
             <h4 class="cert-title">Introducción a Unity para videojuegos 2D</h4>
             <p class="cert-issuer">Domestika, 2023</p>
             <p class="cert-note">Introduction to Unity for 2D video games, a course in Spanish</p>
@@ -132,6 +156,7 @@
         <h3 class="company-sub">Marketing</h3>
         <ul class="cert-list" aria-label="Marketing certificates">
           <li class="cert">
+            <img class="cert-logo" src="assets/logos/google.png" width="263" height="94" alt="">
             <h4 class="cert-title">Attract and Engage Customers with Digital Marketing</h4>
             <p class="cert-issuer">Google, through Coursera, 2025</p>
             <p class="cert-action"><a class="btn" href="https://coursera.org/verify/S0E7ONPAAMZP" target="_blank" rel="noopener">Click to verify<span class="visually-hidden"> Attract and Engage Customers with Digital Marketing on Coursera (opens in a new tab)</span></a></p>
@@ -143,6 +168,7 @@
         <h3 class="company-sub">Other</h3>
         <ul class="cert-list" aria-label="Other certificates">
           <li class="cert">
+            <img class="cert-logo" src="assets/logos/ontario.png" width="235" height="69" alt="">
             <h4 class="cert-title">Worker Health and Safety Awareness in 4 Steps</h4>
             <p class="cert-issuer">Ontario Ministry of Labour, Training and Skills Development, 2026</p>
           </li>
@@ -168,7 +194,7 @@
     </div>
   </footer>
 
-  <script src="js/content.js?v=20261120n"></script>
-  <script src="js/site.js?v=20261120n"></script>
+  <script src="js/content.js?v=20261120r"></script>
+  <script src="js/site.js?v=20261120r"></script>
 </body>
 </html>
