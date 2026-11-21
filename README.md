@@ -56,7 +56,7 @@ The app logos are the latest versions of each brand's icon, in the brand's colou
 **Valnet (GameRant)** (`valnet.html`, a company under Experience like Tim McDowell, KES and Gold Leaf). Its block on `experience.html` is plain HTML (copy it to add another company). The page itself is plain HTML for the heading, the text and the small tool tiles (`assets/logos/`, one line each); the videos come from the `valnetVideos` list in `js/content.js`: one line each with a `title` and an optional `link`. Paste a full `https://` address into `link` (for example the GameRant article the video plays in) and the title becomes a link that opens in a new tab, with "Watch on GameRant" under it. A line with an empty `link` shows as plain text. To add a video, copy a line. Raise the `?v=` number on every page afterwards (see the cache note above).
 
 ### 3. Add marketing work (Tim McDowell Equipment Ltd.)
-The page `tim-mcdowell.html` has three sections, and all three are filled from `js/content.js`. The page also has a third section, the company's YouTube videos, described just below.
+The page `tim-mcdowell.html` has three sections, and all three are filled from `js/content.js`.
 
 **Social media posts and videos** (`tmeSocial`)
 1. Put the image in `assets/tme/social/`, named by date and title, for example `2026-08-14-cat-950-wheel-loader-rented.jpg`. Keep the original in your own folder named the same way, with the date first (`2026-08-14 CAT 950 Wheel Loader Rented.jpg`), so the files sort in the order they were posted.
