@@ -529,6 +529,9 @@ button { font: inherit; color: inherit; }
 .stack-item img { width: 32px; height: 32px; }
 .stack-item span { font-size: 0.6875rem; font-weight: 700; line-height: 1.1; }
 .stack-item--text { align-content: center; }
+/* Tool tiles inside a job block (Software page, IT experience): the block's grid left-aligns
+   its children, so let the row use the full width and wrap like the project tiles. */
+.company-body .stack { justify-self: stretch; min-width: 0; width: 100%; max-width: 46rem; }
 .project-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
 
 @media (max-width: 1279px) {
