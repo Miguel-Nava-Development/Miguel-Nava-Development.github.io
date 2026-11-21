@@ -341,7 +341,7 @@ window.PORTFOLIO = {
     {
       id: "jobwatch",
       title: "JobWatch",
-      summary: "A job search application.",
+      summary: "A Windows app that checks Job Bank for new postings and shows each one as a card with the company's logo, grouped by type of employer, with a link to the posting. You can mark a job as applied or hide it, and a Progress tab charts your applications by month, site and reply. It can also run by itself each morning and show a Windows notification. Everything stays on the computer, and it needs no accounts or keys.",
       stack: ["Python", "SQLite", "HTML", "CSS", "JavaScript", "PowerShell"]
     },
     {
