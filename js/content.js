@@ -359,7 +359,7 @@ window.PORTFOLIO = {
     {
       id: "music-fixer",
       title: "Music Fixer",
-      summary: "A tool that cleans up a music library. Drop in songs and it tidies the file names, fixes spelling and capitalisation, fills in artist, album, year and genre, adds cover art and sets duplicates aside. Your originals are never changed: fixed copies go to a new folder and each one is checked after it is saved. It grew out of the scripts I wrote to clean up my own library.",
+      summary: "A tool that cleans up a music library. Given a folder of songs, it tidies the file names, corrects spelling, fixes capitalisation, fills in the artist, album, year and genre, and adds cover art. Duplicates are set aside. Your originals are never changed: fixed copies go to a new folder, and each one is checked after it is saved. It grew out of the scripts I wrote to clean up my own library.",
       stack: ["JavaScript", "HTML", "CSS", "PowerShell", "Python"]
     },
     {
