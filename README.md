@@ -4,9 +4,10 @@ A hand-built site with no framework, no build step and no page builder. It is pl
 
 ```
 index.html        Home page: three big choices, Marketing, Software and Mining
-marketing.html    Marketing: a two-choice page that leads to Experience and Skills
+marketing.html    Marketing: a three-choice page that leads to Experience, Skills and Diplomas & Certificates
 experience.html   Marketing > Experience: the companies you did the work at, each linking to its page
 skills.html       Marketing > Skills: what you do, plus the apps you use (with logos)
+diplomas.html     Marketing > Diplomas & Certificates: your degree, high school diploma with IB Diploma, and course certificates
 tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
 kes.html          KES Equipment: social media posts
 gold-leaf.html    Gold Leaf Financial Group: photos of you at work
@@ -19,7 +20,7 @@ contact.html      Contact form (your email address is never shown on the site)
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos) and about/
+assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos), diplomas/ (the transcripts PDF) and about/
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -54,6 +55,11 @@ To add a job, open `experience.html`: copy one `<li>` inside `<ul class="compani
 The app logos are the latest versions of each brand's icon, in the brand's colours. Brand logos belong to their owners and are used here only to show which apps you work in. The Final Cut Pro icon is a small 75 px image; if it looks soft on your screen, swap in a larger copy from Apple's own site, named `final-cut-pro.png`.
 
 **Valnet (GameRant)** (`valnet.html`, a company under Experience like Tim McDowell, KES and Gold Leaf). Its block on `experience.html` is plain HTML (copy it to add another company). The page itself is plain HTML for the heading, the text and the small tool tiles (`assets/logos/`, one line each); the videos come from the `valnetVideos` list in `js/content.js`: one line each with a `title` and an optional `link`. Paste a full `https://` address into `link` (for example the GameRant article the video plays in) and the title becomes a link that opens in a new tab, with "Watch on GameRant" under it. A line with an empty `link` shows as plain text. To add a video, copy a line. Raise the `?v=` number on every page afterwards (see the cache note above).
+
+**Diplomas & Certificates** (`diplomas.html`, the third tab under Marketing). It is plain HTML, with no list in `js/content.js` to edit. The two diplomas are text blocks (copy one `<li>` to add another). Under them, the certificates sit in three groups: Technology, Marketing and Other. To add a certificate, copy one `<li class="cert">` into the right group and change the title, issuer and year. If the issuer has a public verification page, wrap the title in the link as the existing Coursera ones do; otherwise leave the title as plain text. Certificates show the year only.
+
+The "View my transcripts" button opens `assets/diplomas/high-school-transcripts.pdf`: the EARJ transcript followed by the IB diploma and its results. The site's code is public on GitHub, so the EARJ transcript was changed before it went up: the home address and student number are covered by black boxes, the page is an image only (no text layer) and the original file's hidden details were removed. Keep the original, unredacted transcript on your own computer and never upload it here. The same goes for the Ontario safety certificate's HTML file, which has your email address inside its web address: use the picture of the certificate only.
+
 
 ### 3. Add marketing work (Tim McDowell Equipment Ltd.)
 The page `tim-mcdowell.html` has three sections, and all three are filled from `js/content.js`.
@@ -130,7 +136,7 @@ Two good free hosts for a site like this. Both give you HTTPS and a free web add
 
 The `.nojekyll` file in this folder tells GitHub to serve the files exactly as they are.
 
-**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261120b`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
+**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261120j`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
 
 ### Option B: Cloudflare Pages
 Create a free Cloudflare account, then in **Workers & Pages** create a Pages project and either connect your GitHub repository or upload this folder directly. Cloudflare's static hosting is free with generous limits. Cloudflare has been merging Pages into Workers, so the menu names may differ a little from this README; their docs at developers.cloudflare.com show the current steps.

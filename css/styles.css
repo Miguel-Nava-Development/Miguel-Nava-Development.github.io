@@ -853,6 +853,36 @@ button { font: inherit; color: inherit; }
   line-height: 1.2;
 }
 
+/* ---------- Diplomas and certificates page ---------- */
+.cert-action { margin-top: 0.25rem; }
+.cert-group + .cert-group { margin-top: clamp(2rem, 4vw, 3rem); }
+.cert-group .company-sub { margin-top: 0; margin-bottom: 0.9rem; }
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+.cert {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem 1.05rem;
+  background: var(--artboard);
+}
+.cert-title { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.2; }
+.cert-link { text-decoration: none; }
+.cert-link::after { content: ""; position: absolute; inset: 0; }
+.cert:hover .cert-link { text-decoration: underline; text-underline-offset: 0.18em; }
+.cert:focus-within { outline: 3px solid var(--select); outline-offset: 2px; }
+.cert-link:focus-visible { outline: none; text-decoration: underline; }
+.cert-issuer,
+.cert-note { color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.35; }
+.cert-verify { color: var(--select-deep); font-size: 0.9375rem; font-weight: 600; }
+.cert-aside { margin-top: 1rem; color: var(--ink-soft); font-size: 0.9375rem; }
+
 @media (max-width: 560px) {
   .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tool { padding: 0.85rem; }
