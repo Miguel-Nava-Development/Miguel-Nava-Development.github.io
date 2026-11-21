@@ -295,6 +295,26 @@ window.PORTFOLIO = {
     { id: "gold-leaf-light-tent", title: "Inside the light tent", category: "Photos", ratio: "1400 / 788", summary: "Next to the green screen and lights, inside a light tent.", images: [{ src: "assets/gold-leaf/light-tent.jpg", alt: "Miguel Nava sitting inside a light tent next to a green screen and studio light" }] },
   ],
 
+  /* ---------- YouTube posted videos (tim-mcdowell.html) ---------- */
+  /* Videos on the Tim McDowell Equipment YouTube channel that I worked on and posted, newest first.
+     To add one, copy a line and change the id (the part after v= in the video link), the title, the
+     date it was posted and the view count you see today.
+     "views" is the count on the day in youtubeViewsAsOf. To make the counts update by themselves,
+     paste a YouTube Data API key into youtubeApiKey (the README says how to get one, it is free). */
+  youtubeApiKey: "",
+  youtubeViewsAsOf: "2026-11-20",
+  youtube: [
+    { id: "F0nl46y1ePI", title: "2026 MT420 TELEHANDLER", published: "2026-05-29", views: 1177 },
+    { id: "O4BAr4UAsuY", title: "2026 Toyota Land Cruiser", published: "2026-05-26", views: 62 },
+    { id: "NLUUGaToe-o", title: "2025 CAT 966-BR Wheel Loader", published: "2026-05-26", views: 2436 },
+    { id: "l-CIuTQwL9A", title: "2024 Faresin FR04 Telehandler", published: "2026-05-22", views: 318 },
+    { id: "C8IRnkr4YVg", title: "2026 CAT 980XE-BR Wheel Loader", published: "2026-05-08", views: 4260 },
+    { id: "AxwuhXgBSa4", title: "2026 CAT R1700 SCOOPTRAM", published: "2026-05-06", views: 8409 },
+    { id: "QOL6ZvRRy9k", title: "2009 CAT AD45B Underground Haul Truck", published: "2026-05-06", views: 646 },
+    { id: "qDPpMZeT500", title: "2026 CAT 330 Excavator", published: "2026-05-06", views: 1870 },
+    { id: "yEwtE7x4eCE", title: "CAT AD30 Haulage Truck", published: "2026-02-10", views: 1879 }
+  ],
+
   /* ---------- Software development (software.html) ---------- */
   /* Logo for each tool name used in a "stack" list. To show a new tool, drop its logo in assets/logos/
      and add one line here. A name that is not listed here still shows, as plain text. */

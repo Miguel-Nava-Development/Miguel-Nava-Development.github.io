@@ -783,6 +783,75 @@
     });
   }
 
+  /* ---------- YouTube posted videos (Tim McDowell page) ---------- */
+
+  function initVideos() {
+    var list = document.getElementById('videos');
+    if (!list) return;
+
+    var items = collection(list, 'youtube').filter(function (v) { return v && v.id && v.title; });
+    if (!items.length) {
+      list.parentNode.insertBefore(
+        emptyMessage('No videos added yet. Add them to the youtube list in js/content.js and they will show up here.'),
+        list
+      );
+      return;
+    }
+
+    function label(n) {
+      n = Number(n);
+      return n.toLocaleString('en-CA') + (n === 1 ? ' view' : ' views');
+    }
+
+    var counters = {};
+    items.forEach(function (v) {
+      var views = h('span', { 'class': 'video-views', text: v.views !== undefined ? label(v.views) : '' });
+      counters[v.id] = views;
+      list.appendChild(h('li', { 'class': 'video' }, [
+        h('a', {
+          'class': 'video-link',
+          href: 'https://www.youtube.com/watch?v=' + v.id,
+          target: '_blank',
+          rel: 'noopener'
+        }, [
+          document.createTextNode(v.title),
+          h('span', { 'class': 'visually-hidden', text: ' (opens on YouTube)' })
+        ]),
+        views
+      ]));
+    });
+
+    var note = document.getElementById('videos-note');
+    var asOf = data.youtubeViewsAsOf ? new Date(data.youtubeViewsAsOf + 'T12:00:00') : null;
+    if (note && asOf && !isNaN(asOf)) {
+      note.textContent = 'View counts as of ' +
+        asOf.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' }) + '.';
+    }
+
+    /* With a YouTube Data API key in js/content.js the counts refresh from YouTube on every visit. */
+    var key = data.youtubeApiKey;
+    if (!key || !window.fetch) return;
+    var url = 'https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' +
+      items.map(function (v) { return v.id; }).join(',') + '&key=' + encodeURIComponent(key);
+    fetch(url)
+      .then(function (response) {
+        if (!response.ok) throw new Error('YouTube did not answer');
+        return response.json();
+      })
+      .then(function (result) {
+        var updated = 0;
+        (result.items || []).forEach(function (item) {
+          var count = item.statistics && item.statistics.viewCount;
+          if (count !== undefined && counters[item.id]) {
+            counters[item.id].textContent = label(count);
+            updated += 1;
+          }
+        });
+        if (updated && note) note.textContent = 'View counts update automatically from YouTube.';
+      })
+      .catch(function () { /* keep the saved counts */ });
+  }
+
   /* ---------- Contact page ---------- */
 
   function initContact() {
@@ -833,5 +902,6 @@
   initDesign();
   initBooklets();
   initSoftware();
+  initVideos();
   initContact();
 })();

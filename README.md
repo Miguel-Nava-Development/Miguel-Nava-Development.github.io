@@ -53,7 +53,7 @@ To add a job, open `experience.html`: copy one `<li>` inside `<ul class="compani
 The app logos are the latest versions of each brand's icon, in the brand's colours. Brand logos belong to their owners and are used here only to show which apps you work in. The Final Cut Pro icon is a small 75 px image; if it looks soft on your screen, swap in a larger copy from Apple's own site, named `final-cut-pro.png`.
 
 ### 3. Add marketing work (Tim McDowell Equipment Ltd.)
-The page `tim-mcdowell.html` has two sections, and both are filled from `js/content.js`.
+The page `tim-mcdowell.html` has three sections, and all three are filled from `js/content.js`.
 
 **Social media posts and videos** (`tmeSocial`)
 1. Put the image in `assets/tme/social/`, named by date and title, for example `2026-08-14-cat-950-wheel-loader-rented.jpg`. Keep the original in your own folder named the same way, with the date first (`2026-08-14 CAT 950 Wheel Loader Rented.jpg`), so the files sort in the order they were posted.
@@ -67,6 +67,12 @@ The page `tim-mcdowell.html` has two sections, and both are filled from `js/cont
 2. In `js/content.js`, copy one block inside `tmeBooklets`, then change the details and list every page under `pages` with its width and height in pixels.
 3. A flyer with three or more pages of the same shape opens as a flip book on a computer and one page at a time on a phone. Add `mode: "single"` to always show one page at a time (good for ads with different page shapes, or a tall banner).
 4. A direct link to one flyer looks like `tim-mcdowell.html#booklet=cim-flyer-2026`.
+
+**YouTube Posted Videos** (`youtube`)
+1. Each video is one line in the `youtube` list in `js/content.js`: the `id` (the part after `v=` in the video's address), `title`, `published` date and the `views` you saw. Newest first.
+2. The page shows each title as a link that opens the video on YouTube, with the view count below it. The saved `views` are what shows until live counts are switched on, and the page says "View counts as of ..." using `youtubeViewsAsOf` (change that date whenever you update the numbers by hand).
+3. To make the counts update by themselves, add a free YouTube Data API key. In the Google Cloud Console: create a project, turn on "YouTube Data API v3", then Credentials > Create credentials > API key. Restrict the key to the website address `https://miguel-nava-development.github.io/*` (HTTP referrers) and to the YouTube Data API v3 only, then paste it between the quotes in `youtubeApiKey`. The key is visible in the page's code, which is why that restriction matters. Raise the `?v=` number on every page afterwards (see the cache note above).
+4. With a key, the counts load fresh each time the page opens and the note changes to "View counts update automatically from YouTube." If YouTube does not answer, the saved counts show instead.
 
 Keep the large original files (the `Companies` folder, `TME Work`, and anything ending in `.pdf`, `.indd` or `.ai`) out of the website folder you upload. They are too big for the site and only the exported images are needed.
 
