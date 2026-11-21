@@ -138,7 +138,7 @@ Two good free hosts for a site like this. Both give you HTTPS and a free web add
 
 The `.nojekyll` file in this folder tells GitHub to serve the files exactly as they are.
 
-**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261120r`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
+**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261120s`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
 
 ### Option B: Cloudflare Pages
 Create a free Cloudflare account, then in **Workers & Pages** create a Pages project and either connect your GitHub repository or upload this folder directly. Cloudflare's static hosting is free with generous limits. Cloudflare has been merging Pages into Workers, so the menu names may differ a little from this README; their docs at developers.cloudflare.com show the current steps.
