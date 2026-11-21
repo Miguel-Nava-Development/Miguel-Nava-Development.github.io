@@ -315,7 +315,7 @@ window.PORTFOLIO = {
     { id: "yEwtE7x4eCE", title: "CAT AD30 Haulage Truck", published: "2026-02-10", views: 1879 }
   ],
 
-  /* ---------- Video editing for Valnet (GameRant) (video-editing.html) ---------- */
+  /* ---------- Video editing for Valnet (GameRant) (valnet.html) ---------- */
   /* The videos I edited, in the order of the folder they came from. "link" is optional: when it is
      filled in (a full https:// address, usually the GameRant article the video plays in) the title
      becomes a link that opens it in a new tab. A title with no link shows as plain text. */
