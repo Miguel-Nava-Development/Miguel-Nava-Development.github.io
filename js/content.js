@@ -315,6 +315,18 @@ window.PORTFOLIO = {
     { id: "yEwtE7x4eCE", title: "CAT AD30 Haulage Truck", published: "2026-02-10", views: 1879 }
   ],
 
+  /* ---------- Video editing for Valnet (GameRant) (video-editing.html) ---------- */
+  /* The videos I edited, in the order of the folder they came from. "link" is optional: when it is
+     filled in (a full https:// address, usually the GameRant article the video plays in) the title
+     becomes a link that opens it in a new tab. A title with no link shows as plain text. */
+  valnetVideos: [
+    { id: "ps5-4k-60fps", title: "The Best PS5 Games That Can Be Run At 4K & 60 FPS", link: "" },
+    { id: "visual-novels-steam", title: "The Best Visual Novels On Steam, Ranked", link: "https://gamerant.com/best-visual-novels-steam/" },
+    { id: "ubisoft-protagonists", title: "8 Best Ubisoft Protagonists, Ranked", link: "https://gamerant.com/best-ubisoft-protagonists/" },
+    { id: "bethesda-worst-worlds", title: "Bethesda's 6 Worst Worlds To Live In", link: "" },
+    { id: "harsh-climates", title: "7 Best Open-World Games Set In Harsh Climates", link: "" }
+  ],
+
   /* ---------- Software development (software.html) ---------- */
   /* Logo for each tool name used in a "stack" list. To show a new tool, drop its logo in assets/logos/
      and add one line here. A name that is not listed here still shows, as plain text. */

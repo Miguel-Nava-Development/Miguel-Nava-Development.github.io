@@ -52,6 +52,8 @@ To add a job, open `experience.html`: copy one `<li>` inside `<ul class="compani
 
 The app logos are the latest versions of each brand's icon, in the brand's colours. Brand logos belong to their owners and are used here only to show which apps you work in. The Final Cut Pro icon is a small 75 px image; if it looks soft on your screen, swap in a larger copy from Apple's own site, named `final-cut-pro.png`.
 
+**Video editing** (`video-editing.html`, the third Marketing tab). The Valnet (GameRant) block is plain HTML in the page. The videos under it come from the `valnetVideos` list in `js/content.js`: one line each with a `title` and an optional `link`. Paste a full `https://` address into `link` (for example the GameRant article the video plays in) and the title becomes a link that opens in a new tab, with "Watch on GameRant" under it. A line with an empty `link` shows as plain text. To add a video, copy a line. Raise the `?v=` number on every page afterwards (see the cache note above). The small tiles under the Valnet title are one line each in the page (`assets/logos/`).
+
 ### 3. Add marketing work (Tim McDowell Equipment Ltd.)
 The page `tim-mcdowell.html` has three sections, and all three are filled from `js/content.js`.
 

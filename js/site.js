@@ -852,6 +852,35 @@
       .catch(function () { /* keep the saved counts */ });
   }
 
+  /* ---------- Video editing page (Valnet / GameRant) ---------- */
+
+  function initEditing() {
+    var list = document.getElementById('editing');
+    if (!list) return;
+
+    var items = collection(list, 'valnetVideos').filter(function (v) { return v && v.title; });
+    if (!items.length) {
+      list.parentNode.insertBefore(
+        emptyMessage('No videos added yet. Add them to the valnetVideos list in js/content.js and they will show up here.'),
+        list
+      );
+      return;
+    }
+
+    items.forEach(function (v) {
+      var linked = /^https?:/.test(v.link || '');
+      list.appendChild(h('li', { 'class': linked ? 'video' : 'video video--plain' }, [
+        linked
+          ? h('a', { 'class': 'video-link', href: v.link, target: '_blank', rel: 'noopener' }, [
+              document.createTextNode(v.title),
+              h('span', { 'class': 'visually-hidden', text: ' (opens on GameRant)' })
+            ])
+          : h('span', { 'class': 'video-title', text: v.title }),
+        linked ? h('span', { 'class': 'video-views', text: 'Watch on GameRant' }) : null
+      ]));
+    });
+  }
+
   /* ---------- Contact page ---------- */
 
   function initContact() {
@@ -903,5 +932,6 @@
   initBooklets();
   initSoftware();
   initVideos();
+  initEditing();
   initContact();
 })();
