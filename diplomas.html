@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=20261120k">
+  <link rel="stylesheet" href="css/styles.css?v=20261120l">
   <script>document.documentElement.className += ' js';</script>
 </head>
 <body id="top" data-page="marketing">
@@ -67,7 +67,9 @@
       <h2 class="visually-hidden" id="diplomas-title">Diplomas</h2>
       <!--
         To add a diploma: copy one <li> below and change the name, school, dates and text.
-        A button under the text (copy the one on the high school block) links to a file in assets/diplomas/.
+        To show the diploma itself, copy the <figure class="diploma"> from the university block (the picture goes
+        in assets/diplomas/, about 1600 px wide). The high school block shows its transcripts as a button instead,
+        until the diploma itself is added.
       -->
       <ul class="companies companies--ruled">
         <li>
@@ -76,7 +78,10 @@
               <h3 class="company-name">University degree</h3>
               <p class="job-meta"><span>Laurentian University</span><span>January 2020 to October 2023</span></p>
               <p class="company-text">I studied in the Computer Science program at Laurentian University in Sudbury, Ontario. I graduated with a Bachelor of Computer Science, Specialization Game Design, with Honours, cum laude.</p>
-              <p class="cert-action"><a class="btn" href="assets/diplomas/university-degree.pdf" target="_blank" rel="noopener">View my degree<span class="visually-hidden"> (PDF, opens in a new tab)</span></a></p>
+              <figure class="diploma">
+                <img src="assets/diplomas/university-degree.jpg" width="1600" height="1267" alt="Laurentian University degree certificate awarded to Miguel Enrique Lopez Nava: Bachelor of Computer Science, Specialization Game Design, with Honours, cum laude, granted October 17, 2023." loading="lazy">
+                <figcaption><a href="assets/diplomas/university-degree.pdf" target="_blank" rel="noopener">Open the degree as a PDF<span class="visually-hidden"> (opens in a new tab)</span></a></figcaption>
+              </figure>
             </div>
           </div>
         </li>
@@ -161,7 +166,7 @@
     </div>
   </footer>
 
-  <script src="js/content.js?v=20261120k"></script>
-  <script src="js/site.js?v=20261120k"></script>
+  <script src="js/content.js?v=20261120l"></script>
+  <script src="js/site.js?v=20261120l"></script>
 </body>
 </html>

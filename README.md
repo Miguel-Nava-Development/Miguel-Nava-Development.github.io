@@ -20,7 +20,7 @@ contact.html      Contact form (your email address is never shown on the site)
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos), diplomas/ (the degree and transcripts PDFs) and about/
+assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos), diplomas/ (the degree picture and PDF, and the transcripts PDF) and about/
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -58,7 +58,7 @@ The app logos are the latest versions of each brand's icon, in the brand's colou
 
 **Diplomas & Certificates** (`diplomas.html`, the third tab under Marketing). It is plain HTML, with no list in `js/content.js` to edit. The two diplomas are text blocks (copy one `<li>` to add another). Under them, the certificates sit in three groups: Technology, Marketing and Other. To add a certificate, copy one `<li class="cert">` into the right group and change the title, issuer and year. If the issuer has a public verification page, copy the `<p class="cert-action">` line from one of the Coursera tiles under the issuer line and paste in the link: it shows a button that says "Click to verify". Without a link, leave the button out. Certificates show the year only.
 
-The "View my degree" button opens `assets/diplomas/university-degree.pdf` (the Laurentian certificate, rebuilt from the scan as an image-only PDF so the scanner app's name and watermark are gone). The "View my transcripts" button opens `assets/diplomas/high-school-transcripts.pdf`: the EARJ transcript followed by the IB diploma and its results. The site's code is public on GitHub, so the EARJ transcript was changed before it went up: the home address and student number are covered by black boxes, the page is an image only (no text layer) and the original file's hidden details were removed. Keep the original, unredacted transcript on your own computer and never upload it here. The same goes for the Ontario safety certificate's HTML file, which has your email address inside its web address: use the picture of the certificate only.
+The university degree is shown on the page as a picture (`assets/diplomas/university-degree.jpg`, about 1600 px wide) with a small "Open the degree as a PDF" link under it to `assets/diplomas/university-degree.pdf`. Both were rebuilt from the scan, so the scanner app's name and watermark are gone. To show another diploma the same way (the high school diploma, once you have it), copy the `<figure class="diploma">` block, put the picture in `assets/diplomas/` and change the file names and the description. The "View my transcripts" button opens `assets/diplomas/high-school-transcripts.pdf`: the EARJ transcript followed by the IB diploma and its results. The site's code is public on GitHub, so the EARJ transcript was changed before it went up: the home address and student number are covered by black boxes, the page is an image only (no text layer) and the original file's hidden details were removed. Keep the original, unredacted transcript on your own computer and never upload it here. The same goes for the Ontario safety certificate's HTML file, which has your email address inside its web address: use the picture of the certificate only.
 
 
 ### 3. Add marketing work (Tim McDowell Equipment Ltd.)
@@ -136,7 +136,7 @@ Two good free hosts for a site like this. Both give you HTTPS and a free web add
 
 The `.nojekyll` file in this folder tells GitHub to serve the files exactly as they are.
 
-**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261120j`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
+**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261120l`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
 
 ### Option B: Cloudflare Pages
 Create a free Cloudflare account, then in **Workers & Pages** create a Pages project and either connect your GitHub repository or upload this folder directly. Cloudflare's static hosting is free with generous limits. Cloudflare has been merging Pages into Workers, so the menu names may differ a little from this README; their docs at developers.cloudflare.com show the current steps.
