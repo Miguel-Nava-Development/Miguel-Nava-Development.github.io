@@ -327,7 +327,7 @@ window.PORTFOLIO = {
     { id: "harsh-climates", title: "7 Best Open-World Games Set In Harsh Climates", link: "" }
   ],
 
-  /* ---------- Software development (software.html) ---------- */
+  /* ---------- Software projects (software-projects.html) ---------- */
   /* Logo for each tool name used in a "stack" list. To show a new tool, drop its logo in assets/logos/
      and add one line here. A name that is not listed here still shows, as plain text. */
   logos: {

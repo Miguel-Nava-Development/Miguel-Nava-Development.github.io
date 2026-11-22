@@ -12,7 +12,10 @@ tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers a
 kes.html          KES Equipment: social media posts
 gold-leaf.html    Gold Leaf Financial Group: photos of you at work
 valnet.html       Valnet (GameRant): videos you edited, with the tools and templates you used
-software.html     Software projects
+software.html     Software & Technology: a three-choice page (Experience, Projects, Skills), like Marketing
+software-experience.html  Software & Technology > Experience: your IT jobs (Gold Leaf, Finlandia), with the tools and projects from each
+software-projects.html    Software & Technology > Projects: your freelance apps (the list is in js/content.js)
+software-skills.html      Software & Technology > Skills: what you do, plus the languages and tools you use (with logos)
 mining.html       Mining: confined space rescue at NATT Safety (Vale shutdown) and heavy equipment work at Tim McDowell
 about.html        About, skills, experience
 contact.html      Contact form (your email address is never shown on the site)
@@ -42,7 +45,7 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 | (optional) another profile link, for example Behance | Add `<li><a href="https://...">Behance</a></li>` to the footer list on every page and to the Contact list in `about.html`. GitHub and LinkedIn are already set, and there is no Behance link for now. |
 
 ### 2. The Marketing pages (Marketing, Experience, Skills)
-Marketing has two sub tabs. They show as a drop-down under "Marketing" in the menu (on computers) and as a small tab strip on the Marketing pages (everywhere, including phones). About works the same way, with one sub tab, Diplomas & Certificates (described under Diplomas & Certificates below).
+Marketing has two sub tabs. They show as a drop-down under "Marketing" in the menu (on computers) and as a small tab strip on the Marketing pages (everywhere, including phones). About works the same way, with one sub tab, Diplomas & Certificates (described under Diplomas & Certificates below). So does "Software & Technology", with three sub tabs: Experience, Projects and Skills (see step 4 below).
 
 - `marketing.html` is a plain two-choice page: Experience and Skills.
 - `skills.html` has two parts you can edit in any text editor:
@@ -93,11 +96,16 @@ Keep the large original files (the `Companies` folder, `TME Work`, and anything 
 
 To add another company, copy `kes.html` (social posts only) or `tim-mcdowell.html` (posts plus flyers) to a new name, add its own lists in `js/content.js`, and add its block to the list in `experience.html` (step 2 above). A block only needs role and dates if you want them shown. The copy keeps the "Back to Experience" link and the Experience / Skills tab strip under the menu.
 
-### 4. Add software projects
-Each project is one block in the `software` list in `js/content.js`: a title, a short `summary` and a `stack` list of the tools used (for example `["Python", "Qt"]`). The page shows the title, then a logo tile for each tool in the stack, then the summary. To add a project, copy a block. `links` is optional (for example `{ label: "Source code", url: "https://..." }`).
+### 4. Software & Technology
+This section has three sub pages, like Marketing: Experience, Projects and Skills. The main page (`software.html`) is a three-choice page. On computers the three sub pages are in a drop-down under "Software & Technology" in the menu, and on every device they are in the small tab strip under the menu.
+
+**Projects** (`software-projects.html`). Each project is one block in the `software` list in `js/content.js`: a title, a short `summary` and a `stack` list of the tools used (for example `["Python", "Qt"]`). The page shows the title, then a logo tile for each tool in the stack, then the summary. To add a project, copy a block. `links` is optional (for example `{ label: "Source code", url: "https://..." }`).
 Each tool name is matched to its logo in the `logos` list just above `software`. To use a tool that is not there yet, put its logo in `assets/logos/` and add one line to `logos`. A name with no logo still shows, as a plain tile.
-The logos come from Simple Icons (CC0) and the Material Design Icons set (PowerShell, the Microsoft Office, SharePoint and Active Directory tiles, and the server, network and camera icons), recoloured to each brand.
-**IT experience** (the second section of `software.html`) is plain HTML, not part of `js/content.js`. Each job is one block: company, role and year, a row of small logo tiles, then the text. To add a job, copy a block. A tile is one line (`<li class="stack-item"><img src="assets/logos/cisco.svg" alt="" width="44" height="44"><span>Cisco</span></li>`); put a new logo in `assets/logos/` first.
+The logos come from Simple Icons (CC0) and the Material Design Icons set (PowerShell, the Microsoft Office, SharePoint and Active Directory tiles, the server, network and camera icons, SQL, Assembly and Visio), recoloured to each brand.
+
+**Experience** (`software-experience.html`) is plain HTML, not part of `js/content.js`. Each job is one block: company, role and year, a row of small logo tiles, then the text. To add a job, copy a block. A tile is one line (`<li class="stack-item"><img src="assets/logos/cisco.svg" alt="" width="44" height="44"><span>Cisco</span></li>`); put a new logo in `assets/logos/` first. A job with work to show could get its own page later, like the jobs on the Marketing Experience page.
+
+**Skills** (`software-skills.html`) is plain HTML and has the same layout as the Marketing Skills page: six highlights under "What I do", then a short paragraph and logo cards under "The tools I work in", in three groups (Programming languages, Libraries and web, IT and office). To add a tool, copy one `<li class="tool">` into the right group (put its logo in `assets/logos/` first); to add a group, copy a whole `<div class="tool-group">`.
 
 ### 5. The Mining page
 `mining.html` is plain HTML, like `experience.html`. It has two blocks: NATT Safety (confined space rescuer, with the certificates as white tiles) and Tim McDowell Equipment (three equipment photos, text, and a button to `tim-mcdowell.html`). To change the wording or add a certificate, edit the text or copy a `<li>` in the `certs` list. To add a video or photos of the shutdown, put them in `assets/` (short lowercase names) and ask for them to be added under the NATT Safety text. Remove metadata from phone photos first. The text comes from the résumé; the NATT Safety date is shown as just 2024 at your request.
@@ -112,7 +120,7 @@ The About page text and the About photo are still samples. The sample image says
 1. Copy `tim-mcdowell.html` to a new name, for example `photography.html`.
 2. In the copy, change `data-collection="tmeSocial"` to `data-collection="photography"`, update the `<title>` and headline, and delete the section you do not need.
 3. In `js/content.js`, add a `photography: [ ... ]` list that follows the same format as `tmeSocial`.
-4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page. The menu on every page also lists Marketing (with its drop-down for Experience and Skills), Software, Mining, About (with its drop-down for Diplomas & Certificates) and Contact; if you copy a page, copy the whole menu block.
+4. Add `<li><a href="photography.html">Photography</a></li>` to the menu in every page. The menu on every page also lists Marketing (with its drop-down for Experience and Skills), Software & Technology (with Experience, Projects and Skills), Mining, About (with its drop-down for Diplomas & Certificates) and Contact; if you copy a page, copy the whole menu block.
 
 ## Switch on the contact form
 The Contact page has a form (name, email, reason for reaching out). Visitors never see your email address: their message goes to a free form service called Web3Forms, which forwards it to your inbox.
@@ -138,7 +146,7 @@ Two good free hosts for a site like this. Both give you HTTPS and a free web add
 
 The `.nojekyll` file in this folder tells GitHub to serve the files exactly as they are.
 
-**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261120s`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
+**If a change does not show up right away:** browsers keep a copy of the stylesheet and scripts for about 10 minutes, so for a short while a page can look half updated. Every page links them with a version number (`css/styles.css?v=20261122a`, and the same on `js/content.js` and `js/site.js`). When you change `styles.css` or a script, change that number on all the pages (for example to `20261201a`) and the new version loads at once. A hard refresh (Ctrl+F5) also fixes it on your own computer.
 
 ### Option B: Cloudflare Pages
 Create a free Cloudflare account, then in **Workers & Pages** create a Pages project and either connect your GitHub repository or upload this folder directly. Cloudflare's static hosting is free with generous limits. Cloudflare has been merging Pages into Workers, so the menu names may differ a little from this README; their docs at developers.cloudflare.com show the current steps.

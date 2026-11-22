@@ -796,6 +796,9 @@ button { font: inherit; color: inherit; }
 .tool img { width: 40px; height: 40px; margin-bottom: 0.6rem; }
 .tool-name { font-weight: 700; }
 .tool-use { color: var(--ink-soft); font-size: 0.875rem; line-height: 1.35; }
+.tool-group { margin-top: clamp(1.75rem, 3.5vw, 2.75rem); }
+.tool-group .company-sub { margin: 0; }
+.tool-group .tools { margin-top: 1rem; }
 
 .job-meta {
   display: flex;
