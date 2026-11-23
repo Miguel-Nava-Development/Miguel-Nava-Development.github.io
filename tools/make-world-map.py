@@ -13,7 +13,8 @@ import json, math, sys
 
 GEO = (sys.argv[1] if len(sys.argv) > 1 else ".").rstrip("/\\") + "/"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "world-map.svg"
-W, H = 2500, 1000
+W, H = 2500, 667   # frame: 15 : 4 (the cover on the About page is 15 : 4 too)
+DX = 0.0           # horizontal shift in SVG units; the world is drawn three times so the sides join up
 
 LAT_TOP, LAT_BOTTOM = 77.0, -50.0   # visible band (degrees)
 
@@ -31,17 +32,17 @@ def ne1(lon, lat):
 x_edge = ne1(180, 0)[0]
 y_top = ne1(0, LAT_TOP)[1]
 y_bot = ne1(0, LAT_BOTTOM)[1]
-# Fit the full world width to W, then see how tall the band is.
-S = W / (2 * x_edge)
-band_h = (y_top - y_bot) * S
-# If the band is not exactly H tall, centre it and report (the SVG is cropped by viewBox).
-Y0 = y_top * S - (band_h - H) / 2 if band_h >= H else y_top * S
-print("band height at full width:", round(band_h, 1), "target", H, file=sys.stderr)
+# The whole latitude band fits the frame height; the world is then narrower than the frame,
+# so a copy of the world is drawn on each side (they are faded out by the page).
+S = H / (y_top - y_bot)
+WORLD_W = 2 * x_edge * S
+Y0 = y_top * S
+print("world width", round(WORLD_W, 1), "of", W, file=sys.stderr)
 
 
 def proj(lon, lat):
     x, y = ne1(lon, lat)
-    return (W / 2 + x * S, Y0 - y * S)
+    return (W / 2 + DX + x * S, Y0 - y * S)
 
 
 VISITED = {
@@ -189,31 +190,33 @@ for f in units["features"]:
         visited = p["NAME"] == "England"
         feats.append((f["geometry"], (lambda poly: True) if visited else None))
 
-land_v, land_u = build(feats, min_area=2.0, keep_tiny=True)
-
-# Lakes drawn in the ocean colour on top of the land
+# Draw the world three times (left copy, centre, right copy) so the frame is filled.
+land_v, land_u, lake_paths, grat = [], [], [], []
 lakes = load("ne_50m_lakes.geojson")
-lake_paths = []
-for f in lakes["features"]:
-    for poly in polys(f["geometry"]):
-        pr0 = [proj(lon, lat) for lon, lat in poly[0]]
-        if not ring_bbox_ok(pr0) or poly_area(poly[0]) < 6:
-            continue
-        d = ring_path(poly[0])
-        if d:
-            lake_paths.append(d)
-
-# Graticule every 30 degrees
-grat = []
-for lon in range(-180, 181, 30):
-    pts = [proj(lon, lat) for lat in range(int(LAT_BOTTOM) - 10, int(LAT_TOP) + 12, 2)]
-    grat.append("M" + "L".join(f"{x:.1f} {y:.1f}" for x, y in pts))
-for lat in range(-30, 91, 30):
-    pts = [proj(lon, lat) for lon in range(-180, 181, 5)]
-    grat.append("M" + "L".join(f"{x:.1f} {y:.1f}" for x, y in pts))
+for DX in (-WORLD_W, 0.0, WORLD_W):
+    v, u = build(feats, min_area=2.0, keep_tiny=True)
+    land_v += v
+    land_u += u
+    # Lakes drawn in the ocean colour on top of the land
+    for f in lakes["features"]:
+        for poly in polys(f["geometry"]):
+            pr0 = [proj(lon, lat) for lon, lat in poly[0]]
+            if not ring_bbox_ok(pr0) or poly_area(poly[0]) < 4:
+                continue
+            d = ring_path(poly[0])
+            if d:
+                lake_paths.append(d)
+    # Graticule every 30 degrees
+    for lon in range(-180, 181, 30):
+        pts = [proj(lon, lat) for lat in range(int(LAT_BOTTOM) - 10, int(LAT_TOP) + 12, 2)]
+        grat.append("M" + "L".join(f"{x:.1f} {y:.1f}" for x, y in pts))
+    for lat in range(-30, 91, 30):
+        pts = [proj(lon, lat) for lon in range(-180, 181, 5)]
+        grat.append("M" + "L".join(f"{x:.1f} {y:.1f}" for x, y in pts))
+DX = 0.0  # pins are drawn once, on the centre copy
 
 # Pins
-R = 18.0  # head radius in SVG units
+R = 16.0  # head radius in SVG units
 
 
 def pin(label, lon, lat):
