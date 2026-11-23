@@ -7,7 +7,7 @@ index.html        Home page: three big choices, Marketing, Software and Mining
 marketing.html    Marketing: a three-choice page that leads to Experience, Skills and Volunteering
 experience.html   Marketing > Experience: the companies you did the work at, each linking to its page
 skills.html       Marketing > Skills: what you do, plus the apps you use (with logos)
-volunteering.html Marketing > Volunteering: free marketing and graphic design work (Porchlight Theatre Company, Pokémon GO trainer page), with links
+volunteering.html Marketing > Volunteering: free marketing and graphic design work, one block per project with links
 diplomas.html     About > Diplomas & Certificates: your degree, high school diploma with IB Diploma, and course certificates
 tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
 kes.html          KES Equipment: social media posts
