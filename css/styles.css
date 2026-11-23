@@ -606,7 +606,70 @@ button { font: inherit; color: inherit; }
 }
 .profile-story p { max-width: 40rem; font-size: 1.125rem; line-height: 1.6; }
 .profile-story p + p { margin-top: 1rem; }
-.profile-story .lede { font-size: var(--step-1); line-height: 1.45; }
+.profile-story .yt-note { max-width: none; margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.4; color: var(--ink-soft); }
+
+/* The YouTube chart in the Background section: one bar per year, drawn with plain CSS. */
+.yt-chart { --plot: 11rem; max-width: 40rem; margin: 1.75rem 0; }
+.yt-chart-title { margin-bottom: 0.75rem; font-size: 1rem; font-weight: 700; }
+.yt-bars {
+  display: grid;
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.yt-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: calc(var(--plot) + 3rem);
+}
+.yt-val {
+  margin-bottom: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.yt-bar {
+  display: block;
+  width: 70%;
+  max-width: 2.25rem;
+  height: calc(var(--plot) * var(--r));
+  min-height: 2px;
+  background: #b8c6f7;
+}
+.yt-yr {
+  align-self: stretch;
+  margin-top: 0;
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 0.8125rem;
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.yt-col--peak .yt-bar { background: var(--select); }
+.yt-col--peak .yt-val { color: var(--select); font-weight: 800; }
+/* On phones the bars lie down (year, bar, number in each row) so every number stays readable. */
+@media (max-width: 560px) {
+  .yt-bars { display: block; }
+  .yt-col {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr) 3.25rem;
+    grid-template-areas: "yr bar val";
+    align-items: center;
+    column-gap: 0.5rem;
+    height: auto;
+    padding-block: 0.2rem;
+  }
+  .yt-yr { grid-area: yr; padding-top: 0; border-top: 0; font-size: 0.8125rem; text-align: left; }
+  .yt-bar { grid-area: bar; width: calc(100% * var(--r)); max-width: none; min-width: 2px; height: 0.9rem; }
+  .yt-val { grid-area: val; margin: 0; font-size: 0.8125rem; }
+}
 .profile-side { display: grid; align-content: start; gap: clamp(2rem, 4vw, 3rem); }
 .hobbies {
   display: grid;
@@ -629,7 +692,7 @@ button { font: inherit; color: inherit; }
   text-align: center;
 }
 .hobby img { width: 2.5rem; height: 2.5rem; }
-.profile-goal p { max-width: 28rem; font-size: var(--step-1); line-height: 1.45; }
+.profile-goal p { max-width: 28rem; font-size: 1.125rem; line-height: 1.6; }
 @media (max-width: 760px) {
   .profile-cover {
     aspect-ratio: 4 / 3;
