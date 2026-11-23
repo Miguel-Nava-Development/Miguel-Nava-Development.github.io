@@ -640,7 +640,7 @@ button { font: inherit; color: inherit; }
   max-width: 2.25rem;
   height: calc(var(--plot) * var(--r));
   min-height: 2px;
-  background: #b8c6f7;
+  background: #7a8294; /* 3.85:1 on white (WCAG 1.4.11 asks for 3:1) */
 }
 .yt-yr {
   align-self: stretch;
@@ -799,9 +799,12 @@ button { font: inherit; color: inherit; }
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: 0.75rem 2rem;
 }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+/* Footer links get a tap area of at least 24 px (WCAG 2.5.8) */
+.site-footer a { display: inline-block; padding-block: 0.3rem; }
 
 /* ---------- Marketing: companies and sections ---------- */
 .companies { display: grid; gap: clamp(3rem, 7vw, 6rem); }
@@ -844,8 +847,11 @@ button { font: inherit; color: inherit; }
 .company-text { max-width: 38rem; font-size: var(--step-1); line-height: 1.45; }
 .company:hover .btn { background: var(--select-deep); border-color: var(--select-deep); }
 
-.crumb { margin-bottom: 1.25rem; font-weight: 600; }
+.crumb { margin-bottom: 1rem; font-weight: 600; }
+.crumb a { display: inline-block; padding-block: 0.25rem; }
 .hero-title--long { max-width: none; font-size: clamp(2.7rem, 8.2vw, 8rem); }
+/* On very small screens the longest unbroken words ("Financial Group") must fit without sideways scrolling (WCAG 1.4.10) */
+@media (max-width: 380px) { .hero-title--long { font-size: 2.2rem; } }
 .nb { white-space: nowrap; }
 .jump { display: flex; flex-wrap: wrap; align-content: start; gap: 0.5rem; }
 .jump .chip { text-decoration: none; }

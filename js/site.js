@@ -319,6 +319,7 @@
       if (p.link) {
         link.href = p.link;
         link.textContent = 'See the original on ' + (p.linkLabel || 'the web');
+        link.appendChild(h('span', { 'class': 'visually-hidden', text: ' (opens in a new tab)' }));
         link.hidden = false;
       } else {
         link.hidden = true;
@@ -773,7 +774,7 @@
             href: link.url || '#',
             target: external ? '_blank' : null,
             rel: external ? 'noopener' : null,
-            'aria-label': link.label + ' for ' + p.title,
+            'aria-label': link.label + ' for ' + p.title + (external ? ' (opens in a new tab)' : ''),
             text: link.label
           });
         })));
