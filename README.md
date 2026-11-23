@@ -4,9 +4,10 @@ A hand-built site with no framework, no build step and no page builder. It is pl
 
 ```
 index.html        Home page: three big choices, Marketing, Software and Mining
-marketing.html    Marketing: a two-choice page that leads to Experience and Skills
+marketing.html    Marketing: a three-choice page that leads to Experience, Skills and Volunteering
 experience.html   Marketing > Experience: the companies you did the work at, each linking to its page
 skills.html       Marketing > Skills: what you do, plus the apps you use (with logos)
+volunteering.html Marketing > Volunteering: free marketing and graphic design work (Porchlight Theatre Company, Pokémon GO trainer page), with links
 diplomas.html     About > Diplomas & Certificates: your degree, high school diploma with IB Diploma, and course certificates
 tim-mcdowell.html Tim McDowell Equipment Ltd.: social media posts, plus flyers and ads you can flip through
 kes.html          KES Equipment: social media posts
@@ -44,13 +45,14 @@ Search the whole folder (in VS Code: Ctrl+Shift+F) and replace:
 | `Open to full-time or project-based roles` | Your availability, or delete the line |
 | (optional) another profile link, for example Behance | Add `<li><a href="https://...">Behance</a></li>` to the footer list on every page and to the Contact list in `about.html`. GitHub and LinkedIn are already set, and there is no Behance link for now. |
 
-### 2. The Marketing pages (Marketing, Experience, Skills)
-Marketing has two sub tabs. They show as a drop-down under "Marketing" in the menu (on computers) and as a small tab strip on the Marketing pages (everywhere, including phones). About works the same way, with one sub tab, Diplomas & Certificates (described under Diplomas & Certificates below). So does "Software & Technology", with three sub tabs: Experience, Projects and Skills (see step 4 below).
+### 2. The Marketing pages (Marketing, Experience, Skills, Volunteering)
+Marketing has three sub tabs. They show as a drop-down under "Marketing" in the menu (on computers) and as a small tab strip on the Marketing pages (everywhere, including phones). About works the same way, with one sub tab, Diplomas & Certificates (described under Diplomas & Certificates below). So does "Software & Technology", with three sub tabs: Experience, Projects and Skills (see step 4 below).
 
-- `marketing.html` is a plain two-choice page: Experience and Skills.
+- `marketing.html` is a plain three-choice page: Experience, Skills and Volunteering.
 - `skills.html` has two parts you can edit in any text editor:
   - **What I do**: six short highlights (`<li class="skill">`). Change the wording or add one by copying a block.
   - **The apps I work in**: a paragraph, then a tile for each app (`<li class="tool">`). The logos are in `assets/logos/`. To add an app, drop its logo in that folder (an SVG is best) and copy a tile. To remove one, delete its tile.
+- `volunteering.html` is plain HTML with one block per volunteer project (name, role, year, text and link buttons). To add one, copy a `<li>` in the list. Links to other sites carry `target="_blank" rel="noopener"` so they open in a new tab. There are no pictures yet; to add some, put them in `assets/` (short lowercase names, metadata removed) and ask for them to be added.
 - `experience.html` has one block per company. Companies with work to show link to their own page (see below). A company without a page yet can use the plain block described in the comment above the list.
 
 To add a job, open `experience.html`: copy one `<li>` inside `<ul class="companies">`, change the name, role, dates and text, and point the link at the new page. The comment above the list repeats these steps. The home page and the Marketing page do not list individual jobs, so you do not need to change them.
