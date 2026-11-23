@@ -589,24 +589,47 @@ button { font: inherit; color: inherit; }
   letter-spacing: -0.01em;
 }
 .profile-place { margin-top: 0.5rem; color: var(--ink-soft); }
-.profile-body { margin-top: clamp(1.5rem, 3vw, 2.5rem); padding-inline: var(--pad); }
-.profile-item {
+.profile-body {
   display: grid;
-  grid-template-columns: 13rem minmax(0, 1fr);
-  gap: 0.4rem clamp(1.5rem, 4vw, 3rem);
-  padding-block: 1.25rem;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  margin: clamp(1.5rem, 3vw, 2.5rem) var(--pad) 0;
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
   border-top: 1px solid rgba(0, 0, 0, 0.14);
 }
-.profile-item h2 { font-size: var(--step-0); font-weight: 700; }
-.profile-item p { max-width: 40rem; font-size: var(--step-1); line-height: 1.45; }
-.places { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
-.places li {
-  padding: 0.2rem 0.7rem;
-  border: 1px solid #79c29a;
-  background: #e2f3e9;
-  font-size: 0.9375rem;
-  font-weight: 500;
+.profile-section h2 {
+  margin-bottom: 1rem;
+  font-size: var(--step-2);
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 1.05;
 }
+.profile-story p { max-width: 40rem; font-size: 1.125rem; line-height: 1.6; }
+.profile-story p + p { margin-top: 1rem; }
+.profile-story .lede { font-size: var(--step-1); line-height: 1.45; }
+.profile-side { display: grid; align-content: start; gap: clamp(2rem, 4vw, 3rem); }
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 0.5rem 0.9rem;
+  background: var(--t);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+.hobby img { width: 2.5rem; height: 2.5rem; }
+.profile-goal p { max-width: 28rem; font-size: var(--step-1); line-height: 1.45; }
 @media (max-width: 760px) {
   .profile-cover {
     aspect-ratio: 4 / 3;
@@ -614,8 +637,12 @@ button { font: inherit; color: inherit; }
     mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
   }
 }
-@media (max-width: 640px) {
-  .profile-item { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .profile-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .hobbies { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+  .hobby { padding-inline: 0.25rem; font-size: 0.875rem; }
 }
 
 .block { margin-top: clamp(3rem, 7vw, 6rem); }

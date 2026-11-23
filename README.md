@@ -24,7 +24,7 @@ contact.html      Contact form (your email address is never shown on the site)
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos), diplomas/ (the degree picture and PDF, and the transcripts PDF) and about/ (your profile photo and the world map)
+assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos), diplomas/ (the degree picture and PDF, and the transcripts PDF) and about/ (your profile photo and the world map) and hobbies/ (the hobby icons)
 tools/            make-world-map.py: draws the About page's cover map (you only need it to change the pins)
 favicon.svg       The small icon in the browser tab
 ```
@@ -114,9 +114,11 @@ The logos come from Simple Icons (CC0) and the Material Design Icons set (PowerS
 `mining.html` is plain HTML, like `experience.html`. It has two blocks: NATT Safety (confined space rescuer, with the certificates as white tiles) and Tim McDowell Equipment (three equipment photos, text, and a button to `tim-mcdowell.html`). To change the wording or add a certificate, edit the text or copy a `<li>` in the `certs` list. To add a video or photos of the shutdown, put them in `assets/` (short lowercase names) and ask for them to be added under the NATT Safety text. Remove metadata from phone photos first. The text comes from the résumé; the NATT Safety date is shown as just 2024 at your request.
 
 ### 6. Edit the About page
-`about.html` is plain HTML and works like a short LinkedIn profile. The top is a world-map cover with a pin in each place you have visited (it fades out at the sides), then your round photo, your full name and where you live. Under that are four short rows: Lived in, Hobbies, Goals and Places I have visited. Edit the text of a row directly in the file. To add a place to the list, copy one `<li>` in the `places` list.
+`about.html` is plain HTML and works like a short LinkedIn profile. The top is a world-map cover with a pin in each place you have visited (it fades out at the sides), then your round photo, your full name and where you live. Under that, on the left, is **Background** (your story in short paragraphs: edit the text directly in the file). On the right are **Hobbies**, shown as coloured icon tiles, and **Goals**.
 
-The cover map is `assets/about/world-map.svg`. It is drawn from free public-domain Natural Earth data, and the countries you have visited are green. To add or move a pin, edit the `PINS` list at the top of `tools/make-world-map.py`, run the script (the command is in its first lines) and replace the SVG; or ask Claude to do it. The photo is `assets/about/miguel-nava.jpg` (640 px square, centred on your face; to change it, put a new square photo there with the same name). The map and photo are the only files in `assets/about/`.
+- **Add a hobby:** copy one `<li class="hobby">` in the `hobbies` list, change the name, put an icon in `assets/hobbies/` (a simple SVG, about 40 px, filled with one colour) and set the tile's pale background colour in `style="--t: #hex"` (use a very light version of the icon's colour). The icons are from Font Awesome Free (CC BY 4.0); the licence line is kept inside each file, which is its credit.
+- **The map** is `assets/about/world-map.svg`, drawn from free public-domain Natural Earth data; the countries you have visited are green. The places themselves are not listed on the page any more, only shown as pins. To add or move a pin, edit the `PINS` list at the top of `tools/make-world-map.py`, run the script (the command is in its first lines) and replace the SVG; or ask Claude to do it.
+- **The photo** is `assets/about/miguel-nava.jpg` (640 px square, centred on your face). To change it, put a new square photo there with the same name.
 
 ### 7. Delete the samples
 The About page now uses your own text and photo. The old `assets/design/` samples are no longer used and can be deleted.
