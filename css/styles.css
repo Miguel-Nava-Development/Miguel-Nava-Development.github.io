@@ -541,7 +541,6 @@ button { font: inherit; color: inherit; }
 
 /* ---------- About ---------- */
 .page { padding-block: clamp(2rem, 6vw, 5rem) 0; }
-.about-grid,
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
@@ -549,8 +548,75 @@ button { font: inherit; color: inherit; }
   align-items: start;
   margin-top: clamp(2rem, 4vw, 3.5rem);
 }
-.about-text { display: grid; gap: 1.1rem; max-width: 38rem; }
-.about-text p:not(.lede) { max-width: 34rem; }
+
+/* The profile card on the About page: a map cover with pins, a round photo, then short facts. */
+.profile {
+  --pad: clamp(1.25rem, 3.5vw, 3rem);
+  --photo: clamp(7.5rem, 14vw, 11.5rem);
+  background: var(--artboard);
+  padding-bottom: clamp(1.25rem, 3vw, 2.5rem);
+}
+.profile-cover {
+  aspect-ratio: 5 / 2;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+}
+.profile-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 27% 50%;
+}
+.profile-head { padding-inline: var(--pad); }
+.profile-photo {
+  width: var(--photo);
+  height: var(--photo);
+  margin-top: calc(var(--photo) / -2);
+  position: relative;
+  border: 6px solid var(--artboard);
+  border-radius: 50%;
+  background: var(--artboard);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+.profile-name {
+  margin-top: 1rem;
+  font-size: clamp(2.1rem, 5vw, 3.75rem);
+  font-weight: 800;
+  font-stretch: 62%;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.profile-place { margin-top: 0.5rem; color: var(--ink-soft); }
+.profile-body { margin-top: clamp(1.5rem, 3vw, 2.5rem); padding-inline: var(--pad); }
+.profile-item {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 0.4rem clamp(1.5rem, 4vw, 3rem);
+  padding-block: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+.profile-item h2 { font-size: var(--step-0); font-weight: 700; }
+.profile-item p { max-width: 40rem; font-size: var(--step-1); line-height: 1.45; }
+.places { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
+.places li {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid #79c29a;
+  background: #e2f3e9;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+@media (max-width: 760px) {
+  .profile-cover {
+    aspect-ratio: 4 / 3;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  }
+}
+@media (max-width: 640px) {
+  .profile-item { grid-template-columns: 1fr; }
+}
 
 .block { margin-top: clamp(3rem, 7vw, 6rem); }
 .block-title {
@@ -589,9 +655,7 @@ button { font: inherit; color: inherit; }
 .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
 
 @media (max-width: 860px) {
-  .about-grid,
-.contact-grid { grid-template-columns: 1fr; }
-  .about-portrait { max-width: 22rem; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .timeline li { grid-template-columns: 1fr; }

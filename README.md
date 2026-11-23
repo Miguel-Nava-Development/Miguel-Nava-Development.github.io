@@ -18,13 +18,14 @@ software-experience.html  Software & Technology > Experience: your IT jobs (Gold
 software-projects.html    Software & Technology > Projects: your freelance apps (the list is in js/content.js)
 software-skills.html      Software & Technology > Skills: what you do, plus the languages and tools you use (with logos)
 mining.html       Mining: confined space rescue at NATT Safety (Vale shutdown) and heavy equipment work at Tim McDowell
-about.html        About, skills, experience
+about.html        About: a profile card with a world-map cover, your photo and a few facts
 contact.html      Contact form (your email address is never shown on the site)
 404.html          Shown when someone opens a link that does not exist
 css/styles.css    All the styling
 js/content.js     YOUR WORK: the only file you edit to add projects
 js/site.js        Behaviour (viewer, flip-through reader, layout). You should not need to touch it
-assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos), diplomas/ (the degree picture and PDF, and the transcripts PDF) and about/
+assets/           Your images: tme/ (Tim McDowell work), kes/ (KES work), gold-leaf/ (Gold Leaf photos), logos/ (app and programming-language logos), diplomas/ (the degree picture and PDF, and the transcripts PDF) and about/ (your profile photo and the world map)
+tools/            make-world-map.py: draws the About page's cover map (you only need it to change the pins)
 favicon.svg       The small icon in the browser tab
 ```
 
@@ -113,10 +114,12 @@ The logos come from Simple Icons (CC0) and the Material Design Icons set (PowerS
 `mining.html` is plain HTML, like `experience.html`. It has two blocks: NATT Safety (confined space rescuer, with the certificates as white tiles) and Tim McDowell Equipment (three equipment photos, text, and a button to `tim-mcdowell.html`). To change the wording or add a certificate, edit the text or copy a `<li>` in the `certs` list. To add a video or photos of the shutdown, put them in `assets/` (short lowercase names) and ask for them to be added under the NATT Safety text. Remove metadata from phone photos first. The text comes from the résumé; the NATT Safety date is shown as just 2024 at your request.
 
 ### 6. Edit the About page
-`about.html` is plain HTML. Replace the instruction text with your own. To add a résumé, put `resume.pdf` in `assets/`, then remove the comment markers around the "Download résumé" link near the bottom of the file.
+`about.html` is plain HTML and works like a short LinkedIn profile. The top is a world-map cover with a pin in each place you have visited (it fades out at the sides), then your round photo, your full name and where you live. Under that are four short rows: Lived in, Hobbies, Goals and Places I have visited. Edit the text of a row directly in the file. To add a place to the list, copy one `<li>` in the `places` list.
+
+The cover map is `assets/about/world-map.svg`. It is drawn from free public-domain Natural Earth data, and the countries you have visited are green. To add or move a pin, edit the `PINS` list at the top of `tools/make-world-map.py`, run the script (the command is in its first lines) and replace the SVG; or ask Claude to do it. The photo is `assets/about/miguel-nava.jpg` (640 px square, centred on your face; to change it, put a new square photo there with the same name). The map and photo are the only files in `assets/about/`.
 
 ### 7. Delete the samples
-The About page text and the About photo are still samples. The sample image says "Sample image" in its corner; once your own photo is in, delete `assets/about/sample-portrait.svg`. The old `assets/design/` samples are no longer used and can be deleted.
+The About page now uses your own text and photo. The old `assets/design/` samples are no longer used and can be deleted.
 
 ## Add another tab (photography, video, illustration...)
 1. Copy `tim-mcdowell.html` to a new name, for example `photography.html`.
